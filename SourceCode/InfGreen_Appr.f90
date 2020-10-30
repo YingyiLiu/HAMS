@@ -1,3 +1,80 @@
+! 
+!==================================================================================
+! 
+!     Purpose: This program evaluates the three-dimensional free-surface
+!              Green function and derivatives in deep water
+! 
+!              Code Original Author: Hui Liang       created on  2016.12.26    
+! 
+!  License:
+!
+!
+!    This routine is a free software package: you can redistribute it and/or modify it
+!    under the terms of the GNU Lesser General Public License as published by the
+!    Free Software Foundation, either version 3 of the License, or (at your option) 
+!    any later version.
+!
+!    You should have received a copy of the GNU General Public License (either V3  
+!    or later), along with this routine. If not, see <http://www.gnu.org/licenses/>.
+!
+!  Modified on:
+! 
+!    January 02, 2018
+! 
+!  Reference:
+! 
+!
+!	[1]	H. Wu, C. Zhang, Y. Zhu, W. Li, D. Wan, F. Noblesse, 
+!		A global approximation to the Green function for 
+!		diffraction radiation of water waves, 
+!		Eur. J. Mech. B Fluids 65 (2017) 54-64.
+!
+!	[2]	H. Liang, H. Wu, F. Noblesse,
+!		Validation of a global approximation for 
+!		wave diffraction-radiation in deep water,
+!		Appl. Ocean Res. 74 (2018) 80-86.
+! 
+!   Remarks
+! 
+!	The local-flow component is approximated by mean of the global 
+!	approximations [1]. The computations reported in [2] provides
+!	strong evidence that the global approximations are sufficiently 
+!	accurate to compute linear and second-order wave loads in practice.
+!	
+!
+!	It should be noted that the Rankine source term -2/d appeared in L_z 
+!	given by (8a) in Ref. [2] is not evaluated here (there is a typo in (8a)).  
+!	These Rankine source components are required to evaluate in another routine  
+!	due to strong singular behavior.
+!
+!	For any questions, please contact: lianghuistar@gmail.com
+!                   
+!   We define the flow-field point (x,y,z) and source point (xi,eta,zeta).               
+!   Please note that all variables are non-dimensionalized with respect to 
+!	the wavenumber k0
+!                   
+!   The Green function is defiend as                
+!                   
+!   G = -1/r-1/d+GF,
+!
+!   where   
+!                                          
+!   r = sqrt((x-xi)^2+(y-eta)^2+(z-zeta)^2);                  
+!   d = sqrt((x-xi)^2+(y-eta)^2+(z+zeta)^2).
+!
+!   Parameters:
+!
+!       Input:      dx  --- x-xi
+!                   dy  --- y-eta
+!                   vv  --- z+zeta
+! 
+!       Output:     GF(0)  --- free surface itself GF
+!                   GF(1)  --- x-derivative GF_x
+!                   GF(2)  --- y-derivative GF_y
+!                   GF(3)  --- part of z-derivative GF_z = GF(3) - 2/d
+!
+! ==================================================================================
+
      module INFG3D_Open
 
       USE Const_mod
@@ -110,35 +187,6 @@ contains
     
 !===============================================================
 subroutine HavelockGF(hh,vv,GF,GFh)
-!
-!	This subroutine evaluates the free-surface term 
-!	of Green function and its spatial derivatives 
-!	for the wave radiation-diffraction problem.
-!
-!	The local-flow component is approximated by
-!	mean of the global approximations [1]. 
-!	The computations reported in [2] provides
-!	strong evidence that the global approximations  
-!	are sufficiently accurate to compute linear 
-!	and second-order wave loads in practice.
-!
-!	It should be noted that the Rankine source 
-!	term -1/d appeared in L_z given by (8a) in 
-!	Ref. [2] is not evaluated here. These Rankine
-!	source components are required to evaluate
-!	in another routine.
-!
-!	For any questions, please contact: lianghuistar@gmail.com
-!
-!	[1]	H. Wu, C. Zhang, Y. Zhu, W. Li, D. Wan, F. Noblesse, 
-!		A global approximation to the Green function for 
-!		diffraction radiation of water waves, 
-!		Eur. J. Mech. B Fluids 65 (2017) 54-64.
-!
-!	[2]	H. Liang, H. Wu, F. Noblesse,
-!		Validation of a global approximation for 
-!		wave diffraction-radiation in deep water,
-!		Appl. Ocean Res. 74 (2018) 80-86.
 !
 	implicit none
 ! --- Variables -------------------------------------------
