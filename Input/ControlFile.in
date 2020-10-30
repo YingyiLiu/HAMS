@@ -1,0 +1,28 @@
+   --------------HAMS Control file---------------
+   
+   Waterdepth  -50.D0
+
+   #Start Definition of Wave Frequencies
+    Input_frequency_type        1
+    Number_of_frequencies      30
+    Minimum_frequency_Wmin    0.1D0
+    Frequency_step            0.1D0
+   #End Definition of Wave Frequencies
+
+   #Start Definition of Wave Headings
+    Number_of_headings          1
+    Minimum_heading           0.D0
+    Heading_step              0.D0
+   #End Definition of Wave Headings
+
+    Reference_body_center   0.000   0.000   0.000
+	Reference_body_length   1.D0
+	If_remove_irr_freq       1
+	Number of threads        28
+
+   ----------End HAMS Control file---------------
+   
+   
+   Input_frequency_type options: 0--wave number; 1--wave frequency; 2--wave period
+
+   
