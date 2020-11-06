@@ -53,7 +53,7 @@
 !     7 :375-389. DOI: 10.1515/ijnaoe-2015-0026
 !    (2) Yingyi Liu, Changhong Hu, Makoto Sueyoshi, Hidetsugu Iwashita, Masashi Kashiwagi (2016). 
 !     Motion response prediction by hybrid panel-stick models for a semi-submersible with bracings. 
-!     Journal of Marine Science and Technology, 21:742�C757. DOI: 10.1007/s00773-016-0390-1
+!     Journal of Marine Science and Technology, 21:742-757. DOI: 10.1007/s00773-016-0390-1
 !    (3) Papers to be continued...
 !
 !   ######### Version released at October, 2020 ####################
@@ -82,14 +82,13 @@
 !
     print*
     
-    Write(*,'(80A)') ' -------------------HAMS_v2019.08 (Hydrodynamic Analysis of Marine Structures)------------------'
+    Write(*,'(80A)') ' ------------------------HAMS (Hydrodynamic Analysis of Marine Structures)---------------------'
     print*
-    Write(*,'(20x,20A,10x)') ' Author & Copyright holder: Yingyi Liu, Kyushu University'
+    Write(*,'(20x,20A,10x)') '                                     Code Original Author: Yingyi Liu'
     print*
-    Write(*,'(80A)') '  HAMS is a proprietary software for computing wave diffraction and radiation of 3D structures.'
-    Write(*,'(80A)') '  Please note the following two conditions before using.'
+    Write(*,'(80A)') '  HAMS is an open-source software for computing wave diffraction and radiation of 3D structures.'
     print*
-    Write(*,'(200A)') '  I. Please cite the following papers when HAMS has been used in your publications, reports, etc.:'
+    Write(*,'(200A)') ' Please cite the following papers in your publications, reports, etc., when HAMS has been used in your work:'
     print*
     Write(*,'(200A)') '  (1) Yingyi Liu. (2019).'
     Write(*,'(200A)') '      HAMS: A Frequency-Domain Preprocessor for Wave-Structure Interactions—Theory, Development, and Application.'
@@ -106,9 +105,8 @@
     Write(*,'(200A)') '  (4) Yingyi Liu et al. (2015).'
     Write(*,'(200A)') '      A calculation method for finite depth free-surface green function.'
     Write(*,'(200A)') '      International Journal of Naval Architecture and Ocean Engineering, 7: 375-389.'
-
     print*
-    Write(*,'(200A)') '  II. Please notify and discuss with Dr.Yingyi Liu when HAMS is to be used in any project making profits.'
+    Write(*,'(200A)') '  Paper list to be continued...'
     print*
     Write(*,'(80A)') ' -----------------------------------------------------------------------------------------------'
     
