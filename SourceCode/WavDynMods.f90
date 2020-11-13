@@ -139,5 +139,17 @@
 !
         END MODULE Potentials_mod
 
-        
+
+!---------------------------------------------------------------------------------------------
+!        Data module for declaring variables for field points
+!---------------------------------------------------------------------------------------------
+!
+        MODULE FieldOutput_mod
+        !USE Precision
+!
+        INTEGER NFP
+!
+        REAL*8,ALLOCATABLE,PUBLIC:: XFP(:,:)
+!
+        END MODULE FieldOutput_mod
         

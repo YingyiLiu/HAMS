@@ -72,6 +72,8 @@
 	  USE PotentWavForce
 	  USE PrintOutput
       USE Potentials_mod
+      USE PressureElevation
+      USE FieldOutput_mod
       USE omp_lib
 
       IMPLICIT NONE  
@@ -295,7 +297,8 @@
          ENDIF
  
          CALL RFORCE(WK,W1,TP,AMAS(KK,:,:),BDMP(KK,:,:))
-
+         CALL OutputPressureElevation_Radiation(64)
+         
         DO II=1,NBETA
 
          BETA=WVHD(II)*PI/180.0D0
@@ -311,7 +314,8 @@
  
          CALL EFORCE(WK,W1,TP,BETA,AMP,EXFC(KK,II,:))
          CALL SolveMotion(WK,W1,TP,WL,AMP,AMAS(KK,:,:),BDMP(KK,:,:),VDMP,EXFC(KK,II,:),DSPL(KK,II,:))
-        
+         CALL OutputPressureElevation_Diffraction(64)
+         
         ENDDO
         
        ENDDO

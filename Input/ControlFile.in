@@ -1,0 +1,35 @@
+   --------------HAMS Control file---------------
+   
+   Waterdepth  2.D0
+
+   #Start Definition of Wave Frequencies
+    Input_frequency_type        0
+    Number_of_frequencies      59
+    Minimum_frequency_Wmin    0.1D0
+    Frequency_step            0.05D0
+   #End Definition of Wave Frequencies
+
+   #Start Definition of Wave Headings
+    Number_of_headings          1
+    Minimum_heading          30.D0
+    Heading_step              0.D0
+   #End Definition of Wave Headings
+
+    Reference_body_center   0.000   0.000   0.000
+    Reference_body_length   1.D0
+	If_remove_irr_freq       0
+	Number of threads        28
+   
+   #Start Definition of Pressure and/or Elevation
+    Number_of_field_points     3                                  # number of field points where to calculate and output the pressure and/or elevation
+    Global_coords_point_1      1.5000     0.0000     0.0000       ! X1, Y1, Z1
+    Global_coords_point_2      1.5000     0.0000    -0.5000       ! X2, Y2, Z2
+    Global_coords_point_3      0.5000     1.0000    -7.5000       ! X3, Y3, Z3
+   #End Definition of Pressure and/or Elevation
+
+   ----------End HAMS Control file---------------
+   
+   
+   Input_frequency_type options: 0--wave number; 1--wave frequency; 2--wave period
+
+   

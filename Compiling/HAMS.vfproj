@@ -24,9 +24,9 @@
 				<Tool Name="VFPreBuildEventTool"/>
 				<Tool Name="VFPostBuildEventTool"/>
 				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
-		<Configuration Name="Debug|x64" OutputDirectory="..\Bin\">
-				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" DebugInformationFormat="debugEnabled" Optimization="optimizeDisabled" Parallelization="true" OpenMP="OpenMPParallelCode" WarnInterfaces="true" Traceback="true" BoundsCheck="true" RuntimeLibrary="rtMultiThreadedDebug" UseMkl="mklParallel"/>
-				<Tool Name="VFLinkerTool" OutputFile="$(OutDir)\$(ProjectName)_$(PlatformName).exe" LinkIncremental="linkIncrementalNo" SuppressStartupBanner="true" GenerateManifest="false" GenerateDebugInformation="true" SubSystem="subSystemConsole" StackReserveSize="100000000"/>
+		<Configuration Name="Debug|x64" TargetName="$(ProjectName)_x64">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" DebugInformationFormat="debugEnabled" Optimization="optimizeDisabled" OpenMP="OpenMPSequentialCode" WarnInterfaces="true" Traceback="true" BoundsCheck="true" RuntimeLibrary="rtMultiThreadedDebug" UseMkl="mklParallel"/>
+				<Tool Name="VFLinkerTool" LinkIncremental="linkIncrementalNo" SuppressStartupBanner="true" GenerateManifest="false" GenerateDebugInformation="true" SubSystem="subSystemConsole" HeapCommitSize="1000000000" StackReserveSize="100000000" AdditionalDependencies="iphlpapi.lib"/>
 				<Tool Name="VFResourceCompilerTool"/>
 				<Tool Name="VFMidlTool" SuppressStartupBanner="true" TargetEnvironment="midlTargetAMD64"/>
 				<Tool Name="VFCustomBuildTool"/>
@@ -34,9 +34,9 @@
 				<Tool Name="VFPreBuildEventTool"/>
 				<Tool Name="VFPostBuildEventTool"/>
 				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
-		<Configuration Name="Release|x64" OutputDirectory="..\Bin\">
-				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" UseProcessorExtensions="codeExclusivelySSE41" OpenMP="OpenMPParallelCode" UseMkl="mklParallel"/>
-				<Tool Name="VFLinkerTool" OutputFile="$(OutDir)\$(ProjectName)_$(PlatformName).exe" LinkIncremental="linkIncrementalNo" GenerateManifest="false" SubSystem="subSystemConsole" HeapCommitSize="1000000000" StackReserveSize="1000000000"/>
+		<Configuration Name="Release|x64" OutputDirectory="..\Bin" TargetName="$(ProjectName)_x64">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" Optimization="optimizeFull" UseProcessorExtensions="codeExclusivelySSE41" OpenMP="OpenMPParallelCode" UseMkl="mklParallel"/>
+				<Tool Name="VFLinkerTool" LinkIncremental="linkIncrementalNo" GenerateManifest="false" SubSystem="subSystemConsole" HeapCommitSize="1000000000" StackReserveSize="1000000000" AdditionalDependencies="iphlpapi.lib"/>
 				<Tool Name="VFResourceCompilerTool"/>
 				<Tool Name="VFMidlTool" SuppressStartupBanner="true" TargetEnvironment="midlTargetAMD64"/>
 				<Tool Name="VFCustomBuildTool"/>
@@ -47,10 +47,10 @@
 	<Files>
 		<Filter Name="Header Files" Filter="fi;fd"/>
 		<Filter Name="Resource Files" Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
-		<File RelativePath="..\Input\ControlFile.in"/>
-		<File RelativePath="..\Input\HullMesh.pnl"/>
-		<File RelativePath="..\Input\Hydrostatic.in"/>
-		<File RelativePath="..\Input\WaterplaneMesh.pnl"/></Filter>
+		<File RelativePath=".\Input\ControlFile.in"/>
+		<File RelativePath=".\Input\HullMesh.pnl"/>
+		<File RelativePath=".\Input\Hydrostatic.in"/>
+		<File RelativePath=".\Input\WaterplaneMesh.pnl"/></Filter>
 		<Filter Name="Source Files" Filter="f90;for;f;fpp;ftn;def;odl;idl">
 		<File RelativePath="..\SourceCode\AssbMatx.f90"/>
 		<File RelativePath="..\SourceCode\AssbMatx_irr.f90"/>
@@ -67,6 +67,7 @@
 		<File RelativePath="..\SourceCode\NormalProcess.f90"/>
 		<File RelativePath="..\SourceCode\PatclVelct.f90"/>
 		<File RelativePath="..\SourceCode\PotentWavForce.f90"/>
+		<File RelativePath="..\SourceCode\PressureElevation.f90"/>
 		<File RelativePath="..\SourceCode\PrintOutput.f90"/>
 		<File RelativePath="..\SourceCode\ReadPanelMesh.f90"/>
 		<File RelativePath="..\SourceCode\SingularIntgr.f90"/>

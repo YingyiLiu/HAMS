@@ -91,7 +91,7 @@ CONTAINS
       
       DO I=1,6
        DO J=1,6
-       WRITE(64,130) I,J,CRS(I,J)/(RHO*G)
+       WRITE(65,130) I,J,CRS(I,J)/(RHO*G)
        ENDDO
       ENDDO
  

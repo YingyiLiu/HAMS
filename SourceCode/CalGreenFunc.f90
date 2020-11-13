@@ -78,7 +78,7 @@ CONTAINS
          IF (ISX.EQ.1.AND.ISY.EQ.0) THEN
           XP=SY(IS,1)*XYZ_P(IEL,1)
           YP=SX(IS,1)*XYZ_P(IEL,2)
-          ZP=          XYZ_P(IEL,3)
+          ZP=         XYZ_P(IEL,3)
          ELSE
           XP=SX(IS,1)*XYZ_P(IEL,1)
           YP=SY(IS,1)*XYZ_P(IEL,2)
@@ -87,11 +87,11 @@ CONTAINS
 
          IF (NCN(JEL).EQ.3) THEN
 
-          CALL SGLINTBD_TRI(IS,IEL,JEL,SIJ,DIJ,IRR)
+          CALL SGLINTBD_TRI(IS,IEL,JEL,SIJ,DIJ,1)
 
          ELSEIF (NCN(JEL).EQ.4) THEN
 
-          CALL SGLINTBD_QUAD(IS,IEL,JEL,SIJ,DIJ,IRR)
+          CALL SGLINTBD_QUAD(IS,IEL,JEL,SIJ,DIJ,1)
 
          ENDIF
 
