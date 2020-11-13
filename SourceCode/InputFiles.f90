@@ -46,7 +46,7 @@
 !  H :   Water depth; H<0: For infinite water depth; H>0: For finite water depth; 
 !  AMP:  Wave amplitude
 !  BETA: Wave incident angle with repect to the x-direction
-!  IFWKO=0,  input wave number; IFWKO=1, input wave frequency
+!  INFT=0,  input wave number; INFT=1, input wave frequency
 !  XC,YC,ZC: the coordinates of body rotation center
 
         READ(1,*) 
@@ -54,7 +54,8 @@
         READ(1,'(14x,f30.15)')     H
         READ(1,*) 
         READ(1,*) 
-        READ(1,'(25x,i16)')        IFWKO
+        READ(1,'(25x,i16)')        INFT
+        READ(1,'(25x,i17)')        OUFT
         READ(1,'(26x,i16)')        NPER
         READ(1,'(27x,f30.15)')     WK1
         READ(1,'(19x,f30.15)')     DWK

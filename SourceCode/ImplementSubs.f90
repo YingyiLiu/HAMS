@@ -41,7 +41,7 @@ CONTAINS
 !	    
 	  INTEGER,INTENT(IN):: KK
       
-        IF (IFWKO .EQ. 0)  THEN
+        IF (INFT .EQ. 0)  THEN
             WK=WK1+(KK-1)*DWK
           IF (H .LE. 0.0D0) THEN
             W1=SQRT(G*WK)
@@ -53,7 +53,7 @@ CONTAINS
           END IF
             WL=2.D0*PI/WK
             TP=2.D0*PI/W1
-        ELSEIF (IFWKO .EQ. 1)  THEN
+        ELSEIF (INFT .EQ. 1)  THEN
             W1=WK1+(KK-1)*DWK
           IF(H .LE. 0.0D0) THEN
             WK=W1*W1/G
@@ -65,7 +65,7 @@ CONTAINS
           END IF
             WL=2.D0*PI/WK
             TP=2.D0*PI/W1
-        ELSEIF (IFWKO .EQ. 2)  THEN
+        ELSEIF (INFT .EQ. 2)  THEN
             TP=WK1+(KK-1)*DWK
             W1=2.D0*PI/TP
           IF(H .LE. 0.0D0) THEN
@@ -77,6 +77,14 @@ CONTAINS
             WK=WVN(1)
           END IF
             WL=2.D0*PI/WK
+        END IF
+        
+        IF (OUFT .EQ. 0)  THEN
+         OUFR=WK
+        ELSEIF (OUFT .EQ. 1)  THEN
+         OUFR=W1
+        ELSEIF (OUFT .EQ. 2)  THEN
+         OUFR=TP
         END IF
 
       END SUBROUTINE CalWaveProperts

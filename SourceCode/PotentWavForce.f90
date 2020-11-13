@@ -22,6 +22,7 @@
 !  ------------------------------------------------------------------------------------------------------
 MODULE PotentWavForce
 
+   USE HAMS_mod
    USE Body_mod
    USE Const_mod
    USE PanelMesh_mod
@@ -108,7 +109,7 @@ CONTAINS
        WRITE(20+MD,1010) WK,W1,REAL(EXFC(MD)),IMAG(EXFC(MD))
        
        IF (ABS(TP+1.D0).GT.1.E-6.AND.ABS(TP).GT.1.E-6) THEN
-        WRITE(62,1030)  TP,BETA*180.0D0/PI,MD,MOD,PHS(MD),NREL,NIMG
+        WRITE(62,1030)  OUFR,BETA*180.0D0/PI,MD,MOD,PHS(MD),NREL,NIMG
        ENDIF
            
       ENDDO
@@ -195,9 +196,9 @@ CONTAINS
        DO MD1=1,6
           DO MD2=1,6
             IF (ABS(TP+1.D0).LT.1.E-6.OR.ABS(TP).LT.1.E-6) THEN
-             WRITE(61,1020) TP,MD1,MD2,AMAS(MD1,MD2)/RHO
+             WRITE(61,1020) OUFR,MD1,MD2,AMAS(MD1,MD2)/RHO
             ELSE
-             WRITE(61,1020) TP,MD1,MD2,AMAS(MD1,MD2)/RHO,BDMP(MD1,MD2)/(RHO*W1)
+             WRITE(61,1020) OUFR,MD1,MD2,AMAS(MD1,MD2)/RHO,BDMP(MD1,MD2)/(RHO*W1)
             ENDIF
           ENDDO
        ENDDO

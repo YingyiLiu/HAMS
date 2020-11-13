@@ -311,8 +311,10 @@ CONTAINS
 !   ===================================================
 !    Write WAMIT-style output files
 !   
-       WRITE(NFILE,1000) TP,IPT,(VCPX(IPT,MD),MD=1,6)
-
+      IF (ABS(XP(3)).GT.1.E-6) THEN
+       WRITE(NFILE,1000) OUFR,IPT,(VCPX(IPT,MD),MD=1,6)
+      ENDIF
+      
       ENDDO
       
 1000  FORMAT(ES14.6,I10,12ES14.6)
@@ -327,7 +329,7 @@ CONTAINS
 !
       INTEGER,INTENT(IN):: NFILE
       INTEGER IPT,MD,EMD,IHD
-      REAL*8 XP(3)
+      REAL*8 XP(3),REL,IMG,MOD,PHS
       COMPLEX*16 VCP,NVCP
 
       DO IPT=1,NFP
@@ -340,10 +342,16 @@ CONTAINS
         CALL WamitNondimens(VCP,'Elevation','Diffraction',0,NVCP)
        ENDIF
        
-       WRITE(NFILE,1020) TP,BETA*180.0D0/PI,IPT,NVCP
+       !WRITE(NFILE,1020) OUFR,BETA*180.0D0/PI,IPT,NVCP
+       REL=REAL(NVCP)
+       IMG=IMAG(NVCP)
+       MOD=ABS(NVCP)
+       PHS=ATAN2D(IMG,REL)
+       WRITE(NFILE,1020) OUFR,BETA*180.0D0/PI,IPT,MOD,PHS,REL,IMG
+       
       ENDDO
       
-1020  FORMAT(2ES14.6,I10,2ES14.6)
+1020  FORMAT(2ES14.6,I10,4ES14.6)
       RETURN
       END SUBROUTINE OutputPressureElevation_Diffraction
 !-------------------------------------------------------------------------------
