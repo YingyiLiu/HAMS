@@ -3,7 +3,8 @@
    Waterdepth  2.D0
 
    #Start Definition of Wave Frequencies
-    Input_frequency_type        0
+    Input_frequency_type        1
+    Output_frequency_type       4
     Number_of_frequencies      59
     Minimum_frequency_Wmin    0.1D0
     Frequency_step            0.05D0
@@ -29,6 +30,6 @@
    ----------End HAMS Control file---------------
    
    
-   Input_frequency_type options: 0--wave number; 1--wave frequency; 2--wave period
-
+   Input_frequency_type options: 1--deepwater wave number; 2--finite-depth wave number; 3--wave frequency; 4--wave period; 5--wave length
+   Output_frequency_type options: same as Input_frequency_type options
    

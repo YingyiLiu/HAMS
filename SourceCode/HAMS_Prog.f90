@@ -282,12 +282,14 @@
  
          CALL CalWaveProperts(KK)       
          WVFQ(KK)=W1
-         IF (OUFT.EQ.0) THEN
-          WRITE(6,1000) OUFR
-         ELSEIF (OUFT.EQ.1) THEN
-          WRITE(6,1000) OUFR
-         ELSEIF (OUFT.EQ.2) THEN
-          WRITE(6,1000) OUFR
+         IF (OUFT.EQ.1.or.OUFT.EQ.2) THEN
+          WRITE(6,1010) OUFR
+         ELSEIF (OUFT.EQ.3) THEN
+          WRITE(6,1030) OUFR
+         ELSEIF (OUFT.EQ.4) THEN
+          WRITE(6,1040) OUFR
+         ELSEIF (OUFT.EQ.5) THEN
+          WRITE(6,1050) OUFR
          ENDIF
              
          IF (IRSP.EQ.0) THEN
@@ -371,9 +373,10 @@
 !====================================================================================
 1600   FORMAT(//, ' Total CPU Time of computation was',F12.3, '  seconds')
 1700   FORMAT(//, ' Elapsed Time in computation was',F12.3, '  seconds')
-1000   FORMAT(/,10x,'Wave Number =',F9.3,' 1/m')
-1010   FORMAT(/,10x,'Wave Frequency =',F9.3,' rad/s')
-1020   FORMAT(/,10x,'Wave Period =',F9.3,'  s')
+1010   FORMAT(/,10x,'Wave Number =',F9.3,' 1/m')
+1030   FORMAT(/,10x,'Wave Frequency =',F9.3,' rad/s')
+1040   FORMAT(/,10x,'Wave Period =',F9.3,'  s')
+1050   FORMAT(/,10x,'Wave Length =',F9.3,' m')
 3000   FORMAT(12x,'Wave Heading =',F9.3,' Degree')
        
       END Program HAMS
