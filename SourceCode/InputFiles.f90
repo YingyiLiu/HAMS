@@ -117,11 +117,11 @@
 
 ! Outputs in WAMIT style
 !        
-	    !OPEN(61,FILE='Output\Wamit_format\AmssDamp.1',        STATUS='UNKNOWN')
-	    !OPEN(62,FILE='Output\Wamit_format\ExcForce.3',        STATUS='UNKNOWN')
-	    !OPEN(63,FILE='Output\Wamit_format\Motion.4',          STATUS='UNKNOWN')
-	    !OPEN(64,FILE='Output\Wamit_format\PressureElevation.6p',       STATUS='UNKNOWN')
-	    !OPEN(65,FILE='Output\Wamit_format\Hydrostat.hst',     STATUS='UNKNOWN')
+        !OPEN(61,FILE='Output\Wamit_format\AmssDamp.1',        STATUS='UNKNOWN')
+        !OPEN(62,FILE='Output\Wamit_format\ExcForce.3',        STATUS='UNKNOWN')
+        !OPEN(63,FILE='Output\Wamit_format\Motion.4',          STATUS='UNKNOWN')
+        !OPEN(64,FILE='Output\Wamit_format\PressureElevation.6p',       STATUS='UNKNOWN')
+        !OPEN(65,FILE='Output\Wamit_format\Hydrostat.hst',     STATUS='UNKNOWN')
         
         OPEN(61,FILE='Output\Wamit_format\Buoy.1',        STATUS='UNKNOWN')
         OPEN(62,FILE='Output\Wamit_format\Buoy.3',        STATUS='UNKNOWN')
