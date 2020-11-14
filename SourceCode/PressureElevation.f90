@@ -117,7 +117,7 @@ CONTAINS
           DUM(1)= RKN(1)+GRN(1)*EAR
           DUM(2)=(RKN(2)+GRN(2)*EAR)*ENV(1)   &
                 +(RKN(3)+GRN(3)*EAR)*ENV(2)   &
-	            +(RKN(4)+GRN(4)*EAR)*ENV(3)
+              +(RKN(4)+GRN(4)*EAR)*ENV(3)
          ELSE
           DUM(1)= GRN(1)*EAR
           DUM(2)=(GRN(2)*ENV(1)+GRN(3)*ENV(2)+GRN(4)*ENV(3))*EAR
@@ -214,7 +214,7 @@ CONTAINS
       COMPLEX*16,INTENT(OUT):: PRS
       CHARACTER(*),INTENT(IN)::RDFLG
       
-  	  COMPLEX*16  XPOT
+      COMPLEX*16  XPOT
       
       CALL CalPotential(XP,RDFLG,MD,XPOT)
       
@@ -238,7 +238,7 @@ CONTAINS
       COMPLEX*16,INTENT(OUT):: ELV
       CHARACTER(*),INTENT(IN)::RDFLG
       
-  	  COMPLEX*16  XPOT
+      COMPLEX*16  XPOT
 
       CALL CalPotential(XP,RDFLG,MD,XPOT)
       

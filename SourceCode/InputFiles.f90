@@ -85,12 +85,12 @@
           endif
         ENDIF
 
-	   READ(1,*) 
-	   READ(1,*) 
-	   READ(1,'(27x,i16)')        NFP
-	   ALLOCATE(XFP(NFP,3))
-	   DO I=1,NFP
-	      READ(1,'(26x,3(1x,f10.4))')     (XFP(I,J), J=1,3)
+     READ(1,*) 
+     READ(1,*) 
+     READ(1,'(27x,i16)')        NFP
+     ALLOCATE(XFP(NFP,3))
+     DO I=1,NFP
+        READ(1,'(26x,3(1x,f10.4))')     (XFP(I,J), J=1,3)
        ENDDO
        
 ! ====================================================
