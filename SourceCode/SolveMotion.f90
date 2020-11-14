@@ -25,9 +25,9 @@
 !---------------------------------------------------------------------------------------------
 !
       SUBROUTINE SolveMotion(WK,W1,TP,WL,AMP,AMAS,BDMP,VDMP,EXFC,DSPL)
-	  USE HAMS_mod
-	  USE Const_mod
-	  USE Body_mod
+      USE HAMS_mod
+      USE Const_mod
+      USE Body_mod
       IMPLICIT   NONE
 
       REAL*8,INTENT(IN)::  WK,W1,TP,WL,AMP
@@ -35,7 +35,7 @@
       COMPLEX*16,INTENT(IN):: EXFC(6)
       COMPLEX*16,INTENT(OUT):: DSPL(6)
       
-	  INTEGER I,J,K,L,NSTP,INFO,IPV(6)
+      INTEGER I,J,K,L,NSTP,INFO,IPV(6)
 
       REAL*8 RERR,PHAS(6),VDMP(6,6)
       COMPLEX*16 EXFC2(6),LEFT(6,6),RIGHT(6),DSPL1(6),DX(6)

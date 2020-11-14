@@ -49,7 +49,7 @@ CONTAINS
        
        REAL*8,INTENT(OUT):: SIJ,DIJ(3)
        REAL*8:: X,Y,Z,ALFA,DKSI,DETA,R1,R2,L,XP,YP,ZP,A1,A2,B1,B2
-	   REAL*8:: XV(3,3),XQ(4,3),UNITI(3),UNITJ(3),UNITK(3),KSI(4),ETA(4)
+       REAL*8:: XV(3,3),XQ(4,3),UNITI(3),UNITJ(3),UNITK(3),KSI(4),ETA(4)
        REAL*8:: P12(3),P13(3),PO3(3),PO1(3),PO2(3),PO(3),POF(3),XF(3)
        REAL*8:: LGRN,ST,SXT,SYT,SZT,SDX,SDY,SDZ
       
@@ -257,7 +257,7 @@ CONTAINS
        
        REAL*8,INTENT(OUT):: SIJ,DIJ(3)
        REAL*8:: X,Y,Z,ALFA,DKSI,DETA,R1,R2,L,XP,YP,ZP,A1,A2,B1,B2
-	   REAL*8:: XV(4,3),XQ(4,3),UNITI(3),UNITJ(3),UNITK(3),KSI(5),ETA(5),DTA(5)
+       REAL*8:: XV(4,3),XQ(4,3),UNITI(3),UNITJ(3),UNITK(3),KSI(5),ETA(5),DTA(5)
        REAL*8:: POV(4,3),PON(4,3),UN(3),PO(3),POF(3),XF(3),PL(3,3)
        REAL*8:: LGRN,ST,SXT,SYT,SZT,SDX,SDY,SDZ,RDET
 
@@ -440,7 +440,7 @@ CONTAINS
 80    CONTINUE
 
       RETURN
-       END SUBROUTINE SGLINTBD_QUAD
+      END SUBROUTINE SGLINTBD_QUAD
        
 !--------------------------------------------------------------------------------
 !-------------------------------------------------------------------------------
@@ -457,7 +457,7 @@ CONTAINS
 
        REAL*8,INTENT(OUT):: RK(4)
        REAL*8:: X,Y,Z,ALFA,DKSI,DETA,R1,R2,L,XP,YP,ZP,A1,A2,B1,B2
-	   REAL*8:: XV(3,3),XQ(4,3),UNITI(3),UNITJ(3),UNITK(3),KSI(4),ETA(4)
+       REAL*8:: XV(3,3),XQ(4,3),UNITI(3),UNITJ(3),UNITK(3),KSI(4),ETA(4)
        REAL*8:: P12(3),P13(3),PO3(3),PO1(3),PO2(3),PO(3),POF(3)
        REAL*8:: LGRN,ST,SXT,SYT,SZT,SX,SY,SZ
 
@@ -625,7 +625,7 @@ CONTAINS
        
        REAL*8,INTENT(OUT):: RK(4)
        REAL*8:: X,Y,Z,ALFA,DKSI,DETA,R1,R2,L,XP,YP,ZP,A1,A2,B1,B2
-	   REAL*8:: XV(4,3),XQ(4,3),UNITI(3),UNITJ(3),UNITK(3),KSI(5),ETA(5),DTA(5)
+       REAL*8:: XV(4,3),XQ(4,3),UNITI(3),UNITJ(3),UNITK(3),KSI(5),ETA(5),DTA(5)
        REAL*8:: POV(4,3),PON(4,3),UN(3),PO(3),POF(3),PL(3,3)
        REAL*8:: LGRN,ST,SXT,SYT,SZT,SX,SY,SZ,RDET
 
@@ -808,7 +808,7 @@ CONTAINS
 !         Calculate determinant of a matrix
 !------------------------------------------------------------------------------- 
 
-	SUBROUTINE BSDET(A,N,DET)
+    SUBROUTINE BSDET(A,N,DET)
     IMPLICIT NONE
 
     INTEGER,INTENT(IN):: N

@@ -46,8 +46,8 @@ CONTAINS
       SUBROUTINE ReadBodyMesh
       IMPLICIT   NONE
 
-	  INTEGER M,N,IND,IEL,J
-	  REAL*8::  DX,DY,DZ
+      INTEGER M,N,IND,IEL,J
+      REAL*8::  DX,DY,DZ
 
         DO 10 IND=1,NTND
           READ(2,*) M, XYZ(IND,1), XYZ(IND,2), XYZ(IND,3)
@@ -61,7 +61,7 @@ CONTAINS
 	    READ(2, *) M, NCN(IEL), (NCON(IEL,J), J=1, NCN(IEL))
 30      CONTINUE
 
-       RETURN
+      RETURN
       END SUBROUTINE ReadBodyMesh
 
 !=======================================================================
@@ -74,8 +74,8 @@ CONTAINS
       SUBROUTINE ReadWTPLMesh
       IMPLICIT   NONE  
 
-	  INTEGER M,N,IND,IEL,J
-	  REAL*8::  DX,DY,DZ
+      INTEGER M,N,IND,IEL,J
+      REAL*8::  DX,DY,DZ
 !
 ! -------------------------------------------------------------------------
 ! 
@@ -110,7 +110,7 @@ CONTAINS
       SUBROUTINE CalNormals
       IMPLICIT   NONE
 
-	  INTEGER IEL,IND
+      INTEGER IEL,IND
 
 ! -------------------------------------------------------------------------
 ! 
@@ -136,8 +136,8 @@ CONTAINS
       CALL CalRotNormals(XG,IXYZ_P,IDXYZ_P,INELEM)
       
 !
-	  Print *,' Calculating panel normals is finished...'
-	  Print * 
+      Print *,' Calculating panel normals is finished...'
+      Print * 
 !
 
       RETURN

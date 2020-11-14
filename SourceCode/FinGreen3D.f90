@@ -81,11 +81,11 @@
 
       SUBROUTINE FINGREEN3D(XF,XP,YF,YP,ZF,ZP,V,WVN,NK,H,GRN,FLAG)
 
-	  INTEGER,INTENT(IN):: NK,FLAG
+      INTEGER,INTENT(IN):: NK,FLAG
       REAL*8 R,R1,RR,XPQ,YPQ,ZPQ
-	  REAL*8,INTENT(IN):: XF,XP,YF,YP,ZF,ZP,V,WVN(1:NK),H
+      REAL*8,INTENT(IN):: XF,XP,YF,YP,ZF,ZP,V,WVN(1:NK),H
       COMPLEX*16,INTENT(OUT):: GRN(4)
-	  COMPLEX*16 FG(3)
+      COMPLEX*16 FG(3)
          
 ! Initialize parameters based on the inputs
 !     

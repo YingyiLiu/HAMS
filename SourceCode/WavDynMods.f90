@@ -26,7 +26,7 @@
 !
         MODULE HAMS_mod
 !
-	    INTEGER,PUBLIC:: IRSP,INFT,OUFT,SYBO
+        INTEGER,PUBLIC:: IRSP,INFT,OUFT,SYBO
         INTEGER,PUBLIC:: NTHREAD
 
         REAL*8,PUBLIC::  WK1,DWK,BETA1,DBETA
@@ -73,10 +73,10 @@
 !
         MODULE PanelMesh_mod
 !
-	    INTEGER NELEM,NTND,NTNDD
-	    INTEGER ISYS,NSYS,ISX,ISY
+        INTEGER NELEM,NTND,NTNDD
+        INTEGER ISYS,NSYS,ISX,ISY
 !
-	    INTEGER,ALLOCATABLE,PUBLIC:: NCN(:),NCON(:,:),NCOND(:,:),IPIV(:,:)
+        INTEGER,ALLOCATABLE,PUBLIC:: NCN(:),NCON(:,:),NCOND(:,:),IPIV(:,:)
         REAL*8,ALLOCATABLE,PUBLIC:: XYZ(:,:),DXYZ_P(:,:),XYZ_P(:,:),DS(:),PNSZ(:)
 !
         END MODULE PanelMesh_mod
@@ -109,9 +109,9 @@
 !
         MODULE Inerfs_mod
 !
-	    INTEGER,PUBLIC:: iNELEM,iNTND,tNELEM,tNTND
+        INTEGER,PUBLIC:: iNELEM,iNTND,tNELEM,tNTND
 !     
-	    INTEGER,ALLOCATABLE,PUBLIC:: iNCN(:),iNCON(:,:),iNCOND(:,:)
+        INTEGER,ALLOCATABLE,PUBLIC:: iNCN(:),iNCON(:,:),iNCOND(:,:)
         REAL*8,ALLOCATABLE,PUBLIC:: iXYZ(:,:),iDXYZ_P(:,:),iXYZ_P(:,:),iDS(:),iPNSZ(:)
 !
         END MODULE Inerfs_mod
@@ -123,7 +123,7 @@
         MODULE LinearMatrix_mod
 !
         COMPLEX*16,ALLOCATABLE,PUBLIC:: AMAT(:,:,:),BRMAT(:,:,:),BDMAT(:,:)
-	    COMPLEX*16,ALLOCATABLE,PUBLIC:: CMAT(:,:,:),DRMAT(:,:,:),DDMAT(:,:)
+        COMPLEX*16,ALLOCATABLE,PUBLIC:: CMAT(:,:,:),DRMAT(:,:,:),DDMAT(:,:)
 !
         END MODULE LinearMatrix_mod
 
@@ -133,9 +133,9 @@
 !
         MODULE Potentials_mod
 !
-	    COMPLEX*16,ALLOCATABLE,PUBLIC:: MXPOT(:,:,:),DPOT(:,:,:)
-	    COMPLEX*16,ALLOCATABLE,PUBLIC:: CGRN(:,:,:,:),RKBN(:,:,:,:)
-	    COMPLEX*16,ALLOCATABLE,PUBLIC:: DGRN(:,:,:,:),PKBN(:,:,:,:)
+        COMPLEX*16,ALLOCATABLE,PUBLIC:: MXPOT(:,:,:),DPOT(:,:,:)
+        COMPLEX*16,ALLOCATABLE,PUBLIC:: CGRN(:,:,:,:),RKBN(:,:,:,:)
+        COMPLEX*16,ALLOCATABLE,PUBLIC:: DGRN(:,:,:,:),PKBN(:,:,:,:)
 !
         END MODULE Potentials_mod
 

@@ -60,7 +60,7 @@ CONTAINS
 
 20    CONTINUE 
 
-      RETURN
+    RETURN
     END SUBROUTINE CalRotNormals
     
 !=======================================================================
@@ -79,12 +79,12 @@ CONTAINS
       REAL*8,INTENT(IN):: XYZ(NTND,3)
       REAL*8,INTENT(OUT):: DXYZ_P(NELEM,6)
       
-	  INTEGER IEL
+      INTEGER IEL
       REAL*8::  V21(3),V23(3),V13(3),V24(3),UN(3),AUN
 !
 ! -------------------------------------------------------------------------
 !     
-	 DO IEL=1,NELEM
+	  DO IEL=1,NELEM
         
         IF (NCN(IEL).EQ.3) THEN
             
@@ -120,7 +120,7 @@ CONTAINS
         
      ENDDO
 !
-       RETURN
+    RETURN
     END SUBROUTINE CalTransNormals
     
 !=======================================================================
@@ -139,7 +139,7 @@ CONTAINS
       REAL*8,INTENT(IN):: XYZ(NTND,3)
       REAL*8,INTENT(OUT):: XYZ_P(NELEM,3)
       
-	  INTEGER IEL,IND,J
+      INTEGER IEL,IND,J
 !
 ! -------------------------------------------------------------------------
 ! 
@@ -155,8 +155,8 @@ CONTAINS
 	    XYZ_P(IEL,:)=XYZ_P(IEL,:)/NCN(IEL)
       ENDDO     
 !
-      RETURN
-    END SUBROUTINE CalPanelCentre
+     RETURN
+     END SUBROUTINE CalPanelCentre
       
 
     
@@ -176,7 +176,7 @@ CONTAINS
       REAL*8,INTENT(IN):: XYZ(NTND,3)
       REAL*8,INTENT(OUT):: DS(NELEM)
       
-	  INTEGER IEL
+      INTEGER IEL
       REAL*8 ADS
 !
 ! -------------------------------------------------------------------------
@@ -193,8 +193,8 @@ CONTAINS
         ENDIF
      ENDDO
 !
-       RETURN
-    END SUBROUTINE CalPanelArea
+     RETURN
+     END SUBROUTINE CalPanelArea
 
     
       
@@ -214,12 +214,12 @@ CONTAINS
       REAL*8,INTENT(IN):: XYZ(NTND,3)
       REAL*8,INTENT(OUT):: DS(NELEM),DXYZ_P(NELEM,6)
       
-	  INTEGER IEL
+      INTEGER IEL
       REAL*8::  V21(3),V23(3),V13(3),V24(3),LTE(4),UN(3),ADS,AUN
 !
 ! -------------------------------------------------------------------------
 !     
-	 DO IEL=1,NELEM
+	  DO IEL=1,NELEM
 
         CALL CalDeltaArea_Improved(XYZ(NCON(IEL,1),:),XYZ(NCON(IEL,2),:),XYZ(NCON(IEL,3),:),DS(IEL))
         
@@ -260,8 +260,8 @@ CONTAINS
         
      ENDDO
 !
-       RETURN
-    END SUBROUTINE CalPanelArea_TransNormal
+     RETURN
+     END SUBROUTINE CalPanelArea_TransNormal
 
      
 !=======================================================================
@@ -280,12 +280,12 @@ CONTAINS
       REAL*8,INTENT(IN):: RC(3),XYZ(NTND,3),XYZ_P(NELEM,3)
       REAL*8,INTENT(OUT):: DS(NELEM),DXYZ_P(NELEM,6)
       
-	  INTEGER IEL
+      INTEGER IEL
       REAL*8::  V21(3),V23(3),V13(3),V24(3),LTE(4),UN(3),ADS,AUN
 !
 ! -------------------------------------------------------------------------
 !     
-	 DO IEL=1,NELEM
+	  DO IEL=1,NELEM
 
         CALL CalDeltaArea_Improved(XYZ(NCON(IEL,1),:),XYZ(NCON(IEL,2),:),XYZ(NCON(IEL,3),:),DS(IEL))
         
@@ -332,8 +332,8 @@ CONTAINS
         
      ENDDO    
 !
-       RETURN
-    END SUBROUTINE CalPanelArea_Normal
+     RETURN
+     END SUBROUTINE CalPanelArea_Normal
 
     
       
@@ -363,8 +363,8 @@ CONTAINS
 
        DS=SQRT(LTE(4)*(LTE(4)-LTE(1))*(LTE(4)-LTE(2))*(LTE(4)-LTE(3)))
 !
-      RETURN
-    END SUBROUTINE CalDeltaArea
+     RETURN
+     END SUBROUTINE CalDeltaArea
     
     
 !
@@ -411,7 +411,7 @@ CONTAINS
       REAL*8::  A,B,C,D
       REAL*8::  V12(3),V23(3),V31(3),V34(3),V41(3)
 
-	DO IEL=1,NELEM
+	  DO IEL=1,NELEM
          
       IF (NCN(IEL).EQ.3) THEN
        V12(:)=XYZ(NCON(IEL,2),:)-XYZ(NCON(IEL,1),:)

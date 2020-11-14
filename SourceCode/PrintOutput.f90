@@ -41,15 +41,15 @@ CONTAINS
 !   --------------------------------------------------------
 
       SUBROUTINE PrintHeading(NFILE,NBETA,REFL,RAOType,MD1,MD2,H,XW,XC,WVHD)
-	  USE Const_mod
+      USE Const_mod
       IMPLICIT NONE
 	  
-	  INTEGER  NFILE,NBETA,MD1,MD2,II
+      INTEGER  NFILE,NBETA,MD1,MD2,II
       REAL*8   REFL,H,XW(2),XC(3),WVHD(NBETA),NWVHD(NBETA)
       CHARACTER(*)::RAOType
 
-	  WRITE(NFILE, '(A11)')  '# Project :'
-	  WRITE(NFILE, '(A11)')  '# User    :'
+      WRITE(NFILE, '(A11)')  '# Project :'
+      WRITE(NFILE, '(A11)')  '# User    :'
       IF (RAOType.EQ.'AddedMass') THEN
 	   WRITE(NFILE, '(A8,A10,A1,I1,I1,A4)')  '# File :',adjustl(trim(RAOType)),'_',MD1,MD2,'.rao'
       ELSEIF (adjustl(trim(RAOType)).EQ.'WaveDamping') THEN
@@ -110,7 +110,7 @@ CONTAINS
 	   WRITE(NFILE, '(A15,A5)')  '#UNIT       :  ','deg/m'
       ENDIF
       
-	  WRITE(NFILE, '(A10,I6)')  '#NBHEADING',NBETA
+      WRITE(NFILE, '(A10,I6)')  '#NBHEADING',NBETA
       IF (RAOType.EQ.'Motion') THEN
        DO II=1,NBETA
         IF (WVHD(II).LT.0.D0) THEN
@@ -133,10 +133,10 @@ CONTAINS
 !   --------------------------------------------------------
 
       SUBROUTINE PrintBody_RealVal(NFILE,W1,NBETA,RAOType,VAB)
-	  USE Const_mod
+      USE Const_mod
       IMPLICIT NONE 
 	  
-	  INTEGER  NFILE,NBETA,II
+      INTEGER  NFILE,NBETA,II
       REAL*8   W1,VAB,REL(NBETA),IMG(NBETA)
       CHARACTER(*)::RAOType
       CHARACTER(LEN=100)::FMT
@@ -146,8 +146,8 @@ CONTAINS
        IMG(II)=0.D0
       ENDDO
 
-	  WRITE(FMT,*) '(F8.4,',NBETA,'(ES14.6),',NBETA,'(F12.4))'
-	  WRITE(NFILE,FMT) W1,(REL(II),II=1,NBETA),(IMG(II),II=1,NBETA)
+      WRITE(FMT,*) '(F8.4,',NBETA,'(ES14.6),',NBETA,'(F12.4))'
+      WRITE(NFILE,FMT) W1,(REL(II),II=1,NBETA),(IMG(II),II=1,NBETA)
 
       RETURN
       END SUBROUTINE PrintBody_RealVal
@@ -157,10 +157,10 @@ CONTAINS
 !   --------------------------------------------------------
 
       SUBROUTINE PrintBody_CmplxVal(NFILE,W1,NBETA,RAOType,CVAB)
-	  USE Const_mod
+      USE Const_mod
       IMPLICIT NONE
 	  
-	  INTEGER  NFILE,NBETA,II
+      INTEGER  NFILE,NBETA,II
       REAL*8   W1,NREL(NBETA),NIMG(NBETA),REL(NBETA),IMG(NBETA),MDL(NBETA),PHS(NBETA)
       COMPLEX*16 CVAB(NBETA)
       CHARACTER(*)::RAOType
@@ -176,8 +176,8 @@ CONTAINS
         IF (PHS(II).LT.0.D0) PHS(II)=PHS(II)+360.D0
       ENDDO
        
-	  WRITE(FMT,*) '(F8.4,',NBETA,'(ES14.6),',NBETA,'(F12.4))'
-	  WRITE(NFILE,FMT) W1,(MDL(II),II=1,NBETA),(PHS(II),II=1,NBETA)
+      WRITE(FMT,*) '(F8.4,',NBETA,'(ES14.6),',NBETA,'(F12.4))'
+      WRITE(NFILE,FMT) W1,(MDL(II),II=1,NBETA),(PHS(II),II=1,NBETA)
 !	  WRITE(NFILE,200) W1,(NREL(II),II=1,NBETA),(NIMG(II),II=1,NBETA) 
       
 100	  FORMAT(F8.4,<NBETA>(ES14.6),<NBETA>(F12.4))
@@ -190,10 +190,10 @@ CONTAINS
 !   --------------------------------------------------------
 
       SUBROUTINE PrintBody_Exfc(NFILE,W1,NBETA,RAOType,CVAB)
-	  USE Const_mod
+      USE Const_mod
       IMPLICIT NONE
 	  
-	  INTEGER  NFILE,NBETA,II
+      INTEGER  NFILE,NBETA,II
       REAL*8   W1,NREL(NBETA),NIMG(NBETA),REL(NBETA),IMG(NBETA),MDL(NBETA),PHS(NBETA)
       COMPLEX*16 CVAB(NBETA)
       CHARACTER(*)::RAOType
@@ -206,8 +206,8 @@ CONTAINS
         PHS(II)=ATAN2D(REL(II),IMG(II))
       ENDDO
        
-	  WRITE(FMT,*) '(F8.4,',NBETA,'(ES14.6),',NBETA,'(F12.4))'
-	  WRITE(NFILE,FMT) W1,(MDL(II),II=1,NBETA),(PHS(II),II=1,NBETA)
+      WRITE(FMT,*) '(F8.4,',NBETA,'(ES14.6),',NBETA,'(F12.4))'
+      WRITE(NFILE,FMT) W1,(MDL(II),II=1,NBETA),(PHS(II),II=1,NBETA)
       
       
 100	  FORMAT(F8.4,<NBETA>(ES14.6),<NBETA>(F12.4))
@@ -224,8 +224,8 @@ CONTAINS
       
       INTEGER NFILE
             
-	  WRITE(NFILE, '(A61)')  '#------------------------------------------------------------'
-	  WRITE(NFILE, '(A8)')  '#ENDFILE' 
+      WRITE(NFILE, '(A61)')  '#------------------------------------------------------------'
+      WRITE(NFILE, '(A8)')  '#ENDFILE' 
        
       RETURN
       END SUBROUTINE PrintEnd

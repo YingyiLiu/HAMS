@@ -61,16 +61,16 @@
 !  ---------------------------------------------------------------------------------------------------------
 !  
       Program HAMS
-	  USE AssbMatx
-	  USE AssbMatx_irr
+      USE AssbMatx
+      USE AssbMatx_irr
       USE CalGreenFunc
-	  USE ReadPanelMesh
+      USE ReadPanelMesh
       USE LinearMatrix_mod
-	  USE HydroStatic
-	  USE ImplementSubs
+      USE HydroStatic
+      USE ImplementSubs
       USE CalGreenFunc
-	  USE PotentWavForce
-	  USE PrintOutput
+      USE PotentWavForce
+      USE PrintOutput
       USE Potentials_mod
       USE PressureElevation
       USE FieldOutput_mod
@@ -78,7 +78,7 @@
 
       IMPLICIT NONE  
       
-	  INTEGER II,KK,MD,MD1,MD2
+      INTEGER II,KK,MD,MD1,MD2
 
 !======================================================================      
 !

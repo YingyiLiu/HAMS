@@ -68,7 +68,7 @@ CONTAINS
       SUBROUTINE ReadHydroStatic
       IMPLICIT   NONE  
 
-	  INTEGER I,J
+      INTEGER I,J
 
       READ(4,*)
       READ(4,*) XG(1),XG(2),XG(3)
