@@ -51,8 +51,8 @@ CONTAINS
       INTEGER,INTENT(IN):: IS,IEL,JEL,FLAG
       COMPLEX*16,INTENT(OUT):: TINDP(4)
       
-	  REAL*8::   RKN(4),ENV(6),EAR
-	  COMPLEX*16  GRN(4)
+      REAL*8::   RKN(4),ENV(6),EAR
+      COMPLEX*16  GRN(4)
 
       EAR=DS(JEL)
       ENV(:)=DXYZ_P(JEL,:)
@@ -86,9 +86,9 @@ CONTAINS
       INTEGER,INTENT(IN):: IS,IEL,JEL,FLAG
       COMPLEX*16,INTENT(OUT):: TINRD(4,6,4)
       
-	  INTEGER  IP
-	  REAL*8  XQ,YQ,ZQ
-	  COMPLEX*16  DUM,DPOX,DPOY,DPOZ
+      INTEGER  IP
+      REAL*8  XQ,YQ,ZQ
+      COMPLEX*16  DUM,DPOX,DPOY,DPOZ
 
 !  Above----
 !  Field point changes, source element keeps the same as in the first quadrant
@@ -123,7 +123,7 @@ CONTAINS
        ENDIF
 200  CONTINUE
        
-       RETURN
+      RETURN
       END SUBROUTINE RBC_RIGHT
       
       
@@ -137,9 +137,9 @@ CONTAINS
       INTEGER,INTENT(IN):: IS,IEL,JEL,FLAG
       COMPLEX*16,INTENT(OUT):: TINRD(4,4)
       
-	  INTEGER  IP
-	  REAL*8 XQ,YQ,ZQ
-	  COMPLEX*16  DUM(2),DPOX,DPOY,DPOZ
+      INTEGER  IP
+      REAL*8 XQ,YQ,ZQ
+      COMPLEX*16  DUM(2),DPOX,DPOY,DPOZ
 
 !  Above----
 !  Field point changes, source element keeps the same as in the first quadrant
