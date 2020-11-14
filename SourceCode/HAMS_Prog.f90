@@ -2,7 +2,7 @@
 !  ------------------------------------------------------------------------------------------------------
 !                                                               
 !    Program HAMS for the diffraction and radiation of waves 
-!    for 3D structures by Constant Panel method.
+!    by 3D structures.
 ! 
 !             Code Original Author: Yingyi Liu       created on  2012.08.07 
 ! 

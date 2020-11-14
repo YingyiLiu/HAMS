@@ -17,7 +17,7 @@
    #End Definition of Wave Headings
 
     Reference_body_center   0.000   0.000   0.000
-	Reference_body_length   1.D0
+    Reference_body_length   1.D0
 	If_remove_irr_freq       0
 	Number of threads        28
    
@@ -27,6 +27,7 @@
     Global_coords_point_2      1.5000     0.0000    -0.5000       ! X2, Y2, Z2
     Global_coords_point_3      0.5000     1.0000    -7.5000       ! X3, Y3, Z3
    #End Definition of Pressure and/or Elevation
+   
    ----------End HAMS Control file---------------
    
    
