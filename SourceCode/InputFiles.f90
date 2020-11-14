@@ -22,7 +22,7 @@
 !  ------------------------------------------------------------------------------------------------------
     
 !  -------------------------------------------------------------------------------------------
-!      Open files, and read the main inpiut file
+!      Open files, and read the main input file
 !---------------------------------------------------------------------------------------------
 ! 
       SUBROUTINE ReadOpenFiles
@@ -57,12 +57,17 @@
         READ(1,'(25x,i16)')        INFT
         READ(1,'(25x,i17)')        OUFT
         READ(1,'(26x,i16)')        NPER
-        READ(1,'(27x,f30.15)')     WK1
-        READ(1,'(19x,f30.15)')     DWK
+        IF (NPER.GT.0) THEN
+         READ(1,*)     WK1
+        ELSEIF (NPER.LT.0) THEN
+         READ(1,'(27x,f30.15)')     WK1
+         READ(1,'(19x,f30.15)')     DWK
+        ENDIF
         READ(1,*) 
         READ(1,*) 
         READ(1,*) 
         READ(1,'(23x,i16)')        NBETA
+        IF (NBETA) 
         READ(1,'(20x,f30.15)')     BETA1
         READ(1,'(17x,f30.15)')     DBETA
         READ(1,*) 
