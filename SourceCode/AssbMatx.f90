@@ -50,7 +50,7 @@ CONTAINS
 ! ------------------------------------------------------------------- 
       SUBROUTINE ASSB_LEFT(AMAT,IPIV,NELEM,NSYS)
       IMPLICIT  NONE
-!	 
+!     
       INTEGER,INTENT(IN):: NELEM,NSYS
       INTEGER,INTENT(OUT):: IPIV(NELEM,NSYS)
       COMPLEX*16,INTENT(OUT):: AMAT(NELEM,NELEM,NSYS)
@@ -69,7 +69,7 @@ CONTAINS
         
        DO 100  IP=1,  NSYS
 
-	    AMAT(IEL,IEL,IP)=2.D0*PI
+        AMAT(IEL,IEL,IP)=2.D0*PI
         
 100    CONTINUE
 
@@ -97,7 +97,7 @@ CONTAINS
          ENDDO
         
 200    CONTINUE
-	 
+     
 1000   CONTINUE
 
 !$OMP END DO NOWAIT
@@ -123,7 +123,7 @@ CONTAINS
       INTEGER,INTENT(IN):: NELEM,NSYS
       COMPLEX*16,INTENT(OUT):: BRMAT(NELEM,6,NSYS)
       
-	  INTEGER IEL,JEL,IS,IP,IRR,MD,FLAG
+      INTEGER IEL,JEL,IS,IP,IRR,MD,FLAG
       REAL*8 DIST
       COMPLEX*16 TINRD(4,6,4),BTMP(6,4)
 
@@ -135,7 +135,7 @@ CONTAINS
       
       DO  1000 IEL=1,  NELEM
             
-	    BTMP=CMPLX(0.0D0,0.0D0)
+        BTMP=CMPLX(0.0D0,0.0D0)
 
        DO 200 JEL=1,  NELEM
             
@@ -170,7 +170,7 @@ CONTAINS
            BRMAT(IEL,MD,IP)=BRMAT(IEL,MD,IP)+RXY(IP,IS)*BTMP(MD,IS)
           ENDIF
 300      CONTINUE
-	 
+     
 1000   CONTINUE
 
 !$OMP END DO NOWAIT
@@ -189,8 +189,8 @@ CONTAINS
       INTEGER,INTENT(IN):: NELEM,NSYS
       COMPLEX*16,INTENT(OUT):: BDMAT(NELEM,NSYS)
       
-	  INTEGER IEL,JEL,IS,IP,IRR,MD,FLAG
-	  REAL*8 XP,YP,ZP,DIST
+      INTEGER IEL,JEL,IS,IP,IRR,MD,FLAG
+      REAL*8 XP,YP,ZP,DIST
       COMPLEX*16 TINRD(4,4),BTMP(4)
 
       IRR=1
@@ -202,7 +202,7 @@ CONTAINS
       
       DO  1000 IEL=1,  NELEM
             
-	    BTMP=CMPLX(0.0D0,0.0D0)        
+        BTMP=CMPLX(0.0D0,0.0D0)        
 
         DO 200 JEL=1,  NELEM
             
@@ -233,7 +233,7 @@ CONTAINS
            BDMAT(IEL,IP)=BDMAT(IEL,IP)+RXY(IP,IS)*BTMP(IS)  
           ENDIF       
 300      CONTINUE
-	 
+     
 1000   CONTINUE
 
 !$OMP END DO NOWAIT
@@ -254,8 +254,8 @@ CONTAINS
       COMPLEX*16,INTENT(IN):: AMAT(NELEM,NELEM,NSYS),BRMAT(NELEM,6,NSYS)
       COMPLEX*16,INTENT(OUT):: MXPOT(NELEM,7,NSYS)
       
-	  INTEGER IEL,IS,IP,MD,INFO
-	  COMPLEX*16,ALLOCATABLE:: ATMAT(:,:,:),BRTMAT(:,:,:)
+      INTEGER IEL,IS,IP,MD,INFO
+      COMPLEX*16,ALLOCATABLE:: ATMAT(:,:,:),BRTMAT(:,:,:)
       
       ALLOCATE(ATMAT(NELEM,NELEM,NSYS),BRTMAT(NELEM,6,NSYS))
       
@@ -264,7 +264,7 @@ CONTAINS
       
 !$omp parallel do private(NTHREAD)
       DO IP=1, NSYS
-  	     CALL ZGETRS( 'No transpose', NELEM, 6, ATMAT(:,:,IP), NELEM, IPIV(:,IP), BRTMAT(:,:,IP), NELEM, INFO )
+           CALL ZGETRS( 'No transpose', NELEM, 6, ATMAT(:,:,IP), NELEM, IPIV(:,IP), BRTMAT(:,:,IP), NELEM, INFO )
       ENDDO
 !$omp end parallel do
       
@@ -316,7 +316,7 @@ CONTAINS
       
 !$omp parallel do private(NTHREAD)
       DO IP=1, NSYS
-  	     CALL ZGETRS( 'No transpose', NELEM, 1, ATMAT(:,:,IP), NELEM, IPIV(:,IP), BDTMAT(:,IP), NELEM, INFO )
+           CALL ZGETRS( 'No transpose', NELEM, 1, ATMAT(:,:,IP), NELEM, IPIV(:,IP), BDTMAT(:,IP), NELEM, INFO )
       ENDDO
 !$omp end parallel do
       

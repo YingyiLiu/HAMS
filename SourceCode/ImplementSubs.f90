@@ -38,8 +38,8 @@ CONTAINS
 ! ------------------------------------------------------------------- 
       SUBROUTINE CalWaveProperts(KK)   
       IMPLICIT  NONE
-!	    
-	  INTEGER,INTENT(IN):: KK
+!        
+      INTEGER,INTENT(IN):: KK
       
         IF (INFT .EQ. 1)  THEN
             V=WK1+(KK-1)*DWK

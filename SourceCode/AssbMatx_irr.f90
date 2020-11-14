@@ -71,7 +71,7 @@ CONTAINS
         
        DO 100  IP=1,  NSYS
 
-	    AMAT(IEL,IEL,IP)=2.D0*PI
+        AMAT(IEL,IEL,IP)=2.D0*PI
         
 100    CONTINUE
         
@@ -99,7 +99,7 @@ CONTAINS
          ENDDO
         
 200    CONTINUE
-	 
+     
 1000   CONTINUE
 
 !$OMP END DO NOWAIT
@@ -114,7 +114,7 @@ CONTAINS
        
        DO 500  IP=1,  NSYS
 
-	    AMAT(IEL,IEL,IP)=0.D0*PI
+        AMAT(IEL,IEL,IP)=0.D0*PI
         
 500    CONTINUE
 
@@ -161,7 +161,7 @@ CONTAINS
         
        SUM=CMPLX(0.0D0,0.0D0)
        DO  KEL=1,  TNELEM
- 	     SUM=SUM+AMAT(KEL,IEL,IP)*AMAT(KEL,JEL,IP)
+          SUM=SUM+AMAT(KEL,IEL,IP)*AMAT(KEL,JEL,IP)
        ENDDO
        CMAT(IEL,JEL,IP)=SUM
         
@@ -205,7 +205,7 @@ CONTAINS
       
       DO  1000 IEL=1,  NELEM
             
-	    BTMP=CMPLX(0.0D0,0.0D0)
+        BTMP=CMPLX(0.0D0,0.0D0)
 
        DO 200 JEL=1,  NELEM
 
@@ -240,7 +240,7 @@ CONTAINS
            BRMAT(IEL,MD,IP)=BRMAT(IEL,MD,IP)+RXY(IP,IS)*BTMP(MD,IS)
           ENDIF
 300    CONTINUE
-	 
+     
 1000   CONTINUE
 
 !$OMP END DO NOWAIT
@@ -253,7 +253,7 @@ CONTAINS
       
       DO  3000 IEL=NELEM+1,  NELEM+iNELEM
             
-	   BTMP=CMPLX(0.0D0,0.0D0)
+       BTMP=CMPLX(0.0D0,0.0D0)
 
        DO 600 JEL=1,  NELEM
 
@@ -288,7 +288,7 @@ CONTAINS
            BRMAT(IEL,MD,IP)=BRMAT(IEL,MD,IP)+RXY(IP,IS)*BTMP(MD,IS)
           ENDIF
 700    CONTINUE
-	 
+     
 3000   CONTINUE
 
 !$OMP END DO NOWAIT
@@ -309,7 +309,7 @@ CONTAINS
         
        DO  MD=1,6
        DO  KEL=1,  TNELEM
- 	     DRMAT(IEL,MD,IP)=DRMAT(IEL,MD,IP)+BRMAT(KEL,MD,IP)*AMAT(KEL,IEL,IP)
+          DRMAT(IEL,MD,IP)=DRMAT(IEL,MD,IP)+BRMAT(KEL,MD,IP)*AMAT(KEL,IEL,IP)
        ENDDO
        ENDDO
 
@@ -334,8 +334,8 @@ CONTAINS
       COMPLEX*16,INTENT(IN):: AMAT(TNELEM,TNELEM,NSYS)
       COMPLEX*16,INTENT(OUT):: BDMAT(TNELEM,NSYS),DDMAT(NELEM,NSYS)
       
-	  INTEGER IEL,JEL,KEL,IS,IP,IRR,MD,FLAG
-	  REAL*8::  XP,YP,ZP,DIST
+      INTEGER IEL,JEL,KEL,IS,IP,IRR,MD,FLAG
+      REAL*8::  XP,YP,ZP,DIST
       COMPLEX*16 TINRD(4,4),BTMP(4)
 
       MD=7
@@ -347,7 +347,7 @@ CONTAINS
 !$OMP DO PRIVATE(IEL,JEL,IP,IS,FLAG,DIST,TINRD,BTMP,XP,YP,ZP) !$OMP REDUCTION(+:BDMAT)     
       DO  1000 IEL=1,  NELEM
 
-	    BTMP=CMPLX(0.0D0,0.0D0)
+        BTMP=CMPLX(0.0D0,0.0D0)
 
         DO 200 JEL=1,  NELEM
 
@@ -379,7 +379,7 @@ CONTAINS
            BDMAT(IEL,IP)=BDMAT(IEL,IP)+RXY(IP,IS)*BTMP(IS)
           ENDIF
 300     CONTINUE
-	 
+     
 1000   CONTINUE
 
 !$OMP END DO NOWAIT
@@ -392,7 +392,7 @@ CONTAINS
       
       DO  3000 IEL=NELEM+1,  NELEM+iNELEM
 
-	   BTMP=CMPLX(0.0D0,0.0D0)
+       BTMP=CMPLX(0.0D0,0.0D0)
 
         DO 600 JEL=1,  NELEM
             
@@ -442,7 +442,7 @@ CONTAINS
       DO  5000  IEL=1,  NELEM
  
        DO  KEL=1,  TNELEM
- 	     DDMAT(IEL,IP)=DDMAT(IEL,IP)+BDMAT(KEL,IP)*AMAT(KEL,IEL,IP)
+          DDMAT(IEL,IP)=DDMAT(IEL,IP)+BDMAT(KEL,IP)*AMAT(KEL,IEL,IP)
        ENDDO
 
 5000  CONTINUE
@@ -475,7 +475,7 @@ CONTAINS
       
 !$omp parallel do private(NTHREAD)
       DO IP=1, NSYS
-  	     CALL ZGETRS( 'No transpose', NELEM, 6, CTMAT(:,:,IP), NELEM, IPIV(:,IP), DRTMAT(:,:,IP), NELEM, INFO )
+           CALL ZGETRS( 'No transpose', NELEM, 6, CTMAT(:,:,IP), NELEM, IPIV(:,IP), DRTMAT(:,:,IP), NELEM, INFO )
       ENDDO
 !$omp end parallel do
       
@@ -527,7 +527,7 @@ CONTAINS
       
 !$omp parallel do private(NTHREAD)
       DO IP=1, NSYS
-  	     CALL ZGETRS( 'No transpose', NELEM, 1, CTMAT(:,:,IP), NELEM, IPIV(:,IP), DDTMAT(:,IP), NELEM, INFO )
+           CALL ZGETRS( 'No transpose', NELEM, 1, CTMAT(:,:,IP), NELEM, IPIV(:,IP), DDTMAT(:,IP), NELEM, INFO )
       ENDDO
 !$omp end parallel do
       

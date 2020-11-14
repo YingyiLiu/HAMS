@@ -113,7 +113,7 @@
           IF(RR.GT.1.E-6) THEN
           GRN(2)=FG(2)*XPQ/RR
           GRN(3)=FG(2)*YPQ/RR
-	      ELSE
+          ELSE
           GRN(2)=CMPLX(0.D0,0.D0)
           GRN(3)=CMPLX(0.D0,0.D0)
           ENDIF
@@ -129,7 +129,7 @@
         GRN(2)=GRN(2)-XPQ/R1**3
         GRN(3)=GRN(3)-YPQ/R1**3
         GRN(4)=GRN(4)-ZPQ/R1**3
-	    ELSE
+        ELSE
         GRN(1)=GRN(1)+(1.D0/R1+1.D0/R)
         GRN(2)=GRN(2)-(XPQ/R1**3+XPQ/R**3)
         GRN(3)=GRN(3)-(YPQ/R1**3+YPQ/R**3)
@@ -143,7 +143,7 @@
         GRN(2)=GRN(2)+XPQ/R1**3
         GRN(3)=GRN(3)+YPQ/R1**3
         GRN(4)=GRN(4)+ZPQ/R1**3
-	    ELSE
+        ELSE
         GRN(1)=GRN(1)+(-1.D0/R1+1.D0/R)
         GRN(2)=GRN(2)+(XPQ/R1**3-XPQ/R**3)
         GRN(3)=GRN(3)+(YPQ/R1**3-YPQ/R**3)

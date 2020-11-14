@@ -82,7 +82,7 @@
 
       PUBLIC :: INFGREEN3D
 
-!      REAL*8			::	pi	=	4.0D0*datan(1.0D0)
+!      REAL*8            ::	pi	=	4.0D0*datan(1.0D0)
       REAL*8			::	gama=	0.5772156649D0
       COMPLEX*16		::  Im	=	dcmplx(0.0D0,1.0D0)
 	
@@ -110,7 +110,7 @@ contains
         COMPLEX*16,INTENT(OUT):: GRN(4)
         
         REAL*8:: R,R1,RR,XPQ,YPQ,ZPQ,PI
-	    COMPLEX*16:: GF,GFH
+        COMPLEX*16:: GF,GFH
 
         DATA  PI /3.141592653589793D0/
 
@@ -134,7 +134,7 @@ contains
           GRN(2)=GRN(2)-XPQ/R1**3
           GRN(3)=GRN(3)-YPQ/R1**3
           GRN(4)=GRN(4)-ZPQ/R1**3
-	     ELSE
+         ELSE
           GRN(1)=GRN(1)+1.D0/R1+1.D0/R
           GRN(2)=GRN(2)-XPQ/R1**3-XPQ/R**3
           GRN(3)=GRN(3)-YPQ/R1**3-YPQ/R**3
@@ -148,7 +148,7 @@ contains
           GRN(2)=GRN(2)+XPQ/R1**3
           GRN(3)=GRN(3)+YPQ/R1**3
           GRN(4)=GRN(4)+ZPQ/R1**3
-	     ELSE
+         ELSE
           GRN(1)=GRN(1)-1.D0/R1+1.D0/R
           GRN(2)=GRN(2)+XPQ/R1**3-XPQ/R**3
           GRN(3)=GRN(3)+YPQ/R1**3-YPQ/R**3
@@ -160,7 +160,7 @@ contains
          IF(RR.GT.1.E-6) THEN
           GRN(2)=-V**2.D0*GFH*XPQ/RR
           GRN(3)=-V**2.D0*GFH*YPQ/RR
-	     ELSE
+         ELSE
           GRN(2)=CMPLX(0.D0,0.D0)
           GRN(3)=CMPLX(0.D0,0.D0)
          ENDIF
@@ -173,7 +173,7 @@ contains
           GRN(2)=GRN(2)-XPQ/R1**3
           GRN(3)=GRN(3)-YPQ/R1**3
           GRN(4)=GRN(4)-ZPQ/R1**3
-	     ELSE
+         ELSE
           GRN(1)=GRN(1)+1.D0/R1+1.D0/R
           GRN(2)=GRN(2)-XPQ/R1**3-XPQ/R**3
           GRN(3)=GRN(3)-YPQ/R1**3-YPQ/R**3
@@ -188,33 +188,33 @@ contains
 !===============================================================
 subroutine HavelockGF(hh,vv,GF,GFh)
 !
-	implicit none
+    implicit none
 ! --- Variables -------------------------------------------
-	REAL*8,intent(in)		::	hh,vv
-	COMPLEX*16,intent(out)	::	GF, GFh
+    REAL*8,intent(in)        ::    hh,vv
+    COMPLEX*16,intent(out)    ::    GF, GFh
 
 ! --- Local variables -------------------------------------
-!	REAL*8					::	hh
+!    REAL*8                    ::    hh
 
-!	hh	=	dsqrt(dx*dx+dy*dy)
-	call	GF_DivParameters(hh,vv)
+!    hh    =    dsqrt(dx*dx+dy*dy)
+    call    GF_DivParameters(hh,vv)
  
-	GF	=	GF_Func_L0(hh,vv)+GF_Func_W(hh,vv)
-	GFh =	GF_Func_Ls(hh,vv)+GF_Func_Wh(hh,vv)
+    GF    =    GF_Func_L0(hh,vv)+GF_Func_W(hh,vv)
+    GFh =    GF_Func_Ls(hh,vv)+GF_Func_Wh(hh,vv)
 
 end subroutine HavelockGF
     
 !=============================================================
 ! Calculate parameters
 subroutine GF_DivParameters(hh,vv)
-	implicit none
+    implicit none
 
 ! --- Variables -------------------------------------------
-	REAL*8,intent(in)		::	hh,vv
+    REAL*8,intent(in)        ::    hh,vv
 
 ! --- Local variables -------------------------------------
 
-	GF_dd		=	dsqrt(hh*hh+vv*vv)     ! r1=sqrt((x-x0)^2+(y-y0)^2+(z-z0)^2)
+    GF_dd		=	dsqrt(hh*hh+vv*vv)     ! r1=sqrt((x-x0)^2+(y-y0)^2+(z-z0)^2)
 	GF_alpha	=	-vv/GF_dd
 	GF_beta		=	hh/GF_dd
 	GF_sigma	=	hh/(GF_dd-vv)

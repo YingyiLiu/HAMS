@@ -18,7 +18,7 @@
     Reference_body_center   0.000   0.000   0.000
     Reference_body_length   1.D0
   If_remove_irr_freq       1
-	Number of threads        28
+    Number of threads        28
    
    #Start Definition of Pressure and/or Elevation
     Number_of_field_points     3                                  # number of field points where to calculate and output the pressure and/or elevation

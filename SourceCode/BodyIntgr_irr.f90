@@ -82,7 +82,7 @@ CONTAINS
 
         TINDP(IS)=(RKN(2)+GRN(2)*EAR)*ENV(1)   &
                  +(RKN(3)+GRN(3)*EAR)*ENV(2)   &
-	             +(RKN(4)+GRN(4)*EAR)*ENV(3)
+                 +(RKN(4)+GRN(4)*EAR)*ENV(3)
 
       ELSE
 
@@ -99,7 +99,7 @@ CONTAINS
 
       SUBROUTINE RBC_IRR(IS,IEL,JEL,TINRD,IRR,FLAG)
       IMPLICIT NONE
-	  
+      
       INTEGER,INTENT(IN):: IS,IEL,JEL,IRR,FLAG
       COMPLEX*16,INTENT(OUT):: TINRD(4,6,4)
       
@@ -168,7 +168,7 @@ CONTAINS
 
       SUBROUTINE DBC_IRR(IS,IEL,JEL,TINRD,IRR,FLAG)
       IMPLICIT NONE 
-	  
+      
       INTEGER,INTENT(IN):: IS,IEL,JEL,IRR,FLAG
       COMPLEX*16,INTENT(OUT):: TINRD(4,4)
       
@@ -216,15 +216,15 @@ CONTAINS
         XQ=SY(IS,IP)*XEC(1)
         YQ=SX(IS,IP)*XEC(2)
         ZQ=           XEC(3)
-	    CALL DINP(XQ,YQ,ZQ,XW(1),XW(2),BETA,DPOX,DPOY,DPOZ)
-	    DUM(2)=SY(IS,IP)*DPOX*ENV(1)+SX(IS,IP)*DPOY*ENV(2)+DPOZ*ENV(3)          
+        CALL DINP(XQ,YQ,ZQ,XW(1),XW(2),BETA,DPOX,DPOY,DPOZ)
+        DUM(2)=SY(IS,IP)*DPOX*ENV(1)+SX(IS,IP)*DPOY*ENV(2)+DPOZ*ENV(3)          
         TINRD(IS,IP)=TINRD(IS,IP)-DUM(1)*DUM(2)
        ELSE
         XQ=SX(IS,IP)*XEC(1)
         YQ=SY(IS,IP)*XEC(2)
         ZQ=          XEC(3)
-	    CALL DINP(XQ,YQ,ZQ,XW(1),XW(2),BETA,DPOX,DPOY,DPOZ)
-	    DUM(2)=SX(IS,IP)*DPOX*ENV(1)+SY(IS,IP)*DPOY*ENV(2)+DPOZ*ENV(3)          
+        CALL DINP(XQ,YQ,ZQ,XW(1),XW(2),BETA,DPOX,DPOY,DPOZ)
+        DUM(2)=SX(IS,IP)*DPOX*ENV(1)+SY(IS,IP)*DPOY*ENV(2)+DPOZ*ENV(3)          
         TINRD(IS,IP)=TINRD(IS,IP)-DUM(1)*DUM(2)
        ENDIF
 
