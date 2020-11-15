@@ -181,7 +181,7 @@
  
        ALLOCATE(AMAT(TNELEM,TNELEM,NSYS),BRMAT(TNELEM,6,NSYS),BDMAT(TNELEM,NSYS),IPIV(NELEM,NSYS))
        ALLOCATE(CGRN(NELEM,NELEM,NSYS,4),RKBN(NELEM,NELEM,NSYS,4))
-       ALLOCATE(MXPOT(NELEM,7,NSYS),WVFQ(NPER),WVHD(NBETA),EXFC(NPER,NBETA,6),DSPL(NPER,NBETA,6),AMAS(NPER,6,6),BDMP(NPER,6,6))
+       ALLOCATE(MXPOT(NELEM,7,NSYS),WVFQ(NPER),EXFC(NPER,NBETA,6),DSPL(NPER,NBETA,6),AMAS(NPER,6,6),BDMP(NPER,6,6))
 
        IF (IRSP.EQ.1) THEN
         ALLOCATE(DGRN(INELEM,NELEM,NSYS,4),PKBN(INELEM,NELEM,NSYS,4))
@@ -262,9 +262,6 @@
            
 ! ================================================================
 !
-       DO II=1,NBETA
-         WVHD(II)=BETA1+(II-1)*DBETA
-       ENDDO
        
        DO MD=1,6
          CALL PrintHeading(190+MD,NBETA,REFL,'Excitation',MD,MD,H,XW,XR,WVHD)
@@ -281,15 +278,15 @@
        DO KK=1,NPER
  
          CALL CalWaveProperts(KK)       
-         WVFQ(KK)=W1
-         IF (OUFT.EQ.1.or.OUFT.EQ.2) THEN
-          WRITE(6,1010) OUFR
-         ELSEIF (OUFT.EQ.3) THEN
-          WRITE(6,1030) OUFR
-         ELSEIF (OUFT.EQ.4) THEN
-          WRITE(6,1040) OUFR
-         ELSEIF (OUFT.EQ.5) THEN
-          WRITE(6,1050) OUFR
+
+         IF (INFT.EQ.1.or.INFT.EQ.2) THEN
+          WRITE(6,1010) INFR
+         ELSEIF (INFT.EQ.3) THEN
+          WRITE(6,1030) INFR
+         ELSEIF (INFT.EQ.4) THEN
+          WRITE(6,1040) INFR
+         ELSEIF (INFT.EQ.5) THEN
+          WRITE(6,1050) INFR
          ENDIF
              
          IF (IRSP.EQ.0) THEN

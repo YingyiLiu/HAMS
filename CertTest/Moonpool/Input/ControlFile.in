@@ -5,13 +5,13 @@
    #Start Definition of Wave Frequencies
     Input_frequency_type        1
     Output_frequency_type       4
-    Number_of_frequencies      59
+    Number_of_frequencies      -59
     Minimum_frequency_Wmin    0.1D0
     Frequency_step            0.05D0
    #End Definition of Wave Frequencies
 
    #Start Definition of Wave Headings
-    Number_of_headings          1
+    Number_of_headings         -1
     Minimum_heading          30.D0
     Heading_step              0.D0
    #End Definition of Wave Headings

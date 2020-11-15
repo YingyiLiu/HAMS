@@ -58,18 +58,34 @@
         READ(1,'(25x,i17)')        OUFT
         READ(1,'(26x,i16)')        NPER
         IF (NPER.GT.0) THEN
-         READ(1,*)     WK1
+         ALLOCATE(WVNB(NPER))
+         READ(1,*) (WVNB(I),I=1,NPER)
         ELSEIF (NPER.LT.0) THEN
+         NPER=ABS(NPER)
+         ALLOCATE(WVNB(NPER))
          READ(1,'(27x,f30.15)')     WK1
          READ(1,'(19x,f30.15)')     DWK
+         DO I=1,NPER
+          WVNB(I)=WK1+(I-1)*DWK
+         ENDDO
         ENDIF
         READ(1,*) 
         READ(1,*) 
         READ(1,*) 
         READ(1,'(23x,i16)')        NBETA
-        IF (NBETA) 
-        READ(1,'(20x,f30.15)')     BETA1
-        READ(1,'(17x,f30.15)')     DBETA
+        IF (NBETA.GT.0) THEN
+         ALLOCATE(WVHD(NBETA))
+         READ(1,*) (WVHD(I),I=1,NBETA)
+        ELSEIF (NBETA.LT.0) THEN
+         NBETA=ABS(NBETA)
+         ALLOCATE(WVHD(NBETA))
+         READ(1,'(20x,f30.15)')     BETA1
+         READ(1,'(17x,f30.15)')     DBETA
+         DO I=1,NBETA
+          WVHD(I)=BETA1+(I-1)*DBETA
+         ENDDO
+        ENDIF
+        
         READ(1,*) 
         READ(1,*) 
         READ(1,'(26x,3f7.3)')      (XR(I), I=1,3)

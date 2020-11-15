@@ -65,7 +65,7 @@ CONTAINS
 
         TINDP(IS)=(RKN(2)+GRN(2)*EAR)*ENV(1)   &
                  +(RKN(3)+GRN(3)*EAR)*ENV(2)   &
-                   +(RKN(4)+GRN(4)*EAR)*ENV(3)
+                 +(RKN(4)+GRN(4)*EAR)*ENV(3)
 
       ELSE
 

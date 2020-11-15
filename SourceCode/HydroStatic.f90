@@ -95,8 +95,8 @@ CONTAINS
        ENDDO
       ENDDO
  
-120    FORMAT(6(2x,E12.5))
-130    FORMAT(2I6,2X,ES14.6)
+120   FORMAT(6(2x,E12.5))
+130   FORMAT(2I6,2X,ES14.6)
       
       RETURN        
       END SUBROUTINE ReadHydroStatic

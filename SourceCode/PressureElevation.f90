@@ -30,7 +30,6 @@ MODULE PressureElevation
    USE PanelMesh_mod
    USE Inerfs_mod
    USE Potentials_mod
-   !USE Precision
 
    USE INFG3D_Open
    USE FinGreen3D_Open
@@ -59,8 +58,8 @@ CONTAINS
       COMPLEX*16,INTENT(OUT):: POT
       CHARACTER(*),INTENT(IN)::RDFLG
 
-    INTEGER  JEL,IS,IRR,FLAG
-    REAL*8   XQ(3),XP(3),XT(3),DIST,EAR,RKN(4),ENV(3),ENT(3),SLD
+      INTEGER  JEL,IS,IRR,FLAG
+      REAL*8   XQ(3),XP(3),XT(3),DIST,EAR,RKN(4),ENV(3),ENT(3),SLD
       COMPLEX*16  F0,DPOX,DPOY,DPOZ,DINCP,TERM1,TERM2,GRN(4),DUM(2)
       COMPLEX*16, ALLOCATABLE:: XPOT(:)
       
@@ -108,9 +107,9 @@ CONTAINS
          ENDIF
 
          IF (H.LT.0.D0) THEN
-         CALL INFGREEN3D(XQ(1),XP(1),XQ(2),XP(2),XQ(3),XP(3),V,GRN,FLAG)
+          CALL INFGREEN3D(XQ(1),XP(1),XQ(2),XP(2),XQ(3),XP(3),V,GRN,FLAG)
          ELSE
-         CALL FINGREEN3D(XQ(1),XP(1),XQ(2),XP(2),XQ(3),XP(3),V,WVN,NK,H,GRN,FLAG)
+          CALL FINGREEN3D(XQ(1),XP(1),XQ(2),XP(2),XQ(3),XP(3),V,WVN,NK,H,GRN,FLAG)
          ENDIF
 
          IF (FLAG.EQ.1) THEN

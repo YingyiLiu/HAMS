@@ -40,6 +40,10 @@ TestResult.xml
 [Rr]eleasePS/
 dlldata.c
 
+# Intel Fortran Local Workspace
+/Compiling/Input
+/Compiling/Output
+
 # DNX
 project.lock.json
 project.fragment.lock.json
