@@ -41,8 +41,8 @@ TestResult.xml
 dlldata.c
 
 # Intel Fortran Local Workspace
-/Compiling/Input/
-/Compiling/Output/
+./Compiling/Input/
+./Compiling/Output/
 
 # DNX
 project.lock.json
