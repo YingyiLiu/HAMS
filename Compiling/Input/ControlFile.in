@@ -22,9 +22,9 @@
    
    #Start Definition of Pressure and/or Elevation
     Number_of_field_points     3                                  # number of field points where to calculate and output the pressure and/or elevation
-    Global_coords_point_1      1.5000     0.0000     0.0000       ! X1, Y1, Z1
-    Global_coords_point_2      1.5000     0.0000    -0.5000       ! X2, Y2, Z2
-    Global_coords_point_3      0.5000     1.0000    -7.5000       ! X3, Y3, Z3
+    1.5000     0.0000     0.0000       ! X1, Y1, Z1
+    1.5000     0.0000    -0.5000       ! X2, Y2, Z2
+    0.5000     1.0000    -7.5000       ! X3, Y3, Z3
    #End Definition of Pressure and/or Elevation
    
    ----------End HAMS Control file---------------
