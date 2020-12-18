@@ -4,15 +4,16 @@
 
    #Start Definition of Wave Frequencies
     Input_frequency_type        1
-    Number_of_frequencies      30
+    Output_frequency_type       4
+    Number_of_frequencies      -30
     Minimum_frequency_Wmin    0.1D0
     Frequency_step            0.1D0
    #End Definition of Wave Frequencies
 
    #Start Definition of Wave Headings
-    Number_of_headings          1
+    Number_of_headings         -5
     Minimum_heading           0.D0
-    Heading_step              0.D0
+    Heading_step             90.D0
    #End Definition of Wave Headings
 
     Reference_body_center   0.000   0.000   0.000
@@ -20,9 +21,17 @@
 	If_remove_irr_freq       1
 	Number of threads        28
 
+   #Start Definition of Pressure and/or Elevation
+    Number_of_field_points     3                                # number of field points where to calculate and output the pressure and/or elevation
+0.000000	0.000000	0.000000	Global_coords_point_1  
+0.500000	0.000000   -0.500000	Global_coords_point_2  
+1.000000	0.000000   -1.000000	Global_coords_point_3  
+   #End Definition of Pressure and/or Elevation
+   
    ----------End HAMS Control file---------------
    
    
-   Input_frequency_type options: 0--wave number; 1--wave frequency; 2--wave period
+   Input_frequency_type options: 1--deepwater wave number; 2--finite-depth wave number; 3--wave frequency; 4--wave period; 5--wave length
+   Output_frequency_type options: same as Input_frequency_type options
 
    
