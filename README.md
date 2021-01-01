@@ -15,23 +15,15 @@ HAMS is freely distributed under the Apache License, Version 2.0, http://www.apa
 
 It should be noted that, any modified version should be licensed under the LGPL License and be released open-publicly as well. The contributors can add their names in the "contributors list" ahead of the modified subroutine(s).
 
-[Boundary Element Methods](https://en.wikipedia.org/wiki/Boundary_element_method) are extensively used to model hydrodynamic forces in offshore devices like ships, offshore wind platforms and wave energy converters. These solvers use device geometry mesh to get some hydrodynamics coefficients as radiation damping, added mass, wave diffraction force, and wave excitation force. All these data is saved in file formats incompatible between them. These may avoid to use the coefficients between programs. 
-
-BEMRosetta allows to load the hydrodynamic coefficients from a format saving it in another. In addition it allows to compare the results obtained between programs, the results between similar geometries and the same geometry with different discretization levels.
-
-Moreover, BEMRosetta allows to view and visually compare the meshes from different programs.
-
-BEMRosetta runs on Windows and Linux, **no install is necessary in Windows** [(see Install)](https://github.com/izabala123/BEMRosetta/tree/master/install), and it includes a GUI and [a command line version](https://github.com/izabala123/BEMRosetta/blob/master/other/test). 
-
 ## Theoretical Basis
 
   <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/global_coordinate_system.png" width="500" title="Free-surface elevation"></p>
   
 ### - Please refer to the following papers:
 
-Yingyi Liu (2019). HAMS: A Frequency-Domain Preprocessor for Wave-Structure Interactions—Theory, Development, and Application. Journal of Marine Science and Engineering 7: 81.
+* Yingyi Liu (2019). HAMS: A Frequency-Domain Preprocessor for Wave-Structure Interactions—Theory, Development, and Application. Journal of Marine Science and Engineering 7: 81.
 
-Yingyi Liu, Shigeo Yoshida, Changhong Hu, Makoto Sueyoshi, Liang Sun, Junliang Gao, Peiwen Cong, Guanghua He (2018). A reliable open-source package for performance evaluation of floating renewable energy systems in coastal and offshore regions. Energy Conversion and Management, 174: 516-536.
+* Yingyi Liu, Shigeo Yoshida, Changhong Hu, Makoto Sueyoshi, Liang Sun, Junliang Gao, Peiwen Cong, Guanghua He (2018). A reliable open-source package for performance evaluation of floating renewable energy systems in coastal and offshore regions. Energy Conversion and Management, 174: 516-536.
 
 Please cite the above papers in your relevant publications if the HAMS code or its executable program has contributed to your work.
 
@@ -43,7 +35,7 @@ Please cite the above papers in your relevant publications if the HAMS code or i
 
 ### - Wave excitation force
 
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/wave_excitation_force_plot.png" width="600"></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/wave_excitation_force_plot.png" width="550"></p>
 
 ### - Motion RAOs
 
@@ -57,12 +49,12 @@ Please cite the above papers in your relevant publications if the HAMS code or i
 
 ### - Mesh element type
 
-  Can be triangular panel, quadrilateral panel, or both.
+* Can be triangular panel, quadrilateral panel, or both.
   <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/panel_local_coordinates.png" width="600"></p>
 
 ### - OpenMP parallel processing
 
-  HAMS can be run in parallel mode on PC's with multiple processors (CPU's).
+* HAMS can be run in parallel mode on PC's with multiple processors (CPU's).
   <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/OpenMP_parallel_process.png" width="700"></p>
   
 ### - Computational efficiency
