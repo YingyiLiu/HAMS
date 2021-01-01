@@ -36,13 +36,13 @@ Please cite the above papers in your relevant publications if the HAMS code or i
 ### - Supported file formats
 
 * Hydrodynamic coefficients
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/hydrodynamic_coefficients.png" width="300" title="Hydrodynamic coefficients"></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/hydrodynamic_coefficients.png" width="600" title="Hydrodynamic coefficients"></p>
 * Wave excitation force
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/wave_excitation_force_plot.png" width="300" title="Wave excitation force"></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/wave_excitation_force_plot.png" width="600" title="Wave excitation force"></p>
 * Motion RAOs
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/RAO_of_motion.png" width="300" title="Motion RAOs"></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/RAO_of_motion.png" width="600" title="Motion RAOs"></p>
 * Free-surface elevation
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/free_surface_elevation.png" width="300" title="Free-surface elevation"></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/free_surface_elevation.png" width="600" title="Free-surface elevation"></p>
 
 ### - Load the hydrodynamic coefficients from one format and save them in another
 
@@ -122,8 +122,8 @@ All files, mesh, Nemoh or BEM files, can be loaded by Drag and Drop or Copy and 
 ## Useful Links
 
 The following open-source software can be used to view the HAMS results: <br/>
-[BEMRosetta](https://github.com/izabala123/BEMRosetta).<br/>
-[BEMIO](https://wec-sim.github.io/bemio/).<br/>
+[1].[BEMRosetta](https://github.com/izabala123/BEMRosetta).<br/>
+[2].[BEMIO](https://wec-sim.github.io/bemio/).<br/>
 
 
 ## License
