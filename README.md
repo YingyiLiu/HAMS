@@ -19,7 +19,7 @@ It should be noted that, any modified version should be licensed under the LGPL 
 
   <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/global_coordinate_system.png" width="500" title="Free-surface elevation"></p>
   
-### - Please refer to the following papers:
+### - Please refer to the following papers for the theory:
 
 * Yingyi Liu (2019). HAMS: A Frequency-Domain Preprocessor for Wave-Structure Interactions—Theory, Development, and Application. Journal of Marine Science and Engineering 7: 81.
 
@@ -43,7 +43,7 @@ Please cite the above papers in your relevant publications if the HAMS code or i
 
 ### - Free-surface elevation
 
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/free_surface_elevation.png" width="400"></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/free_surface_elevation.png" width="450"></p>
 
 ## Features
 
@@ -59,7 +59,7 @@ Please cite the above papers in your relevant publications if the HAMS code or i
   
 ### - Computational efficiency
 
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/computational_efficiency.png" width="600"></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/computational_efficiency.png" width="500"></p>
 
 ## Useful Links
 
