@@ -36,9 +36,9 @@ Please cite the above papers in your relevant publications if the HAMS code or i
 ### - Supported file formats
 
 * Hydrodynamic coefficients
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/hydrodynamic_coefficients.png" width="800" title="Hydrodynamic coefficients"></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/hydrodynamic_coefficients.png" width="1000" title="Hydrodynamic coefficients"></p>
 * Wave excitation force
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/wave_excitation_force_plot.png" width="700" title="Wave excitation force"></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/wave_excitation_force_plot.png" width="800" title="Wave excitation force"></p>
 * Motion RAOs
   <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/RAO_of_motion.png" width="700" title="Motion RAOs"></p>
 * Free-surface elevation
