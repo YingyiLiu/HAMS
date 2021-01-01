@@ -9,6 +9,8 @@
 
 [![License: Apache v2](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/body_mesh.png" width="500"></p>
+  
 HAMS (Hydrodynamic Analysis of Marine Structures) is an open-source software for the numerical computation of the wave effect upon marine structures. It is based on boundary integral equations in the potential flow theory for analysis of wave-structure interactions. It is currently written in FORTRAN 90. The code has been developed by the author Yingyi Liu for around a decade. 
 
 HAMS is freely distributed under the Apache License, Version 2.0, http://www.apache.org/licenses/LICENSE-2.0, and may be modified and extended by researchers who intend to enhance its capabilities and port the code to other platforms.
@@ -17,7 +19,7 @@ It should be noted that, any modified version should be licensed under the LGPL 
 
 ## Theoretical Basis
 
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/global_coordinate_system.png" width="500" title="Free-surface elevation"></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/global_coordinate_system.png" width="500"></p>
   
 ### - Please refer to the following papers for the theory:
 
@@ -64,8 +66,8 @@ Please cite the above papers in your relevant publications if the HAMS code or i
 ## Useful Links
 
 The following open-source software can be used to view the HAMS results: <br/>
-[1].[BEMRosetta](https://github.com/izabala123/BEMRosetta).<br/>
-[2].[BEMIO](https://wec-sim.github.io/bemio/).<br/>
+[1]. [BEMRosetta](https://github.com/izabala123/BEMRosetta).<br/>
+[2]. [BEMIO](https://wec-sim.github.io/bemio/).<br/>
 
 
 ## License
