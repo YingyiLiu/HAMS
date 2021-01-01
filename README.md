@@ -36,101 +36,37 @@ Yingyi Liu, Shigeo Yoshida, Changhong Hu, Makoto Sueyoshi, Liang Sun, Junliang G
 Please cite the above papers in your relevant publications if the HAMS code or its executable program has contributed to your work.
 
 ## Generated results
-- Damping for the same geometry got from different solvers
-### Damping for the same geometry got from different solvers
 
-* Hydrodynamic coefficients
+### - Hydrodynamic coefficients
+
   <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/hydrodynamic_coefficients.png" width="900"></p>
-* Wave excitation force
+
+### - Wave excitation force
+
   <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/wave_excitation_force_plot.png" width="700"></p>
-* Motion RAOs
+
+### - Motion RAOs
+
   <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/RAO_of_motion.png" width="600"></p>
-* Free-surface elevation
+
+### - Free-surface elevation
+
   <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/free_surface_elevation.png" width="500"></p>
 
 ## Features
 
-* Mesh element type
+### - Mesh element type
+
   Can be triangular panel, quadrilateral panel, or both.
   <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/panel_local_coordinates.png" width="600"></p>
-* OpenMP parallel processing
+
+### - OpenMP parallel processing
+
   HAMS can be run in parallel mode on PC's with multiple processors (CPU's).
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/OpenMP_parallel_process.png" width="900" title="Hydrodynamic coefficients"></p>
-* Motion RAOs
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/RAO_of_motion.png" width="600" title="Motion RAOs"></p>
-* Free-surface elevation
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/free_surface_elevation.png" width="500" title="Free-surface elevation"></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/OpenMP_parallel_process.png" width="900"></p>
+### - Computational efficiency
 
-
-### - Compare the hydrodynamic coefficients for the same geometry from different software
-
-- Damping for the same geometry got from different solvers
-  
-<p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/hydrodynamic_coefficients.png" width="300" title="Damping for the same geometry got from different solvers"></p>
-
-- Excitation force for the same geometry got from different solvers_
-  
-<p align="center"><img src="https://github.com/izabala123/BEMRosetta/blob/master/other/md%20resources/2%20solvers%20exc.jpg" width="300" title="Excitation force for the same geometry got from different solvers"></p>
-
-### - Forces handling
-
-It simmetrizes the available forces in all directions, averaging them when they are available on both possitive and negative headings. Some examples cases:
-* Only the forces on positive headings from 0 to 180º have been processed: Symmetrize duplicates them to the negative heading values from 0 to -180º
-* Both positive and negative headings forces have been processed: Symmetrize averages them
-
-### - Compare the hydrodynamic coefficients for the same geometry for different discretization levels
-### - Compare the hydrodynamic coefficients for different geometries
-
-- Damping for different offshore wind floating platforms_
-  
-<p align="center"><img src="https://github.com/izabala123/BEMRosetta/blob/master/other/md%20resources/offshore%20wind%20platforms%20B.png" width="300" title="Damping for different offshore wind floating platforms"></p>
-
-- Excitation force for different offshore wind floating platforms_
-  
-<p align="center"><img src="https://github.com/izabala123/BEMRosetta/blob/master/other/md%20resources/offshore%20wind%20platforms%20exc.jpg" width="300" title="Excitation force for different offshore wind floating platforms"></p>
-
-### - FOAMM connection
-
-[Finite Order Approximation by Moment-Matching (FOAMM)](http://www.eeng.nuim.ie/coer/wp-content/uploads/2019/02/FOAMM-Manual.pdf) is an application developed by N. Faedo, Y. Peña-Sanchez and J. V. Ringwood in the [Maynooth University](https://www.maynoothuniversity.ie/)'s [Centre for Ocean Energy Research (COER)](http://www.eeng.nuim.ie/coer/), that implements the moment-matching based frequency-domain identification algorithm.
-
-BEMRosetta allows an interactive and seamless FOAMM connection to get state space coefficients.
-
-### - Mesh loading, combining them for visual comparison 
-
-Several meshes can be loaded in this basic viewer, allowing a visual comparison of geometries.
-
-<p align="center"><img src="https://github.com/izabala123/BEMRosetta/blob/master/other/md%20resources/deepcwind.jpg" width="300" title="Mesh loading"></p>
-
-
-### - Mesh handling
-
-- Interactive mesh rotation and translation around user defined center
-- Automatic free surface, underwater surface, center of buoyancy, hydrostatic stiffness matrix, and other parameters calculation
-- Improved viewer including dropdown menu in viewer screen
-- Hydrostatic stiffness matrix viewer
-- Mesh healing option
-    
-### - Nemoh
-
-Added Nemoh launcher. It can load an existing Nemoh.cal file, lets you editing it, and creates the set of files to launch Nemoh from a .bat file (it replaces the classic MATLAB launcher)
-
-### - Bonus
-
-BEMRosetta now includes an OpenFAST .out/.outb file reader, designed to be very easy to use.
-It includes an online mode for updating the plot while the simulation is in progress.
-Files may be opened by drag and drop, and parameters are filtered by name or units.
-
-<p align="center"><img src="https://github.com/izabala123/BEMRosetta/blob/master/other/md%20resources/FAST_Reader.png" width="800" title="OpenFAST .out/.outb reader"></p>
-
-### - Other
-
-All files, mesh, Nemoh or BEM files, can be loaded by Drag and Drop or Copy and Paste from file explorer in Windows and Linux.
-
-<p align="center">
-  <img src="https://github.com/izabala123/BEMRosetta/blob/master/other/md%20resources/Underwater.png" width="45%" title="Underwater mesh and waterline">
-  <img src="https://github.com/izabala123/BEMRosetta/blob/master/other/md%20resources/Mesh.png" width="45%" title="All mesh ans waterline">
-</p>
-
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/computational_efficiency.png" width="600"></p>
 
 ## Useful Links
 
