@@ -52,7 +52,7 @@ Please cite the above papers in your relevant publications if the HAMS code or i
 ### - Mesh element type
 
 * Can be triangular panel, quadrilateral panel, or both.
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/panel_local_coordinates.png" width="600"></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/panel_local_coordinates.png" width="650"></p>
 
 ### - OpenMP parallel processing
 
@@ -74,6 +74,6 @@ The following open-source software can be used to view the HAMS results: <br/>
 
 HAMS is free software: you can redistribute it and/or modify it under the terms of the Apache License as published by the Free Software Foundation, either version 2 of the License, or (at your option) any later version.\
 
-HAMS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for details. You should have received a copy of the GNU General Public License along with BEMRosetta. If not, see http://www.gnu.org/licenses/.<br/>
+HAMS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the Apache License for details. You should have received a copy of the Apache License along with HAMS. If not, see http://www.apache.org/licenses/LICENSE-2.0 <br/>
 
 
