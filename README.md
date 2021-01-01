@@ -24,7 +24,10 @@ Moreover, BEMRosetta allows to view and visually compare the meshes from differe
 BEMRosetta runs on Windows and Linux, **no install is necessary in Windows** [(see Install)](https://github.com/izabala123/BEMRosetta/tree/master/install), and it includes a GUI and [a command line version](https://github.com/izabala123/BEMRosetta/blob/master/other/test). 
 
 ## Theoretical Basis
-### - please refer to the following papers:
+
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/global_coordinate_system.png" width="500" title="Free-surface elevation"></p>
+  
+### - Please refer to the following papers:
 
 Yingyi Liu (2019). HAMS: A Frequency-Domain Preprocessor for Wave-Structure Interactions—Theory, Development, and Application. Journal of Marine Science and Engineering 7: 81.
 
@@ -32,21 +35,29 @@ Yingyi Liu, Shigeo Yoshida, Changhong Hu, Makoto Sueyoshi, Liang Sun, Junliang G
 
 Please cite the above papers in your relevant publications if the HAMS code or its executable program has contributed to your work.
 
-## Features
-### - Supported file formats
+## Generated results
 
 * Hydrodynamic coefficients
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/hydrodynamic_coefficients.png" width="1000" title="Hydrodynamic coefficients"></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/hydrodynamic_coefficients.png" width="900" title="Hydrodynamic coefficients"></p>
 * Wave excitation force
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/wave_excitation_force_plot.png" width="800" title="Wave excitation force"></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/wave_excitation_force_plot.png" width="700" title="Wave excitation force"></p>
 * Motion RAOs
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/RAO_of_motion.png" width="700" title="Motion RAOs"></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/RAO_of_motion.png" width="600" title="Motion RAOs"></p>
 * Free-surface elevation
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/free_surface_elevation.png" width="600" title="Free-surface elevation"></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/free_surface_elevation.png" width="500" title="Free-surface elevation"></p>
 
-### - Load the hydrodynamic coefficients from one format and save them in another
+## Features
 
-The goal is to have a good robustness in the handling of files
+* Mesh element type
+  Can be triangular panel, quadrilateral panel, or both.
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/panel_local_coordinates.png" width="900"></p>
+* OpenMP parallel processing
+  HAMS can be run in parallel mode on PC's with multiple processors (CPU's).
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/OpenMP_parallel_process.png" width="900" title="Hydrodynamic coefficients"></p>
+* Motion RAOs
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/RAO_of_motion.png" width="600" title="Motion RAOs"></p>
+* Free-surface elevation
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/free_surface_elevation.png" width="500" title="Free-surface elevation"></p>
 
 
 ### - Compare the hydrodynamic coefficients for the same geometry from different software
