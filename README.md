@@ -36,21 +36,23 @@ Yingyi Liu, Shigeo Yoshida, Changhong Hu, Makoto Sueyoshi, Liang Sun, Junliang G
 Please cite the above papers in your relevant publications if the HAMS code or its executable program has contributed to your work.
 
 ## Generated results
+- Damping for the same geometry got from different solvers
+### Damping for the same geometry got from different solvers
 
 * Hydrodynamic coefficients
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/hydrodynamic_coefficients.png" width="900" title="Hydrodynamic coefficients"></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/hydrodynamic_coefficients.png" width="900"></p>
 * Wave excitation force
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/wave_excitation_force_plot.png" width="700" title="Wave excitation force"></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/wave_excitation_force_plot.png" width="700"></p>
 * Motion RAOs
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/RAO_of_motion.png" width="600" title="Motion RAOs"></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/RAO_of_motion.png" width="600"></p>
 * Free-surface elevation
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/free_surface_elevation.png" width="500" title="Free-surface elevation"></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/free_surface_elevation.png" width="500"></p>
 
 ## Features
 
 * Mesh element type
   Can be triangular panel, quadrilateral panel, or both.
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/panel_local_coordinates.png" width="900"></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/panel_local_coordinates.png" width="600"></p>
 * OpenMP parallel processing
   HAMS can be run in parallel mode on PC's with multiple processors (CPU's).
   <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/OpenMP_parallel_process.png" width="900" title="Hydrodynamic coefficients"></p>
