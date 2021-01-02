@@ -19,7 +19,7 @@ The success of HAMS should to a large portion be attributed to Prof. Bin Teng (D
 
 ## Theoretical Basis
 
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/global_coordinate_system.png" width="60%" /></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/global_coordinate_system.png" width="70%" /></p>
   
 ### - Please refer to the following papers for the theory:
 
@@ -35,11 +35,11 @@ Please cite the above papers in your relevant publications, reports, etc., if th
 
 ### - Hydrodynamic coefficients
 
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/hydrodynamic_coefficients.png" width="80%" /></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/hydrodynamic_coefficients.png" width="100%" /></p>
 
 ### - Wave excitation force
 
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/wave_excitation_force_plot.png" width="60%" /></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/wave_excitation_force_plot.png" width="70%" /></p>
 
 ### - Motion RAOs
 
@@ -47,19 +47,19 @@ Please cite the above papers in your relevant publications, reports, etc., if th
 
 ### - Free-surface elevation
 
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/free_surface_elevation.png" width="60%" /></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/free_surface_elevation.png" width="55%" /></p>
 
 ## Features
 
 ### - Mesh element type
 
 * HAMS can import meshes containing triangular panel type, quadrilateral panel type, or both.
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/panel_local_coordinates.png" width="60%" /></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/panel_local_coordinates.png" width="80%" /></p>
 
 ### - OpenMP parallel processing
 
 * HAMS can be run in the parallel mode using OpenMP techniques on PC's with multiple processors (CPU's).
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/OpenMP_parallel_process.png" width="60%" /></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/OpenMP_parallel_process.png" width="80%" /></p>
   
 ### - Computational efficiency
 
