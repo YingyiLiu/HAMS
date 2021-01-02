@@ -25,11 +25,23 @@ The success of HAMS should to a large portion be attributed to Prof. Bin Teng (D
   
 ### - Please refer to the following papers for the theory:
 
-* Yingyi Liu (2019). HAMS: A Frequency-Domain Preprocessor for Wave-Structure Interactions—Theory, Development, and Application. _Journal of Marine Science and Engineering_ 7: 81.
+* Yingyi Liu (2019). "HAMS: A Frequency-Domain Preprocessor for Wave-Structure Interactions—Theory, Development, and Application." _Journal of Marine Science and Engineering_, 7: 81.
 
-* Yingyi Liu, Shigeo Yoshida, Changhong Hu, Makoto Sueyoshi, Liang Sun, Junliang Gao, Peiwen Cong, Guanghua He (2018). A reliable open-source package for performance evaluation of floating renewable energy systems in coastal and offshore regions. _Energy Conversion and Management_, 174: 516-536.
+* Yingyi Liu, Changhong Hu, Makoto Sueyoshi, Hidetsugu Iwashita, Masashi Kashiwagi (2016). "Motion response prediction by hybrid panel-stick models for a semi-submersible with bracings." _Journal of Marine Science and Technology_, 21:742–757.
 
-* Yingyi Liu, Changhong Hu, Makoto Sueyoshi, Hidetsugu Iwashita, Masashi Kashiwagi (2016). Motion response prediction by hybrid panel-stick models for a semi-submersible with bracings. _Journal of Marine Science and Technology_, 21:742–757.
+The deepwater Green function is using a fortran subroutine (https://github.com/YingyiLiu/Green-function-in-deep-water) developed by Dr. Hui Liang. For the detailed theory you may refer to the following three papers:
+
+* Hui Liang, Huiyu Wu, and Francis Noblesse (2018). "Validation of a global approximation for wave diffraction-radiation in deep water." _Applied Ocean Research_, 74 : 80-86.
+
+* Huiyu Wu, Hui Liang, and Francis Noblesse (2018). "Wave component in the Green function for diffraction radiation of regular water waves." _Applied Ocean Research_, 81: 72-75.
+
+* Huiyu Wu, Chenliang Zhang, Yi Zhu, Wei Li, Decheng Wan, Francis Noblesse (2017). "A global approximation to the Green function for diffraction radiation of water waves." _European Journal of Mechanics-B/Fluids_, 65: 54-64.
+
+The finite-depth Green function is using a fortran subroutine named FinGreen3D (https://github.com/YingyiLiu/FinGreen3D) developed by Dr. Yingyi Liu. For the detailed theory you may refer to the following two papers:
+
+* Yingyi Liu, Shigeo Yoshida, Changhong Hu, Makoto Sueyoshi, Liang Sun, Junliang Gao, Peiwen Cong, Guanghua He (2018). "A reliable open-source package for performance evaluation of floating renewable energy systems in coastal and offshore regions." _Energy Conversion and Management_, 174: 516-536.
+
+* Yingyi Liu, Hidetsugu Iwashita, Changhong Hu (2015). "A calculation method for finite depth free-surface green function." _International Journal of Naval Architecture and Ocean Engineering_, 7(2): 375-389.
 
 Please cite the above papers in your relevant publications, reports, etc., if the HAMS code or its executable program has contributed to your work.
 
