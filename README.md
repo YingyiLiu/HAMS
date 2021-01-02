@@ -23,9 +23,9 @@ The success of HAMS should to a large portion be attributed to Prof. Bin Teng (D
   
 ### - Please refer to the following papers for the theory:
 
-* Yingyi Liu (2019). HAMS: A Frequency-Domain Preprocessor for Wave-Structure Interactions—Theory, Development, and Application. Journal of Marine Science and Engineering 7: 81.
+* Yingyi Liu (2019). HAMS: A Frequency-Domain Preprocessor for Wave-Structure Interactions—Theory, Development, and Application. _Journal of Marine Science and Engineering_ 7: 81.
 
-* Yingyi Liu, Shigeo Yoshida, Changhong Hu, Makoto Sueyoshi, Liang Sun, Junliang Gao, Peiwen Cong, Guanghua He (2018). A reliable open-source package for performance evaluation of floating renewable energy systems in coastal and offshore regions. Energy Conversion and Management, 174: 516-536.
+* Yingyi Liu, Shigeo Yoshida, Changhong Hu, Makoto Sueyoshi, Liang Sun, Junliang Gao, Peiwen Cong, Guanghua He (2018). A reliable open-source package for performance evaluation of floating renewable energy systems in coastal and offshore regions. _Energy Conversion and Management_, 174: 516-536.
 
 Please cite the above papers in your relevant publications if the HAMS code or its executable program has contributed to your work.
 
