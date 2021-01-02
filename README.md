@@ -63,7 +63,7 @@ Please cite the above papers in your relevant publications, reports, etc., if th
   
 ### - Computational efficiency
 
-* The following graph shows an example of DeepCwind semisubmersible using 8 threads for the computation.
+* The following graph shows an example of DeepCwind semisubmersible using 8 threads for the computation:
   <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/computational_efficiency.png" width="70%" /></p>
 
 ## Useful Links
@@ -76,7 +76,9 @@ Sandia National Laboratories. <br/>
 
 ## License
 
-HAMS is free software: you can redistribute it and/or modify it under the terms of the Apache License as published by the Free Software Foundation, either version 2 of the License, or (at your option) any later version.\
+Code original author: Yingyi Liu.
+
+HAMS is free software: you can redistribute it and/or modify it under the terms of the Apache License as published by the Free Software Foundation, either version 2 of the License, or (at your option) any later version.
 
 HAMS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the Apache License for details. You should have received a copy of the Apache License along with HAMS. If not, see http://www.apache.org/licenses/LICENSE-2.0 <br/>
 
