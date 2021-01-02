@@ -66,7 +66,7 @@ Please cite the above papers in your relevant publications, reports, etc., if th
 ### - Computational efficiency
 
 * The following graph shows an example of DeepCwind semisubmersible using 8 threads for the computation:
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/computational_efficiency.png" width="75%" /></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/computational_efficiency.png" width="80%" /></p>
 
 ## Useful Links
 
