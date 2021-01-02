@@ -63,7 +63,7 @@ Please cite the above papers in your relevant publications, reports, etc., if th
   
 ### - Computational efficiency
 
-* HAMS can be run in the parallel mode using OpenMP techniques on PC's with multiple processors (CPU's).
+* The following graph shows an example of DeepCwind semisubmersible using 8 threads for the computation.
   <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/computational_efficiency.png" width="500"></p>
 
 ## Useful Links
