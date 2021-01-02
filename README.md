@@ -37,7 +37,7 @@ Please cite the above papers in your relevant publications, reports, etc., if th
 
 ### - Hydrodynamic coefficients
 
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/hydrodynamic_coefficients.png" width="100%" /></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/hydrodynamic_coefficients.png" width="65%" /></p>
 
 ### - Wave excitation force
 
