@@ -15,7 +15,7 @@ HAMS (Hydrodynamic Analysis of Marine Structures) is an open-source software for
 
 HAMS is freely distributed under the Apache License, Version 2.0, http://www.apache.org/licenses/LICENSE-2.0, and may be modified and extended by researchers who intend to enhance its capabilities and port the code to other platforms.
 
-Great thanks go to Prof. Bin Teng, who has tutored me the theory of potential flow in marine hydrodynamics and the programming skills using the [Boundary Element Method](https://en.wikipedia.org/wiki/Boundary_element_method). The code structure and the coding style of HAMS are two of the examples that I have learned from Prof. Bin Teng.
+The success of HAMS should to a large portion be attributed to Prof. Bin Teng (Dalian University of Technology), who has tutored me the theory of potential flow in marine hydrodynamics and the programming skills using the [Boundary Element Method](https://en.wikipedia.org/wiki/Boundary_element_method). The code structure and the coding style of HAMS are exactly two of the examples that I have learned and inherited from Prof. Bin Teng.
 
 ## Theoretical Basis
 
