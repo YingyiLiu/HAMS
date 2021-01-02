@@ -45,11 +45,11 @@ Please cite the above papers in your relevant publications, reports, etc., if th
 
 ### - Motion RAOs
 
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/RAO_of_motion.png" width="70%" /></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/RAO_of_motion.png" width="75%" /></p>
 
 ### - Free-surface elevation
 
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/free_surface_elevation.png" width="55%" /></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/free_surface_elevation.png" width="60%" /></p>
 
 ## Features
 
