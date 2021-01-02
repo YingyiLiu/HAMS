@@ -9,7 +9,7 @@
 
 [![License: Apache v2](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/body_mesh.png" style="zoom:40%" /></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/body_mesh.png" style="zoom:20%" /></p>
   
 HAMS (Hydrodynamic Analysis of Marine Structures) is an open-source software for the numerical computation of the wave effect upon marine structures. It is based on boundary integral equations in the potential flow theory for analysis of wave-structure interactions. It is currently written in FORTRAN 90. The code has been developed by the author Yingyi Liu for almost a decade. HAMS is released in the hope that it will be useful, 
 
@@ -19,7 +19,7 @@ The success of HAMS should to a large portion be attributed to Prof. Bin Teng (D
 
 ## Theoretical Basis
 
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/global_coordinate_system.png" style="zoom:40%" /></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/global_coordinate_system.png" style="zoom:20%" /></p>
   
 ### - Please refer to the following papers for the theory:
 
@@ -39,15 +39,15 @@ Please cite the above papers in your relevant publications, reports, etc., if th
 
 ### - Wave excitation force
 
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/wave_excitation_force_plot.png" style="zoom:40%" /></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/wave_excitation_force_plot.png" style="zoom:20%" /></p>
 
 ### - Motion RAOs
 
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/RAO_of_motion.png" style="zoom:40%" /></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/RAO_of_motion.png" style="zoom:20%" /></p>
 
 ### - Free-surface elevation
 
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/free_surface_elevation.png" style="zoom:40%" /></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/free_surface_elevation.png" style="zoom:20%" /></p>
 
 ## Features
 
@@ -64,7 +64,7 @@ Please cite the above papers in your relevant publications, reports, etc., if th
 ### - Computational efficiency
 
 * The following graph shows an example of DeepCwind semisubmersible using 8 threads for the computation.
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/computational_efficiency.png" style="zoom:40%" /></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/computational_efficiency.png" style="zoom:30%" /></p>
 
 ## Useful Links
 
