@@ -27,6 +27,8 @@ The success of HAMS should to a large portion be attributed to Prof. Bin Teng (D
 
 * Yingyi Liu, Shigeo Yoshida, Changhong Hu, Makoto Sueyoshi, Liang Sun, Junliang Gao, Peiwen Cong, Guanghua He (2018). A reliable open-source package for performance evaluation of floating renewable energy systems in coastal and offshore regions. _Energy Conversion and Management_, 174: 516-536.
 
+* Yingyi Liu, Changhong Hu, Makoto Sueyoshi, Hidetsugu Iwashita, Masashi Kashiwagi (2016). Motion response prediction by hybrid panel-stick models for a semi-submersible with bracings. _Journal of Marine Science and Technology_, 21:742–757.
+
 Please cite the above papers in your relevant publications if the HAMS code or its executable program has contributed to your work.
 
 ## Generated results
