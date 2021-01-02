@@ -76,7 +76,7 @@ Sandia National Laboratories. <br/>
 
 ## License
 
-Code original author: Yingyi Liu.
+Code original author: Yingyi Liu (劉盈溢).
 
 HAMS is free software: you can redistribute it and/or modify it under the terms of the Apache License as published by the Free Software Foundation, either version 2 of the License, or (at your option) any later version.
 
