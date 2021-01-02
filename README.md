@@ -68,10 +68,10 @@ Please cite the above papers in your relevant publications, reports, etc., if th
 
 ## Useful Links
 
-The following open-source software can be used to view the HAMS results: <br/>
-[1]. [BEMRosetta](https://github.com/izabala123/BEMRosetta).<br/> Developed by Iñaki Zabala, Markel Peñalba, Yerai Peña-Sanchez.</p>
-[2]. [BEMIO](https://wec-sim.github.io/bemio/).<br/> Developed by National Renewable Energy Laboratory and Sandia 
-Sandia National Laboratories. </p>
+The following open-source software can be used to view the HAMS results: </p>
+[1]. [BEMRosetta](https://github.com/izabala123/BEMRosetta). Developed by Iñaki Zabala, Markel Peñalba, Yerai Peña-Sanchez.<br/> 
+[2]. [BEMIO](https://wec-sim.github.io/bemio/). Developed by National Renewable Energy Laboratory and Sandia 
+Sandia National Laboratories. <br/> 
 
 
 ## License
