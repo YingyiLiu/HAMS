@@ -31,7 +31,7 @@ The theory of panel method that has been used by HAMS is written in detail in th
 
 * Yingyi Liu, Changhong Hu, Makoto Sueyoshi, Hidetsugu Iwashita, Masashi Kashiwagi (2016). "Motion response prediction by hybrid panel-stick models for a semi-submersible with bracings." _Journal of Marine Science and Technology_, 21:742–757.
 
-The deepwater Green function is using a fortran subroutine (https://github.com/YingyiLiu/Green-function-in-deep-water) developed by Dr. Hui Liang. For the detailed theory you may refer to the following three papers:
+The deepwater Green function is using a fortran subroutine (https://github.com/Hui-Liang/Green-function-in-deep-water) developed by Dr. Hui Liang. For the detailed theory you may refer to the following three papers:
 
 * Hui Liang, Huiyu Wu, and Francis Noblesse (2018). "Validation of a global approximation for wave diffraction-radiation in deep water." _Applied Ocean Research_, 74 : 80-86.
 
@@ -39,7 +39,7 @@ The deepwater Green function is using a fortran subroutine (https://github.com/Y
 
 * Huiyu Wu, Chenliang Zhang, Yi Zhu, Wei Li, Decheng Wan, Francis Noblesse (2017). "A global approximation to the Green function for diffraction radiation of water waves." _European Journal of Mechanics-B/Fluids_, 65: 54-64.
 
-The finite-depth Green function is using a fortran subroutine named FinGreen3D (https://github.com/YingyiLiu/FinGreen3D) developed by Dr. Yingyi Liu. For the detailed theory you may refer to the following two papers:
+The finite-depth Green function is using a fortran subroutine FinGreen3D (https://github.com/YingyiLiu/FinGreen3D) developed by Dr. Yingyi Liu. For the detailed theory you may refer to the following two papers:
 
 * Yingyi Liu, Shigeo Yoshida, Changhong Hu, Makoto Sueyoshi, Liang Sun, Junliang Gao, Peiwen Cong, Guanghua He (2018). "A reliable open-source package for performance evaluation of floating renewable energy systems in coastal and offshore regions." _Energy Conversion and Management_, 174: 516-536.
 
