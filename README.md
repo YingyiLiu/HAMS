@@ -45,7 +45,7 @@ The finite-depth Green function is using a fortran subroutine FinGreen3D (https:
 
 * Yingyi Liu, Hidetsugu Iwashita, Changhong Hu (2015). "A calculation method for finite depth free-surface green function." _International Journal of Naval Architecture and Ocean Engineering_, 7(2): 375-389.
 
-Please cite the above papers in your relevant publications, reports, etc., if the HAMS code or its executable program has contributed to your work.
+Please cite appropriately the above papers in your relevant publications, reports, etc., if the HAMS code or its executable program has contributed to your work.
 
 ## Generated numerical results
 
