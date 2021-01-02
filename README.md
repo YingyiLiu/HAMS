@@ -11,9 +11,9 @@
 
   <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/body_mesh.png" width="500"></p>
   
-HAMS (Hydrodynamic Analysis of Marine Structures) is an open-source software for the numerical computation of the wave effect upon marine structures. It is based on boundary integral equations in the potential flow theory for analysis of wave-structure interactions. It is currently written in FORTRAN 90. The code has been developed by the author Yingyi Liu for almost a decade. 
+HAMS (Hydrodynamic Analysis of Marine Structures) is an open-source software for the numerical computation of the wave effect upon marine structures. It is based on boundary integral equations in the potential flow theory for analysis of wave-structure interactions. It is currently written in FORTRAN 90. The code has been developed by the author Yingyi Liu for almost a decade. HAMS is released in the hope that it will be useful, 
 
-HAMS is freely distributed under the Apache License, Version 2.0, http://www.apache.org/licenses/LICENSE-2.0, and may be modified and extended by researchers who intend to enhance its capabilities and port the code to other platforms.
+HAMS is freely distributed under the Apache License, Version 2.0, http://www.apache.org/licenses/LICENSE-2.0, and may be modified and extended by researchers who intend to enhance its capabilities and port the code to other platforms. 
 
 The success of HAMS should to a large portion be attributed to Prof. Bin Teng (Dalian University of Technology), who has tutored me the theory of potential flow in marine hydrodynamics and the programming skills using the [Boundary Element Method](https://en.wikipedia.org/wiki/Boundary_element_method). The code structure and the coding style of HAMS are exactly two of the examples that I have learned and inherited from Prof. Bin Teng.
 
@@ -29,9 +29,9 @@ The success of HAMS should to a large portion be attributed to Prof. Bin Teng (D
 
 * Yingyi Liu, Changhong Hu, Makoto Sueyoshi, Hidetsugu Iwashita, Masashi Kashiwagi (2016). Motion response prediction by hybrid panel-stick models for a semi-submersible with bracings. _Journal of Marine Science and Technology_, 21:742–757.
 
-Please cite the above papers in your relevant publications if the HAMS code or its executable program has contributed to your work.
+Please cite the above papers in your relevant publications, reports, etc., if the HAMS code or its executable program has contributed to your work.
 
-## Generated results
+## Generated numerical results
 
 ### - Hydrodynamic coefficients
 
@@ -53,23 +53,25 @@ Please cite the above papers in your relevant publications if the HAMS code or i
 
 ### - Mesh element type
 
-* Can be triangular panel, quadrilateral panel, or both.
+* HAMS can import meshes containing triangular panel type, quadrilateral panel type, or both.
   <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/panel_local_coordinates.png" width="650"></p>
 
 ### - OpenMP parallel processing
 
-* HAMS can be run in parallel mode on PC's with multiple processors (CPU's).
+* HAMS can be run in the parallel mode using OpenMP techniques on PC's with multiple processors (CPU's).
   <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/OpenMP_parallel_process.png" width="700"></p>
   
 ### - Computational efficiency
 
+* HAMS can be run in the parallel mode using OpenMP techniques on PC's with multiple processors (CPU's).
   <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/computational_efficiency.png" width="500"></p>
 
 ## Useful Links
 
 The following open-source software can be used to view the HAMS results: <br/>
-[1]. [BEMRosetta](https://github.com/izabala123/BEMRosetta).<br/>
-[2]. [BEMIO](https://wec-sim.github.io/bemio/).<br/>
+[1]. [BEMRosetta](https://github.com/izabala123/BEMRosetta).<br/> Developed by Iñaki Zabala, Markel Peñalba, Yerai Peña-Sanchez.
+[2]. [BEMIO](https://wec-sim.github.io/bemio/).<br/> Developed by National Renewable Energy Laboratory and Sandia 
+Sandia National Laboratories. 
 
 
 ## License
