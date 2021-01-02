@@ -41,11 +41,11 @@ Please cite the above papers in your relevant publications, reports, etc., if th
 
 ### - Wave excitation force
 
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/wave_excitation_force_plot.png" width="70%" /></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/wave_excitation_force_plot.png" width="65%" /></p>
 
 ### - Motion RAOs
 
-  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/RAO_of_motion.png" width="80%" /></p>
+  <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/RAO_of_motion.png" width="75%" /></p>
 
 ### - Free-surface elevation
 
