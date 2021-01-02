@@ -36,15 +36,15 @@ Please cite the above papers in your relevant publications, reports, etc., if th
 ## Generated numerical results
 
 ### - Hydrodynamic coefficients
-</p>
+
   <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/hydrodynamic_coefficients.png" width="60%" /></p>
 
 ### - Wave excitation force
-</p>
+
   <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/wave_excitation_force_plot.png" width="65%" /></p>
 
 ### - Motion RAOs
-</p>
+
   <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/RAO_of_motion.png" width="75%" /></p>
 
 ### - Free-surface elevation
