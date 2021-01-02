@@ -25,6 +25,8 @@ The success of HAMS should to a large portion be attributed to Prof. Bin Teng (D
   
 ### - Please refer to the following papers for the theory:
 
+The theory of panel method that has been used by HAMS is written in detail in the following two papers:
+
 * Yingyi Liu (2019). "HAMS: A Frequency-Domain Preprocessor for Wave-Structure Interactions—Theory, Development, and Application." _Journal of Marine Science and Engineering_, 7: 81.
 
 * Yingyi Liu, Changhong Hu, Makoto Sueyoshi, Hidetsugu Iwashita, Masashi Kashiwagi (2016). "Motion response prediction by hybrid panel-stick models for a semi-submersible with bracings." _Journal of Marine Science and Technology_, 21:742–757.
