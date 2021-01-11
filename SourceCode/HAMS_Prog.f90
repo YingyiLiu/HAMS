@@ -318,7 +318,7 @@
          ENDIF
  
          CALL EFORCE(WK,W1,TP,BETA,AMP,EXFC(KK,II,:))
-         CALL SolveMotion(WK,W1,TP,WL,AMP,AMAS(KK,:,:),BDMP(KK,:,:),VDMP,EXFC(KK,II,:),DSPL(KK,II,:))
+         CALL SolveMotion(W1,TP,OUFR,BETA,AMP,AMAS(KK,:,:),BDMP(KK,:,:),VDMP,EXFC(KK,II,:),DSPL(KK,II,:))
          CALL OutputPressureElevation_Diffraction(64)
          
         ENDDO

@@ -6,7 +6,7 @@
 #     Reference length     :     1.0000
 #     Water density (rho)  :  1025.0000
 #     Gravity acceleration :     9.8066
-#     Waterdepth           :     2.0000
+#     Waterdepth           :  Inf. 
 #     Ref.pt incident wave : (   0.0000   0.0000)
 #            Forward speed :   0.0000  m/s 
 #
@@ -17,6 +17,6 @@
 #RAOTYPE    :  WaveDamping
 #COMPONENT  :  16
 #UNIT       :  kg/s
-#NBHEADING     1
-#HEADING         30.00
+#NBHEADING     5
+#HEADING          0.00         90.00        180.00        270.00        360.00
 #---w(r/s)-----------------------------------------------------

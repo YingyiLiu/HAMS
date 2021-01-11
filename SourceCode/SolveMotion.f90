@@ -24,59 +24,57 @@
 !       Calculate the motion response in frequency domain by panel model.
 !---------------------------------------------------------------------------------------------
 !
-      SUBROUTINE SolveMotion(WK,W1,TP,WL,AMP,AMAS,BDMP,VDMP,EXFC,DSPL)
+      SUBROUTINE SolveMotion(W1,TP,OUFR,BETA,AMP,AMAS,BDMP,VDMP,EXFC,DSPL)
       USE HAMS_mod
       USE Const_mod
       USE Body_mod
       IMPLICIT   NONE
 
-      REAL*8,INTENT(IN)::  WK,W1,TP,WL,AMP
-      REAL*8,INTENT(IN):: AMAS(6,6),BDMP(6,6)
+      REAL*8,INTENT(IN)::  W1,TP,OUFR,BETA,AMP
+      REAL*8,INTENT(IN):: AMAS(6,6),BDMP(6,6),VDMP(6,6)
       COMPLEX*16,INTENT(IN):: EXFC(6)
       COMPLEX*16,INTENT(OUT):: DSPL(6)
       
-      INTEGER I,J,K,L,NSTP,INFO,IPV(6)
+      INTEGER INFO,IPV(6),MD,MEXP
 
-      REAL*8 RERR,PHAS(6),VDMP(6,6)
-      COMPLEX*16 EXFC2(6),LEFT(6,6),RIGHT(6),DSPL1(6),DX(6)
+      REAL*8 MOD,PHS,REL,IMG,NREL,NIMG,NFAC
+      COMPLEX*16 LEFT(6,6),RIGHT(6)
 !
 ! ========================================================
 
-      DO I=1,6
-      EXFC2(I)=CMPLX(-IMAG(EXFC(I)),-REAL(EXFC(I)))
-      ENDDO
-
-      RERR=100.D0
-      LEFT=-W1**2*(MATX+AMAS)+CRS+KSTF-CI*W1*BDMP
+      LEFT=-W1**2*(MATX+AMAS)-CI*W1*(BDMP+VDMP)+CRS+KSTF
       RIGHT=EXFC
 
       CALL ZGESV( 6, 1, LEFT, 6, IPV, RIGHT, 6, INFO )
-
       DSPL=RIGHT
-
-      DO 100 WHILE (RERR.GT.0.0001D0)
-
-        DO I=1,6
-        DO J=1,6
-         VDMP(I,J)=0.D0 !BDMP(I,J)+VDMP(I,J)*8.D0/3.D0/PI*W1*ABS(DSPL(J))
-        ENDDO
-        ENDDO
+!
+!   =================================================== 
+!    Write WAMIT-style output files
+!
+      DO MD=1,6
           
-        LEFT=-W1**2*(MATX+AMAS)-CI*W1*(BDMP+VDMP)+CRS+KSTF
-        RIGHT=EXFC
-        
-        CALL ZGESV( 6, 1, LEFT, 6, IPV, RIGHT, 6, INFO )
-        DSPL1=RIGHT
-        
-        DX=DSPL1-DSPL
-        RERR=0.D0
-        DO K=1,6
-        RERR=RERR+ABS(DX(K))/ABS(DSPL1(K))
-        ENDDO
-        
-        DSPL=DSPL1  !+0.75D0*DX
+       IF (MD.LE.3) THEN
+        MEXP=2
+       ELSEIF (MD.GE.4) THEN
+        MEXP=3
+       ENDIF
 
-100   CONTINUE
-
+       NFAC=(RHO*G*AMP)*REFL**MEXP
+       
+       REL=REAL(DSPL(MD))/NFAC
+       IMG=IMAG(DSPL(MD))/NFAC
+       MOD=SQRT(REL**2+IMG**2) !ABS(EXFC(IMD))/NFAC
+       NREL= REL
+       NIMG=-IMG
+       PHS=ATAN2D(NIMG,NREL)
+       
+       IF (ABS(TP+1.D0).GT.1.E-6.AND.ABS(TP).GT.1.E-6) THEN
+        WRITE(63,1030)  OUFR,BETA*180.0D0/PI,MD,MOD,PHS,NREL,NIMG
+       ENDIF
+           
+      ENDDO
+!   =================================================== 
+1030 FORMAT(2ES14.6,I6,4ES14.6)
+     
       RETURN        
       END SUBROUTINE SolveMotion
