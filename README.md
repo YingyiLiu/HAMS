@@ -86,13 +86,11 @@ Please cite appropriately the above papers in your relevant publications, report
 
 The following open-source software can be used to view the HAMS results: </p>
 [1]. [BEMRosetta](https://github.com/izabala123/BEMRosetta). Developed by Iñaki Zabala, Markel Peñalba, Yerai Peña-Sanchez.<br/> 
-[2]. [BEMIO](https://wec-sim.github.io/bemio/). Developed by National Renewable Energy Laboratory and Sandia 
-Sandia National Laboratories. <br/> 
+[2]. [BEMIO](https://wec-sim.github.io/bemio/). Developed by National Renewable Energy Laboratory and Sandia National Laboratories. <br/> 
 
 You may need HAMS to do the frequency-domain pre-processing before you use the following programs: </p>
 [1]. [FAST](https://www.nrel.gov/wind/nwtc/fast.html) or [OpenFAST](https://openfast.readthedocs.io/en/master/). Developed by National Renewable Energy Laboratory.<br/> 
-[2]. [WEC-Sim](https://wec-sim.github.io/WEC-Sim/). Developed by National Renewable Energy Laboratory and Sandia 
-Sandia National Laboratories. <br/> 
+[2]. [WEC-Sim](https://wec-sim.github.io/WEC-Sim/). Developed by National Renewable Energy Laboratory and Sandia National Laboratories. <br/> 
 
 ## License
 

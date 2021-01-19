@@ -1,0 +1,26 @@
+# Project :
+# User    :
+# File : Motion_1.rao
+#
+# Constants used in computations :
+#     Reference length     :     0.0000
+#     Water density (rho)  :  1025.0000
+#     Gravity acceleration :     9.8066
+#     Waterdepth           :  Inf. 
+#     Ref.pt incident wave : (   0.0000   0.0000)
+#            Forward speed :   0.0000  m/s 
+#
+# Reference point of body 1: (   0.0000   0.0000   0.0000)
+# MEANVALUE :   0.0000E+0
+#   AMP/PHASE
+#-----------------------------------------------------------------------
+#RAOTYPE    :  Motion
+#COMPONENT  :  11
+#UNIT       :  m/m
+#NBHEADING     1
+#HEADING          0.00
+#---w(r/s)-----------------------------------------------------
+  1.4005  9.403155E-01    269.9998
+  1.4005  8.765555E-01    269.9948
+#------------------------------------------------------------
+#ENDFILE
