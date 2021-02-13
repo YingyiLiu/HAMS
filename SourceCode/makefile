@@ -13,8 +13,8 @@ MOD_OBJS=$(patsubst %.f90,%.o,$(MODS))
 
 # Compiler/Linker settings
 FC = gfortran
-FLFLAGS = -g -fopenmp -llapack
-FCFLAGS = -g -c -O2 -fno-align-commons -fPIC
+FLFLAGS = -g -fopenmp -llapack -fbacktrace -fcheck=all -Wall
+FCFLAGS = -g -c -O3 -fno-align-commons -fPIC -fbacktrace -fcheck=all -Wall
 PROGRAM = hams
 PRG_OBJ = $(PROGRAM).o
 
