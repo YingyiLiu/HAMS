@@ -13,8 +13,8 @@ MOD_OBJS=$(patsubst %.f90,%.o,$(MODS))
 
 # Compiler/Linker settings
 FC = gfortran
-FLFLAGS = -g -fopenmp -llapack -fbacktrace -fcheck=all -Wall
-FCFLAGS = -g -c -O3 -fno-align-commons -fPIC -fbacktrace -fcheck=all -Wall
+FLFLAGS = -g -m64 -fopenmp -fbacktrace
+FCFLAGS = -g -m64 -c -O3 -fno-align-commons -fPIC -fdec-math -fbacktrace -fcheck=all -Wall
 PROGRAM = hams
 PRG_OBJ = $(PROGRAM).o
 
@@ -42,10 +42,10 @@ $(OBJS) : %.o : %.f90
 
 # Linker
 $(PROGRAM) : $(OBJS)
-	$(FC) $(FLFLAGS) -o $@ $^
+	$(FC) $(FLFLAGS) -o $@ $^ -llapack
 
 shared : $(OBJS)
-	$(FC) $(FLFLAGS) $(LDFLAGS) -o $(LIB) $^
+	$(FC) $(FLFLAGS) $(LDFLAGS) -o $(LIB) $^ -llapack
 
 # If something doesn't work right, have a 'make debug' to 
 # show what each variable contains.
@@ -59,7 +59,7 @@ debug:
 	@echo "PRG_OBJ = $(PRG_OBJ)"
 
 clean:
-	rm -rf $(OBJS) $(PROGRAM) $(LIB) $(patsubst %.o,%.mod,$(MOD_OBJS))
+	rm -rf $(OBJS) $(PROGRAM) $(LIB) $(patsubst %.o,%.mod,$(MOD_OBJS)) *.mod
 
 .PHONY: debug default clean
 
