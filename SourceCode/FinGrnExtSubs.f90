@@ -1,4 +1,5 @@
-﻿      MODULE FinGrnExtSubs
+﻿
+MODULE FinGrnExtSubs
 
       IMPLICIT NONE
    
@@ -16,7 +17,7 @@
       PUBLIC :: JY01BY0
       PUBLIC :: JY01BY1
       
-      CONTAINS
+CONTAINS
 !!---------------------------------------------------------------------------!!
 !           Belows are third-party Level-3 (low level) subroutines           !
 !!---------------------------------------------------------------------------!!
@@ -58,7 +59,7 @@
 !                  5.0      1.00000000
 !   ============================================================================
 
-        SUBROUTINE ERROR(X,ERR)
+SUBROUTINE ERROR(X,ERR)
 
         IMPLICIT NONE
         INTEGER K
@@ -89,7 +90,7 @@
            IF (X.LT.0.0) ERR=-ERR
         ENDIF
         RETURN
-        END SUBROUTINE ERROR
+END SUBROUTINE ERROR
         
 ! 
 !  ============================================================================
@@ -131,7 +132,7 @@
 !                    5     .30897289D-05
 !  ============================================================================
 !
-        SUBROUTINE ENXA(N,X,EN)
+SUBROUTINE ENXA(N,X,EN)
 
         IMPLICIT NONE
         INTEGER N,K
@@ -153,7 +154,7 @@
         ENDIF         
            
         RETURN
-        END SUBROUTINE ENXA
+END SUBROUTINE ENXA
         
 !
 !  ============================================================================
@@ -194,7 +195,7 @@
 !                  5.0     .1148296E-02
 !  ============================================================================
 !
-        SUBROUTINE E1XA(X,E1)
+SUBROUTINE E1XA(X,E1)
 
         IMPLICIT NONE
         REAL*8 X,E1,ES1,ES2
@@ -209,7 +210,7 @@
            E1=DEXP(-X)/X*ES1/ES2
         ENDIF
         RETURN
-        END SUBROUTINE E1XA
+END SUBROUTINE E1XA
 
 !
 !  ============================================================================
@@ -250,7 +251,7 @@
 !                   5     .40185275E+02
 !  ============================================================================
 
-        SUBROUTINE EIX(X,EI)
+SUBROUTINE EIX(X,EI)
 
         IMPLICIT NONE
         INTEGER K
@@ -278,7 +279,7 @@
            EI=DEXP(X)/X*EI
         ENDIF
         RETURN
-        END SUBROUTINE EIX
+END SUBROUTINE EIX
         
 !
 !  ============================================================================
@@ -322,7 +323,7 @@
 !                 10.0     .3628800000D+06
 !  ============================================================================
 
-        SUBROUTINE LGAMA(KF,X,GL)
+SUBROUTINE LGAMA(KF,X,GL)
 
         IMPLICIT NONE
         INTEGER K,KF,N
@@ -359,7 +360,7 @@
         ENDIF
  
         RETURN
-        END SUBROUTINE LGAMA
+END SUBROUTINE LGAMA
         
         
         
@@ -534,7 +535,7 @@
 !  ============================================================================
 !       
 
-        SUBROUTINE IK01A(X,BK0,BK1)
+SUBROUTINE IK01A(X,BK0,BK1)
         
         IMPLICIT NONE
         INTEGER K,K0
@@ -624,7 +625,7 @@
         BK1=(1.0D0/X-BI1*BK0)/BI0
 
         RETURN
-        END SUBROUTINE IK01A
+END SUBROUTINE IK01A
       
 !
 !  ============================================================================
@@ -659,7 +660,7 @@
 !                 BY1 --- Y1(x)
 !  ============================================================================
 !       
-        SUBROUTINE JY01B(X,BJ0,BJ1,BY0,BY1)
+SUBROUTINE JY01B(X,BJ0,BJ1,BY0,BY1)
 
         IMPLICIT NONE
         REAL*8 PI,X,BJ0,BY0,T,T2,A0,P0,Q0,TA0,BJ1,BY1,P1,Q1,TA1
@@ -701,7 +702,7 @@
         ENDIF
 
         RETURN
-        END SUBROUTINE JY01B
+END SUBROUTINE JY01B
         
 !
 !  ============================================================================
@@ -737,7 +738,7 @@
 !                 BJ1 --- J1(x)
 !  ============================================================================
 !         
-        SUBROUTINE JY01BJ(X,BJ0,BJ1)
+SUBROUTINE JY01BJ(X,BJ0,BJ1)
 
         IMPLICIT NONE
         REAL*8 PI,X,BJ0,BJ1,T,T2,A0,P0,Q0,TA0,P1,Q1,TA1
@@ -769,7 +770,7 @@
         ENDIF
 
         RETURN
-        END SUBROUTINE JY01BJ
+END SUBROUTINE JY01BJ
         
 !
 !  ============================================================================
@@ -807,7 +808,7 @@
 !                 BY1 --- Y1(x)
 !  ============================================================================
 !         
-        SUBROUTINE JY01BY0(X,BY0)
+SUBROUTINE JY01BY0(X,BY0)
 
         IMPLICIT NONE
         REAL*8 PI,X,BJ0,BY0,T,T2,A0,P0,Q0,TA0
@@ -836,7 +837,7 @@
         ENDIF
 
         RETURN
-        END SUBROUTINE JY01BY0
+END SUBROUTINE JY01BY0
         
 !
 !  ============================================================================
@@ -871,7 +872,7 @@
 !        Output:  BY1 --- Y1(x)
 !  ============================================================================
 !         
-        SUBROUTINE JY01BY1(X,BY1)
+SUBROUTINE JY01BY1(X,BY1)
 
         IMPLICIT NONE
         REAL*8 PI,X,BJ1,BY1,T,T2,A0,P1,Q1,TA1
@@ -900,8 +901,8 @@
         ENDIF
 
         RETURN
-        END SUBROUTINE JY01BY1
+END SUBROUTINE JY01BY1
 !-------------------------------------------------------------------------------
-      END MODULE FinGrnExtSubs
+END MODULE FinGrnExtSubs
 !*******************************************************************************
       

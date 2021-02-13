@@ -24,7 +24,8 @@
 !       Calculate the motion response in frequency domain by panel model.
 !---------------------------------------------------------------------------------------------
 !
-      SUBROUTINE SolveMotion(W1,TP,OUFR,BETA,AMP,AMAS,BDMP,VDMP,EXFC,DSPL)
+SUBROUTINE SolveMotion(W1,TP,OUFR,BETA,AMP,AMAS,BDMP,&
+     VDMP,EXFC,DSPL)
       USE HAMS_mod
       USE Const_mod
       USE Body_mod
@@ -77,4 +78,4 @@
 1030 FORMAT(2ES14.6,I6,4ES14.6)
      
       RETURN        
-      END SUBROUTINE SolveMotion
+END SUBROUTINE SolveMotion
