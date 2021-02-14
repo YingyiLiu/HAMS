@@ -60,7 +60,13 @@
 
 !  ---------------------------------------------------------------------------------------------------------
 !  
-      Program HAMS
+module HAMS_Lib
+  implicit none
+
+contains
+
+  subroutine Exec()
+    
       USE AssbMatx
       USE AssbMatx_irr
       USE CalGreenFunc
@@ -376,4 +382,13 @@
 1050   FORMAT(/,10x,'Wave Length =',F9.3,' m')
 3000   FORMAT(12x,'Wave Heading =',F9.3,' Degree')
        
+     end subroutine Exec
+end module HAMS_Lib
+
+
+!  
+      Program HAMS
+      USE HAMS_Lib
+      CALL Exec
       END Program HAMS
+      
