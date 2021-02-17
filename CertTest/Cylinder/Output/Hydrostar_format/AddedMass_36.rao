@@ -3,7 +3,7 @@
 # File : AddedMass_36.rao
 #
 # Constants used in computations :
-#     Reference length     :     0.0000
+#     Reference length     :     1.0000
 #     Water density (rho)  :  1025.0000
 #     Gravity acceleration :     9.8066
 #     Waterdepth           :  Inf. 
