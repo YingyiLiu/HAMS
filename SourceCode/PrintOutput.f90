@@ -47,7 +47,8 @@ CONTAINS
       INTEGER  NFILE,NBETA,MD1,MD2,II
       REAL*8   REFL,H,XW(2),XC(3),WVHD(NBETA),NWVHD(NBETA)
       CHARACTER(*)::RAOType
-
+      CHARACTER(LEN=100)::FMT
+      
       WRITE(NFILE, '(A11)')  '# Project :'
       WRITE(NFILE, '(A11)')  '# User    :'
       IF (RAOType.EQ.'AddedMass') THEN
@@ -118,10 +119,14 @@ CONTAINS
         ELSE
          NWVHD(II)=WVHD(II)
         ENDIF
-       ENDDO       
+       ENDDO
+       WRITE(FMT,*) '(A8,',NBETA,'(7X,F7.2))'
 	   WRITE(NFILE, '(A8,<NBETA>(7X,F7.2))')  '#HEADING  ',(NWVHD(II),II=1,NBETA)
+!	   WRITE(NFILE, '(A8,<NBETA>(7X,F7.2))')  '#HEADING  ',(NWVHD(II),II=1,NBETA)
       ELSE
+       WRITE(FMT,*) '(A8,',NBETA,'(7X,F7.2))'
 	   WRITE(NFILE, '(A8,<NBETA>(7X,F7.2))')  '#HEADING  ',(WVHD(II),II=1,NBETA)
+!      WRITE(NFILE, '(A8,<NBETA>(7X,F7.2))')  '#HEADING  ',(WVHD(II),II=1,NBETA)
       ENDIF
 	  WRITE(NFILE, '(A63)')  '#---w(r/s)-----------------------------------------------------'
 
@@ -180,8 +185,8 @@ CONTAINS
       WRITE(NFILE,FMT) W1,(MDL(II),II=1,NBETA),(PHS(II),II=1,NBETA)
 !	  WRITE(NFILE,200) W1,(NREL(II),II=1,NBETA),(NIMG(II),II=1,NBETA) 
       
-100	  FORMAT(F8.4,<NBETA>(ES14.6),<NBETA>(F12.4))
-200	  FORMAT(F8.4,<NBETA>(ES14.6),<NBETA>(ES14.6))
+!100	  FORMAT(F8.4,<NBETA>(ES14.6),<NBETA>(F12.4))
+!200	  FORMAT(F8.4,<NBETA>(ES14.6),<NBETA>(ES14.6))
       RETURN
       END SUBROUTINE PrintBody_CmplxVal
 
@@ -208,10 +213,9 @@ CONTAINS
        
       WRITE(FMT,*) '(F8.4,',NBETA,'(ES14.6),',NBETA,'(F12.4))'
       WRITE(NFILE,FMT) W1,(MDL(II),II=1,NBETA),(PHS(II),II=1,NBETA)
-      
-      
-100	  FORMAT(F8.4,<NBETA>(ES14.6),<NBETA>(F12.4))
-200	  FORMAT(F8.4,<NBETA>(ES14.6),<NBETA>(ES14.6))
+
+!100	  FORMAT(F8.4,<NBETA>(ES14.6),<NBETA>(F12.4))
+!200	  FORMAT(F8.4,<NBETA>(ES14.6),<NBETA>(ES14.6))
       RETURN
       END SUBROUTINE PrintBody_Exfc
       
