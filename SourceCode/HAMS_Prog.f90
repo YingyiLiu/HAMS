@@ -336,7 +336,7 @@
         
          DO MD=1,6
           CALL PrintBody_CmplxVal( 190+MD,WVFQ(KK),NBETA,'Excitation',EXFC(KK,:,MD))
-          CALL PrintBody_CmplxVal(200+MD,W1,NBETA,'Motion',DSPL(KK,:,MD))
+          CALL PrintBody_CmplxVal(200+MD,WVFQ(KK),NBETA,'Motion',DSPL(KK,:,MD))
          ENDDO
 
        ENDDO

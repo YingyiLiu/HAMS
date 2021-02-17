@@ -413,6 +413,8 @@ CONTAINS
           R2=SQRT((KSI(I+1)-X)**2+(ETA(I+1)-Y)**2+Z**2)
           L=SQRT((KSI(I+1)-KSI(I))**2+(ETA(I+1)-ETA(I))**2)
 		  
+          IF (DABS(L).LT.1.D-8) GOTO 100     ! to avoid overlapping vertexes
+          
           B1=DETA*((KSI(I)-X)**2+Z**2)-DKSI*(KSI(I)-X)*(ETA(I)-Y)
           A1=R1*Z*DKSI
           B2=DETA*((KSI(I+1)-X)**2+Z**2)-DKSI*(KSI(I+1)-X)*(ETA(I+1)-Y)
@@ -775,7 +777,9 @@ CONTAINS
           R1=SQRT((KSI(I)-X)**2+(ETA(I)-Y)**2+Z**2)
           R2=SQRT((KSI(I+1)-X)**2+(ETA(I+1)-Y)**2+Z**2)
           L=SQRT((KSI(I+1)-KSI(I))**2+(ETA(I+1)-ETA(I))**2)
-
+		  
+          IF (DABS(L).LT.1.D-8) GOTO 100     ! to avoid overlapping vertexes
+          
           B1=DETA*((KSI(I)-X)**2+Z**2)-DKSI*(KSI(I)-X)*(ETA(I)-Y)
           A1=R1*Z*DKSI
           B2=DETA*((KSI(I+1)-X)**2+Z**2)-DKSI*(KSI(I+1)-X)*(ETA(I+1)-Y)
