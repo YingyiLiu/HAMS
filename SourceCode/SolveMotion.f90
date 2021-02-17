@@ -61,6 +61,9 @@
 
        NFAC=(RHO*G*AMP)*REFL**MEXP
        
+       !print*,'NFAC',(RHO*G*AMP),REFL,MEXP
+       !pause
+       
        REL=REAL(DSPL(MD))/NFAC
        IMG=IMAG(DSPL(MD))/NFAC
        MOD=SQRT(REL**2+IMG**2) !ABS(EXFC(IMD))/NFAC
