@@ -75,7 +75,7 @@ CONTAINS
        ELSE
         XP=RY(IP,1)*XYZ_P(IEL,1)
         YP=RY(IP,2)*XYZ_P(IEL,2)
-        ZP=          XYZ_P(IEL,3)
+        ZP=         XYZ_P(IEL,3)
         PHI=(MXPOT(IEL,MD,IP)+VINP(XP,YP,ZP,XW(1),XW(2),BETA))*DS(IEL)
         FORCE(1,IP)=FORCE(1,IP)+PHI*RY(IP,1)*DXYZ_P(IEL,1)
         FORCE(2,IP)=FORCE(2,IP)+PHI*RY(IP,2)*DXYZ_P(IEL,2)
