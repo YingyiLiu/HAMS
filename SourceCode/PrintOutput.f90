@@ -121,11 +121,11 @@ CONTAINS
         ENDIF
        ENDDO
        WRITE(FMT,*) '(A8,',NBETA,'(7X,F7.2))'
-	   WRITE(NFILE, '(A8,<NBETA>(7X,F7.2))')  '#HEADING  ',(NWVHD(II),II=1,NBETA)
+	   WRITE(NFILE, FMT)  '#HEADING  ',(NWVHD(II),II=1,NBETA)
 !	   WRITE(NFILE, '(A8,<NBETA>(7X,F7.2))')  '#HEADING  ',(NWVHD(II),II=1,NBETA)
       ELSE
        WRITE(FMT,*) '(A8,',NBETA,'(7X,F7.2))'
-	   WRITE(NFILE, '(A8,<NBETA>(7X,F7.2))')  '#HEADING  ',(WVHD(II),II=1,NBETA)
+	   WRITE(NFILE, FMT)  '#HEADING  ',(WVHD(II),II=1,NBETA)
 !      WRITE(NFILE, '(A8,<NBETA>(7X,F7.2))')  '#HEADING  ',(WVHD(II),II=1,NBETA)
       ENDIF
 	  WRITE(NFILE, '(A63)')  '#---w(r/s)-----------------------------------------------------'

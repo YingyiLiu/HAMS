@@ -69,15 +69,17 @@
         
 !---------------------------------------------------------------------------------------------
 !        Data module for declaring variables in panel method
-!---------------------------------------------------------------------------------------------						
+!---------------------------------------------------------------------------------------------
 !
         MODULE PanelMesh_mod
 !
         INTEGER NELEM,NTND,NTNDD
         INTEGER ISYS,NSYS,ISX,ISY
 !
-        INTEGER,ALLOCATABLE,PUBLIC:: NCN(:),NCON(:,:),NCOND(:,:),IPIV(:,:)
-        REAL*8,ALLOCATABLE,PUBLIC:: XYZ(:,:),DXYZ_P(:,:),XYZ_P(:,:),DS(:),PNSZ(:)
+        INTEGER,ALLOCATABLE,PUBLIC:: NCN(:),NCON(:,:),NCOND(:,:)
+        INTEGER,ALLOCATABLE,PUBLIC:: IPIV(:,:)
+        REAL*8,ALLOCATABLE,PUBLIC:: XYZ(:,:),DXYZ_P(:,:),XYZ_P(:,:)
+        REAL*8,ALLOCATABLE,PUBLIC:: DS(:),PNSZ(:)
 !
         END MODULE PanelMesh_mod
         
@@ -112,7 +114,8 @@
         INTEGER,PUBLIC:: iNELEM,iNTND,tNELEM,tNTND
 !     
         INTEGER,ALLOCATABLE,PUBLIC:: iNCN(:),iNCON(:,:),iNCOND(:,:)
-        REAL*8,ALLOCATABLE,PUBLIC:: iXYZ(:,:),iDXYZ_P(:,:),iXYZ_P(:,:),iDS(:),iPNSZ(:)
+        REAL*8,ALLOCATABLE,PUBLIC:: iXYZ(:,:),iDXYZ_P(:,:),iXYZ_P(:,:)
+        REAL*8,ALLOCATABLE,PUBLIC:: iDS(:),iPNSZ(:)
 !
         END MODULE Inerfs_mod
     
@@ -122,8 +125,10 @@
 !
         MODULE LinearMatrix_mod
 !
-        COMPLEX*16,ALLOCATABLE,PUBLIC:: AMAT(:,:,:),BRMAT(:,:,:),BDMAT(:,:)
-        COMPLEX*16,ALLOCATABLE,PUBLIC:: CMAT(:,:,:),DRMAT(:,:,:),DDMAT(:,:)
+        COMPLEX*16,ALLOCATABLE,PUBLIC:: AMAT(:,:,:),BRMAT(:,:,:)
+        COMPLEX*16,ALLOCATABLE,PUBLIC:: BDMAT(:,:)
+        COMPLEX*16,ALLOCATABLE,PUBLIC:: CMAT(:,:,:),DRMAT(:,:,:)
+        COMPLEX*16,ALLOCATABLE,PUBLIC:: DDMAT(:,:)
 !
         END MODULE LinearMatrix_mod
 

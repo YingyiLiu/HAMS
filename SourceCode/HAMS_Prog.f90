@@ -60,7 +60,13 @@
 
 !  ---------------------------------------------------------------------------------------------------------
 !  
-      Program HAMS
+module HAMS_Lib
+  implicit none
+
+contains
+
+  subroutine Exec()
+    
       USE AssbMatx
       USE AssbMatx_irr
       USE CalGreenFunc
@@ -93,12 +99,12 @@
     Write(*,'(200A)') ' Please cite the following papers in your publications, reports, etc., when HAMS has been used in your work:'
     print*
     Write(*,'(200A)') '  (1) Yingyi Liu. (2019).'
-    Write(*,'(200A)') '      HAMS: A Frequency-Domain Preprocessor for Wave-Structure Interactions—Theory, Development, and Application.'
-    Write(*,'(200A)') '      Journal of Marine Science and Engineering, 7(3), 81.'
+    Write(*,'(200A)') '      HAMS: A Frequency-Domain Preprocessor for Wave-Structure Interactions—'
+    Write(*,'(200A)') '      Theory, Development, and Application. Journal of Marine Science and Engineering, 7(3), 81.'
     print*
     Write(*,'(200A)') '  (2) Yingyi Liu et al. (2018). '
-    Write(*,'(200A)') '      A reliable open-source package for performance evaluation of floating renewable energy systems in coastal and offshore regions.'
-    Write(*,'(200A)') '      Energy Conversion and Management, 174: 516-536.'
+    Write(*,'(200A)') '      A reliable open-source package for performance evaluation of floating renewable energy systems'
+    Write(*,'(200A)') '      in coastal and offshore regions. Energy Conversion and Management, 174: 516-536.'
     print*
     Write(*,'(200A)') '  (3) Yingyi Liu et al. (2016).'
     Write(*,'(200A)') '      Motion response prediction by hybrid panel-stick models for a semi-submersible with bracings.'
@@ -376,4 +382,13 @@
 1050   FORMAT(/,10x,'Wave Length =',F9.3,' m')
 3000   FORMAT(12x,'Wave Heading =',F9.3,' Degree')
        
+     end subroutine Exec
+end module HAMS_Lib
+
+
+!  
+      Program HAMS
+      USE HAMS_Lib
+      CALL Exec
       END Program HAMS
+      

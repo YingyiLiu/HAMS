@@ -75,7 +75,7 @@
 !
 ! ==================================================================================
 
-     module INFG3D_Open
+module INFG3D_Open
 
       USE Const_mod
       implicit none
@@ -101,7 +101,7 @@ contains
 !        FREE-SURFACE GREEN FUNCTION AND ITS NORMAL DERIVATIVES
 !***********************************************************************
 
-        SUBROUTINE INFGREEN3D(XF,XP,YF,YP,ZF,ZP,V,GRN,FLAG)
+SUBROUTINE INFGREEN3D(XF,XP,YF,YP,ZF,ZP,V,GRN,FLAG)
 
         IMPLICIT NONE
         
@@ -183,7 +183,7 @@ contains
         ENDIF
 
       RETURN
-      END SUBROUTINE INFGREEN3D    
+END SUBROUTINE INFGREEN3D    
     
 !===============================================================
 subroutine HavelockGF(hh,vv,GF,GFh)

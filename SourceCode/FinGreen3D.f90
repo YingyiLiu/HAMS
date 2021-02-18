@@ -2493,12 +2493,12 @@
 !
 ! ==================================================================================
 
-       RECURSIVE REAL*8 FUNCTION AQUADF(V,R,ZF,ZP,H,A,B,EPS,FUNTAG) RESULT(ANS)
+       RECURSIVE FUNCTION AQUADF(V,R,ZF,ZP,H,A,B,EPS,FUNTAG) RESULT(ANS)
         
        IMPLICIT NONE
        REAL*8,INTENT(IN)::V,R,ZF,ZP,H,A,B,EPS
        INTEGER,INTENT(IN)::FUNTAG
-       REAL*8 GK_INT,ERR
+       REAL*8 GK_INT,ERR,ANS
 
        ANS=0.0D0
        CALL GK_INTEGF(V,R,ZF,ZP,H,A,B,GK_INT,ERR,FUNTAG)
@@ -2706,12 +2706,12 @@
 !
 ! ==================================================================================
 
-       RECURSIVE REAL*8 FUNCTION AQUAD(R,WVN,NO,A,B,EPS,FUNTAG) RESULT(ANS)
+       RECURSIVE FUNCTION AQUAD(R,WVN,NO,A,B,EPS,FUNTAG) RESULT(ANS)
 
         IMPLICIT NONE     
         REAL*8,INTENT(IN)::R,WVN,A,B,EPS
         INTEGER,INTENT(IN)::NO,FUNTAG
-        REAL*8 GK_INT,ERR
+        REAL*8 GK_INT,ERR,ANS
 
        ANS=0.0D0
        CALL GK_INTEG(R,WVN,NO,A,B,GK_INT,ERR,FUNTAG)
