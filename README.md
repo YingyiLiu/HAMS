@@ -17,7 +17,7 @@ HAMS is released in the hope that it will contribute to eliminating the inequali
 
 HAMS is freely distributed under the Apache License, Version 2.0, http://www.apache.org/licenses/LICENSE-2.0, and may be modified and extended by researchers who intend to enhance its capabilities and port the code to other platforms. 
 
-The success of HAMS should to a large portion be attributed to Prof. Bin Teng (Dalian University of Technology), who has tutored me the theory of potential flow in marine hydrodynamics and the programming skills using the [Boundary Element Method](https://en.wikipedia.org/wiki/Boundary_element_method). The code structure and the coding style of HAMS are exactly two of the examples that I have learned and inherited from Prof. Bin Teng.
+The success of HAMS should to a large extent be attributed to Prof. Bin Teng (Dalian University of Technology), who has tutored me the theory of potential flow in marine hydrodynamics and the programming skills using the [Boundary Element Method](https://en.wikipedia.org/wiki/Boundary_element_method). The code structure and the coding style of HAMS are exactly two of the examples that I have learned and inherited from Prof. Bin Teng.
 
 ## Theoretical Basis
 
@@ -91,6 +91,10 @@ The following open-source software can be used to view the HAMS results: </p>
 You may need HAMS to do the frequency-domain pre-processing before you use the following programs: </p>
 [1]. [FAST](https://www.nrel.gov/wind/nwtc/fast.html) or [OpenFAST](https://openfast.readthedocs.io/en/master/). Developed by National Renewable Energy Laboratory.<br/> 
 [2]. [WEC-Sim](https://wec-sim.github.io/WEC-Sim/). Developed by National Renewable Energy Laboratory and Sandia National Laboratories. <br/> 
+
+Used by other open-source software: </p>
+[1]. [pyHAMS](https://github.com/WISDEM/pyHAMS). Developed by Garrett Barter, National Renewable Energy Laboratory.<br/> 
+[2]. [RAFT](https://github.com/WISDEM/RAFT). Developed by Matt Hall, Stein Housner, David Ogden, Garrett Barter, National Renewable Energy Laboratory. <br/> 
 
 ## License
 
