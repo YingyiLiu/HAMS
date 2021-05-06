@@ -65,7 +65,11 @@ CONTAINS
         XP=RX(IP,1)*XYZ_P(IEL,1)
         YP=RX(IP,2)*XYZ_P(IEL,2)
         ZP=         XYZ_P(IEL,3)
-        PHI=(MXPOT(IEL,MD,IP)+VINP(XP,YP,ZP,XW(1),XW(2),BETA))*DS(IEL)
+        IF (ISOL.EQ.1) THEN
+         PHI=(MXPOT(IEL,MD,IP)+VINP(XP,YP,ZP,XW(1),XW(2),BETA))*DS(IEL)
+        ELSEIF (ISOL.EQ.2) THEN
+         PHI=MXPOT(IEL,MD,IP)*DS(IEL)
+        ENDIF
         FORCE(1,IP)=FORCE(1,IP)+PHI*RX(IP,1)*DXYZ_P(IEL,1)
         FORCE(2,IP)=FORCE(2,IP)+PHI*RX(IP,2)*DXYZ_P(IEL,2)
         FORCE(3,IP)=FORCE(3,IP)+PHI*         DXYZ_P(IEL,3)
@@ -76,7 +80,11 @@ CONTAINS
         XP=RY(IP,1)*XYZ_P(IEL,1)
         YP=RY(IP,2)*XYZ_P(IEL,2)
         ZP=         XYZ_P(IEL,3)
-        PHI=(MXPOT(IEL,MD,IP)+VINP(XP,YP,ZP,XW(1),XW(2),BETA))*DS(IEL)
+        IF (ISOL.EQ.1) THEN
+         PHI=(MXPOT(IEL,MD,IP)+VINP(XP,YP,ZP,XW(1),XW(2),BETA))*DS(IEL)
+        ELSEIF (ISOL.EQ.2) THEN
+         PHI=MXPOT(IEL,MD,IP)*DS(IEL)
+        ENDIF
         FORCE(1,IP)=FORCE(1,IP)+PHI*RY(IP,1)*DXYZ_P(IEL,1)
         FORCE(2,IP)=FORCE(2,IP)+PHI*RY(IP,2)*DXYZ_P(IEL,2)
         FORCE(3,IP)=FORCE(3,IP)+PHI*          DXYZ_P(IEL,3)

@@ -172,7 +172,11 @@ CONTAINS
           TERM2=DUM(2)*MXPOT(JEL,MD,IS)
          ENDIF
 
+        IF (ISOL.EQ.1) THEN
          XPOT(JEL)=XPOT(JEL)+TERM1-TERM2
+        ELSEIF (ISOL.EQ.2) THEN
+         XPOT(JEL)=XPOT(JEL)-TERM2 
+        ENDIF
 
        ENDDO
       ENDDO

@@ -88,6 +88,7 @@
         READ(1,*) 
         READ(1,'(26x,3f7.3)')      (XR(I), I=1,3)
         READ(1,'(26x,f30.15)')     REFL
+        READ(1,'(26x,i16)')        ISOL
         READ(1,'(23x,i16)')        IRSP
         READ(1,'(23x,i16)')        NTHREAD
         IF (IRSP.NE.0) THEN
@@ -108,7 +109,7 @@
 !          READ(1,'(26x,3(1x,f10.4))')     (XFP(I,J), J=1,3)
            READ(1,*)     (XFP(I,J), J=1,3)
         ENDDO
-       
+             
 ! ====================================================
 !
 ! Exciting forces

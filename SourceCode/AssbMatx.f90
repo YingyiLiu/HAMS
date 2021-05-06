@@ -135,20 +135,20 @@ CONTAINS
       
       DO  1000 IEL=1,  NELEM
             
-        BTMP=CMPLX(0.0D0,0.0D0)
+       BTMP=CMPLX(0.0D0,0.0D0)
 
-       DO 200 JEL=1,  NELEM
+        DO 200 JEL=1,  NELEM
             
-        DIST=SQRT((XYZ_P(IEL,1)-XYZ_P(JEL,1))**2+(XYZ_P(IEL,2)-XYZ_P(JEL,2))**2+(XYZ_P(IEL,3)-XYZ_P(JEL,3))**2)
-        IF (DIST.LE.50.D0*PNSZ(JEL)) THEN
-         FLAG=1
-        ELSE
-         FLAG=0
-        ENDIF
+         DIST=SQRT((XYZ_P(IEL,1)-XYZ_P(JEL,1))**2+(XYZ_P(IEL,2)-XYZ_P(JEL,2))**2+(XYZ_P(IEL,3)-XYZ_P(JEL,3))**2)
+         IF (DIST.LE.50.D0*PNSZ(JEL)) THEN
+          FLAG=1
+         ELSE
+          FLAG=0
+         ENDIF
 
-        TINRD=CMPLX(0.0D0, 0.0D0)
+         TINRD=CMPLX(0.0D0, 0.0D0)
         
-        DO  200   IS=1,  NSYS
+         DO  200   IS=1,  NSYS
         
           CALL RBC_RIGHT(IS,IEL,JEL,TINRD,FLAG)
         
@@ -158,7 +158,7 @@ CONTAINS
           ENDDO
           ENDDO
         
-200    CONTINUE
+200     CONTINUE
         
          DO  300  MD=1,  6
          DO  300  IP=1, NSYS
@@ -198,11 +198,28 @@ CONTAINS
       BDMAT=CMPLX(0.0D0,0.0D0)
 
 !$OMP PARALLEL NUM_THREADS(NTHREAD)           
-!$OMP DO PRIVATE(IEL,JEL,IP,IS,FLAG,DIST,TINRD,BTMP) !$OMP REDUCTION(+:BDMAT)
+!$OMP DO PRIVATE(XP,YP,ZP,IEL,JEL,IP,IS,FLAG,DIST,TINRD,BTMP) !$OMP REDUCTION(+:BDMAT)
       
       DO  1000 IEL=1,  NELEM
             
-        BTMP=CMPLX(0.0D0,0.0D0)        
+       BTMP=CMPLX(0.0D0,0.0D0)
+       
+       IF (ISOL.EQ.2) THEN
+            
+         DO 100  IP=1,  NSYS
+          IF (ISX.EQ.1.AND.ISY.EQ.0) THEN
+           XP=RX(IP,1)*XYZ_P(IEL,1)
+           YP=RX(IP,2)*XYZ_P(IEL,2)
+           ZP=         XYZ_P(IEL,3)
+          ELSE
+           XP=RY(IP,1)*XYZ_P(IEL,1)
+           YP=RY(IP,2)*XYZ_P(IEL,2)
+           ZP=         XYZ_P(IEL,3)
+          ENDIF
+          BTMP(IP)=4.D0*PI*VINP(XP,YP,ZP,XW(1),XW(2),BETA)
+100      CONTINUE
+         
+       ELSEIF (ISOL.EQ.1) THEN       
 
         DO 200 JEL=1,  NELEM
             
@@ -222,7 +239,15 @@ CONTAINS
              BTMP(IP)=BTMP(IP)+TINRD(IS,IP)
            ENDDO
         
-200      CONTINUE
+200     CONTINUE
+        
+       ELSE
+           
+        PRINT*,"  Error: The input for ISOL should be either 1 or 2."
+        STOP
+        
+       ENDIF
+       
         
          DO  300  IP=1, NSYS
 
