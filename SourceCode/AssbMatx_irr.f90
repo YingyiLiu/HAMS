@@ -257,7 +257,9 @@ CONTAINS
 
         DO 600 JEL=1,  NELEM
 
-         DIST=SQRT((iXYZ_P(IEL-NELEM,1)-XYZ_P(JEL,1))**2+(iXYZ_P(IEL-NELEM,2)-XYZ_P(JEL,2))**2+(iXYZ_P(IEL-NELEM,3)-XYZ_P(JEL,3))**2)
+           DIST=SQRT((iXYZ_P(IEL-NELEM,1)-XYZ_P(JEL,1))**2 +&
+                (iXYZ_P(IEL-NELEM,2)-XYZ_P(JEL,2))**2 +&
+                (iXYZ_P(IEL-NELEM,3)-XYZ_P(JEL,3))**2)
          IF (DIST.LE.50.D0*PNSZ(JEL)) THEN
           FLAG=1
          ELSE
