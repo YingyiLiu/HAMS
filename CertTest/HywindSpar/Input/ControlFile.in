@@ -18,6 +18,7 @@
 
     Reference_body_center   0.000   0.000   0.000
     Reference_body_length   1.D0
+    Wave-diffrac-solution    2
     If_remove_irr_freq       1
     Number of threads        20
    
