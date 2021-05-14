@@ -122,8 +122,6 @@ contains
 !
 !======================================================================        
   
-      CALL Initialisation
-     
       CALL ReadOpenFiles
  
       CALL OMP_SET_NUM_THREADS(nthread)
@@ -194,6 +192,8 @@ contains
         ALLOCATE(CMAT(NELEM,NELEM,NSYS),DRMAT(NELEM,6,NSYS),DDMAT(NELEM,NSYS))
        ENDIF
        
+      CALL Initialisation
+     
        CALL ReadHydroStatic
       
        CALL CalNormals
