@@ -107,11 +107,11 @@ CONTAINS
 !   !   and on the inner water plane
 
 
-      SUBROUTINE CalNormals(IRSP)
+      SUBROUTINE CalNormals(IFLAG)
       IMPLICIT   NONE
 
       INTEGER IEL,IND
-      INTEGER,INTENT(IN):: IRSP
+      INTEGER,INTENT(IN):: IFLAG
 
 ! -------------------------------------------------------------------------
 ! 
@@ -127,7 +127,7 @@ CONTAINS
 
       CALL CalRotNormals(XG, XYZ_P, DXYZ_P, NELEM)
 
-      IF (IRSP.NE.0) THEN
+      IF (IFLAG.NE.0) THEN
 
          CALL CalPanelCentre(iXYZ,INTND,INELEM,INCN,INCON,iXYZ_P)
 
