@@ -196,7 +196,7 @@ contains
      
        CALL ReadHydroStatic
       
-       CALL CalNormals
+       CALL CalNormals(IRSP)
       
        write(*,*) ' Number of geometrial symmetries:',ISYS
        write(*,*) ' Number of panels on the hull:   ',NELEM
@@ -365,7 +365,7 @@ contains
        DEALLOCATE(MXPOT,WVHD,EXFC,DSPL,AMAS,BDMP)
      
        IF (IRSP.EQ.1) THEN
-        DEALLOCATE(IXYZ,IDS,INCN,INCON,IXYZ_P,IDXYZ_P)
+        DEALLOCATE(iXYZ,IDS,INCN,INCON,iXYZ_P,IDXYZ_P)
         DEALLOCATE(CMAT,DRMAT,DDMAT,DGRN,PKBN)
        ENDIF
 
