@@ -359,7 +359,7 @@ contains
          CALL PrintEnd(130+10*(MD1-1)+MD2)
         ENDDO
         ENDDO
-       
+        
        DEALLOCATE(XYZ,DS,NCN,NCON,XYZ_P,DXYZ_P)
        DEALLOCATE(AMAT,BRMAT,BDMAT,CGRN,RKBN)
        DEALLOCATE(MXPOT,WVHD,EXFC,DSPL,AMAS,BDMP)
@@ -381,7 +381,16 @@ contains
 1040   FORMAT(/,10x,'Wave Period =',F9.3,'  s')
 1050   FORMAT(/,10x,'Wave Length =',F9.3,' m')
 3000   FORMAT(12x,'Wave Heading =',F9.3,' Degree')
-       
+
+        DO MD1=2,20
+        DO MD2=1,6
+           IF (MD1.EQ.6.AND.MD2.EQ.6) THEN
+              CONTINUE
+           ENDIF
+           CLOSE(10*MD1+MD2)
+        ENDDO
+        ENDDO
+
      end subroutine Exec
 end module HAMS_Lib
 
