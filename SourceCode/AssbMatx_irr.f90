@@ -424,13 +424,13 @@ CONTAINS
             
          DO 500  IP=1,  NSYS
           IF (ISX.EQ.1.AND.ISY.EQ.0) THEN
-           XP=RX(IP,1)*IXYZ_P(IEL-NELEM,1)
-           YP=RX(IP,2)*IXYZ_P(IEL-NELEM,2)
-           ZP=         IXYZ_P(IEL-NELEM,3)
+           XP=RX(IP,1)*iXYZ_P(IEL-NELEM,1)
+           YP=RX(IP,2)*iXYZ_P(IEL-NELEM,2)
+           ZP=         iXYZ_P(IEL-NELEM,3)
           ELSE
-           XP=RY(IP,1)*IXYZ_P(IEL-NELEM,1)
-           YP=RY(IP,2)*IXYZ_P(IEL-NELEM,2)
-           ZP=         IXYZ_P(IEL-NELEM,3)
+           XP=RY(IP,1)*iXYZ_P(IEL-NELEM,1)
+           YP=RY(IP,2)*iXYZ_P(IEL-NELEM,2)
+           ZP=         iXYZ_P(IEL-NELEM,3)
           ENDIF
           BTMP(IP)=4.D0*PI*VINP(XP,YP,ZP,XW(1),XW(2),BETA)
 500      CONTINUE

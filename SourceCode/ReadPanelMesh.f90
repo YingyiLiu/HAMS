@@ -107,34 +107,38 @@ CONTAINS
 !   !   and on the inner water plane
 
 
-      SUBROUTINE CalNormals
+      SUBROUTINE CalNormals(IRSP)
       IMPLICIT   NONE
 
       INTEGER IEL,IND
+      INTEGER,INTENT(IN):: IRSP
 
 ! -------------------------------------------------------------------------
 ! 
 !      Calculate some panel properties
 !
       CALL CalPanelCentre( XYZ, NTND, NELEM, NCN, NCON, XYZ_P)
-      CALL CalPanelCentre(IXYZ,INTND,INELEM,INCN,INCON,IXYZ_P)
-     
+
       CALL CalPanelArea( XYZ, NTND, NELEM, NCN, NCON, DS)
-      CALL CalPanelArea(IXYZ,INTND,INELEM,INCN,INCON,IDS)
 
       CALL CalPanelChartLength( XYZ, NTND, NELEM, NCN, NCON, PNSZ)
-      CALL CalPanelChartLength(IXYZ,INTND,INELEM,INCN,INCON,IPNSZ)
-!
-! -------------------------------------------------------------------------
-! 
-!      Calculate normals on the immersed body surface AND inner water plane
-!
+
       CALL CalTransNormals( XYZ, NTND, NELEM, NCN, NCON, DXYZ_P)
-      CALL CalTransNormals(IXYZ,INTND,INELEM,INCN,INCON,IDXYZ_P)
-      
+
       CALL CalRotNormals(XG, XYZ_P, DXYZ_P, NELEM)
-      CALL CalRotNormals(XG,IXYZ_P,IDXYZ_P,INELEM)
-      
+
+      IF (IRSP.NE.0) THEN
+
+         CALL CalPanelCentre(iXYZ,INTND,INELEM,INCN,INCON,iXYZ_P)
+
+         CALL CalPanelArea(iXYZ,INTND,INELEM,INCN,INCON,IDS)
+
+         CALL CalPanelChartLength(iXYZ,INTND,INELEM,INCN,INCON,IPNSZ)
+
+         CALL CalTransNormals(iXYZ,INTND,INELEM,INCN,INCON,IDXYZ_P)
+
+         CALL CalRotNormals(XG,iXYZ_P,IDXYZ_P,INELEM)
+      ENDIF
 !
       Print *,' Calculating panel normals is finished...'
       Print * 
