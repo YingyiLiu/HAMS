@@ -26,10 +26,6 @@ jobs:
             
         steps:
         - uses: actions/checkout@v2
-
-        # Debugging session
-        #- name: Setup tmate session
-        #    uses: mxschmitt/action-tmate@v3
             
         - name: Install GFortran macOS
           if: contains(matrix.os, 'macos')
@@ -38,6 +34,11 @@ jobs:
         - name: Install GFortran windows
           if: contains(matrix.os, 'win')
           run: choco install mingw
+
+        # Debugging session
+        - name: Setup tmate session
+          if: contains(matrix.os, 'win')
+          uses: mxschmitt/action-tmate@v3
             
         - name: vtest
           run: |
