@@ -12,7 +12,7 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                os: [ubuntu-latest, macos-latest, windows-latest]
+                os: [ubuntu-latest, macos-latest] #, windows-latest]
                 gcc_v: [9, 10] # Version of GFortran we want to use.
                 
         env:
@@ -33,19 +33,70 @@ jobs:
         
         - name: Install GFortran windows
           if: contains(matrix.os, 'win')
-          run: choco install mingw
+          run: |
+              choco install mingw
 
         # Debugging session
-        - name: Setup tmate session
+        #- name: Setup tmate session
+        #  uses: mxschmitt/action-tmate@v3
+
+        # Debugging session
+        - name: Run windows build
           if: contains(matrix.os, 'win')
-          uses: mxschmitt/action-tmate@v3
+          run: |
+              FC=gfortran.exe
+              cd SourceCode
+              make.exe
             
-        - name: vtest
+        - name: Version test
+          if: contains(matrix.os, 'macos') || contains(matrix.os, 'ubuntu')
           run: |
               $FC --version
             
         - name: make
+          if: contains(matrix.os, 'macos') || contains(matrix.os, 'ubuntu')
           run: |
               cd SourceCode
               make
+              cd ..
+            
+        - name: Compile test
+          if: contains(matrix.os, 'macos') || contains(matrix.os, 'ubuntu')
+          run: |
+              cd Compiling
+              ../SourceCode/hams
+              cd ..
+              
+        - name: CertTest Cylinder
+          if: contains(matrix.os, 'macos') || contains(matrix.os, 'ubuntu')
+          run: |
+              cd CertTest
+              cd Cylinder
+              ../../SourceCode/hams
+              cd ../..
+              
+        - name: CertTest DeepCwind
+          if: contains(matrix.os, 'macos') || contains(matrix.os, 'ubuntu')
+          run: |
+              cd CertTest
+              cd DeepCwind
+              ../../SourceCode/hams
+              cd ../..
+              
+        - name: CertTest HywindSpar
+          if: contains(matrix.os, 'macos') || contains(matrix.os, 'ubuntu')
+          run: |
+              cd CertTest
+              cd HywindSpar
+              ../../SourceCode/hams
+              cd ../..
+              
+        - name: CertTest Moonpool
+          if: contains(matrix.os, 'macos') || contains(matrix.os, 'ubuntu')
+          run: |
+              cd CertTest
+              cd Moonpool
+              ../../SourceCode/hams
+              cd ../..
+
 
