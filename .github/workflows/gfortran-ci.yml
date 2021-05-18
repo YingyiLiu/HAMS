@@ -12,7 +12,7 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                os: [ubuntu-latest, macos-latest, windows-latest]
+                os: [ubuntu-latest, macos-latest] #, windows-latest]
                 gcc_v: [9, 10] # Version of GFortran we want to use.
                 
         env:
@@ -31,23 +31,23 @@ jobs:
           if: contains(matrix.os, 'macos')
           run: brew install gcc@${GCC_V} || brew upgrade gcc@${GCC_V} || true
         
-        - name: Install GFortran windows
-          if: contains(matrix.os, 'win')
-          run: |
-              choco install mingw wget
-              wget https://icl.cs.utk.edu/lapack-for-windows/libraries/VisualStudio/3.7.0/Dynamic-MINGW/Win64/liblapack.dll
-              wget https://icl.cs.utk.edu/lapack-for-windows/libraries/VisualStudio/3.7.0/Dynamic-MINGW/Win64/liblapack.lib
+        #- name: Install GFortran windows
+        #  if: contains(matrix.os, 'win')
+        #  run: |
+        #      choco install mingw wget
+        #      wget https://icl.cs.utk.edu/lapack-for-windows/libraries/VisualStudio/3.7.0/Dynamic-MINGW/Win64/liblapack.dll
+        #      wget https://icl.cs.utk.edu/lapack-for-windows/libraries/VisualStudio/3.7.0/Dynamic-MINGW/Win64/liblapack.lib
 
         # Debugging session
         #- name: Setup tmate session
         #  uses: mxschmitt/action-tmate@v3
 
-        - name: Run windows build
-          if: contains(matrix.os, 'win')
-          run: |
-              FC=gfortran.exe
-              cd SourceCode
-              make.exe
+        #- name: Run windows build
+        #  if: contains(matrix.os, 'win')
+        #  run: |
+        #      FC=gfortran.exe
+        #      cd SourceCode
+        #      make.exe
             
         - name: Version test
           if: contains(matrix.os, 'macos') || contains(matrix.os, 'ubuntu')
@@ -68,12 +68,12 @@ jobs:
               ../SourceCode/hams
               cd ..
             
-        - name: Compile test windows
-          if: contains(matrix.os, 'win')
-          run: |
-              cd Compiling
-              ..\SourceCode\hams.exe
-              cd ..
+        #- name: Compile test windows
+        #  if: contains(matrix.os, 'win')
+        #  run: |
+        #      cd Compiling
+        #      ..\SourceCode\hams.exe
+        #      cd ..
               
         - name: CertTest Cylinder
           if: contains(matrix.os, 'macos') || contains(matrix.os, 'ubuntu')
