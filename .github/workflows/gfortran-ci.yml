@@ -1,51 +1,51 @@
 name: Fortran CI
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    push:
+        branches: [ master ]
+    pull_request:
+        branches: [ master ]
 
 jobs:
-  build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
-        gcc_v: [9, 10] # Version of GFortran we want to use.
-        
-    env:
-      FC: gfortran-${{ matrix.gcc_v }}
-      GCC_V: ${{ matrix.gcc_v }}
-      HOMEBREW_NO_ANALYTICS: "ON" # Make Homebrew installation a little quicker
-      HOMEBREW_NO_AUTO_UPDATE: "ON"
-      HOMEBREW_NO_BOTTLE_SOURCE_FALLBACK: "ON"
-      HOMEBREW_NO_GITHUB_API: "ON"
-      HOMEBREW_NO_INSTALL_CLEANUP: "ON"
-      
-    steps:
-    - uses: actions/checkout@v2
+    build:
+        runs-on: ${{ matrix.os }}
+        strategy:
+            fail-fast: false
+            matrix:
+                os: [ubuntu-latest, macos-latest, windows-latest]
+                gcc_v: [9, 10] # Version of GFortran we want to use.
+                
+        env:
+            FC: gfortran-${{ matrix.gcc_v }}
+            GCC_V: ${{ matrix.gcc_v }}
+            HOMEBREW_NO_ANALYTICS: "ON" # Make Homebrew installation a little quicker
+            HOMEBREW_NO_AUTO_UPDATE: "ON"
+            HOMEBREW_NO_BOTTLE_SOURCE_FALLBACK: "ON"
+            HOMEBREW_NO_GITHUB_API: "ON"
+            HOMEBREW_NO_INSTALL_CLEANUP: "ON"
+            
+        steps:
+        - uses: actions/checkout@v2
 
-    # Debugging session
-    #- name: Setup tmate session
-    #  uses: mxschmitt/action-tmate@v3
-    
-   - name: Install GFortran macOS
-      if: contains(matrix.os, 'macos')
-      run: brew install gcc@${GCC_V} || brew upgrade gcc@${GCC_V} || true
-    
-   - name: Install GFortran macOS
-      if: contains(matrix.os, 'win')
-      run: choco install mingw
-      
-    - name: vtest
-      run: |
-          gfortran --version
-          $FC --version
-      
-    - name: make
-      run: |
-        cd SourceCode
-        make
+        # Debugging session
+        #- name: Setup tmate session
+        #    uses: mxschmitt/action-tmate@v3
+            
+        - name: Install GFortran macOS
+            if: contains(matrix.os, 'macos')
+            run: brew install gcc@${GCC_V} || brew upgrade gcc@${GCC_V} || true
+        
+        - name: Install GFortran windows
+            if: contains(matrix.os, 'win')
+            run: choco install mingw
+            
+        - name: vtest
+            run: |
+                    gfortran --version
+                    $FC --version
+            
+        - name: make
+            run: |
+                cd SourceCode
+                make
 
