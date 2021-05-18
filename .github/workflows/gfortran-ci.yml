@@ -41,7 +41,6 @@ jobs:
             
         - name: vtest
           run: |
-              gfortran --version
               $FC --version
             
         - name: make
