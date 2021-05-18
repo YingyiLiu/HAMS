@@ -32,20 +32,20 @@ jobs:
         #    uses: mxschmitt/action-tmate@v3
             
         - name: Install GFortran macOS
-            if: contains(matrix.os, 'macos')
-            run: brew install gcc@${GCC_V} || brew upgrade gcc@${GCC_V} || true
+          if: contains(matrix.os, 'macos')
+          run: brew install gcc@${GCC_V} || brew upgrade gcc@${GCC_V} || true
         
         - name: Install GFortran windows
-            if: contains(matrix.os, 'win')
-            run: choco install mingw
+          if: contains(matrix.os, 'win')
+          run: choco install mingw
             
         - name: vtest
-            run: |
-                    gfortran --version
-                    $FC --version
+          run: |
+              gfortran --version
+              $FC --version
             
         - name: make
-            run: |
-                cd SourceCode
-                make
+          run: |
+              cd SourceCode
+              make
 
