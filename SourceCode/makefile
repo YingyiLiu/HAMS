@@ -12,7 +12,7 @@ MODS=$(wildcard mod*.f90)
 MOD_OBJS=$(patsubst %.f90,%.o,$(MODS))
 
 # Compiler/Linker settings
-FC = gfortran
+FC ?= gfortran
 FLFLAGS = -g -m64 -fopenmp -fbacktrace
 FCFLAGS = -g -m64 -c -O3 -fno-align-commons -fPIC -fdec-math -fbacktrace -fcheck=all -Wall
 PROGRAM = hams
