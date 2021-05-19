@@ -1,0 +1,26 @@
+# Project :
+# User    :
+# File : AddedMass_35.rao
+#
+# Constants used in computations :
+#     Reference length     :     1.0000
+#     Water density (rho)  :  1025.0000
+#     Gravity acceleration :     9.8066
+#     Waterdepth           :  Inf. 
+#     Ref.pt incident wave : (   0.0000   0.0000)
+#            Forward speed :   0.0000  m/s 
+#
+# Reference point of body 1: (   0.0000   0.0000   0.0000)
+# MEANVALUE :   0.0000E+0
+#   AMP/PHASE
+#-----------------------------------------------------------------------
+#RAOTYPE    :  AddedMass
+#COMPONENT  :  35
+#UNIT       :  kg
+#NBHEADING     2
+#HEADING          0.00         90.00
+#---w(r/s)-----------------------------------------------------
+  2.7120  4.022028E-07  4.022028E-07      0.0000      0.0000
+  3.8354  7.436550E-07  7.436550E-07      0.0000      0.0000
+#------------------------------------------------------------
+#ENDFILE

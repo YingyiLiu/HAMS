@@ -20,7 +20,7 @@
     Reference_body_length   1.D0
     Wave_diffrac_solution    2
     If_remove_irr_freq       1
-    Number of threads        6
+    Number of threads       16
    
    #Start Definition of Pressure and/or Elevation (PE)
     Number_of_field_points     3                           # number of field points where to calculate PE

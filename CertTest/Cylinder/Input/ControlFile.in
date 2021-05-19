@@ -20,13 +20,13 @@
     Reference_body_length   1.D0
     Wave_diffrac_solution    2
     If_remove_irr_freq       1
-    Number of threads       12
+    Number of threads        6
 
    #Start Definition of Pressure and/or Elevation (PE)
     Number_of_field_points     3                           # number of field points where to calculate PE
-0.000000    0.000000    0.000000    Global_coords_point_1  
-1.500000    0.000000   -0.500000    Global_coords_point_2  
-3.000000    0.000000   -1.000000    Global_coords_point_3  
+    0.000000    0.000000    0.000000    Global_coords_point_1  
+    1.500000    0.000000   -0.500000    Global_coords_point_2  
+    3.000000    0.000000   -1.000000    Global_coords_point_3  
    #End Definition of Pressure and/or Elevation
    
    ----------End HAMS Control file---------------

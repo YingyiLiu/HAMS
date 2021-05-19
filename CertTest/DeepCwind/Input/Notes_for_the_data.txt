@@ -3,7 +3,7 @@ In Hydrostatic.in,
 
 (1) The values of the Body Mass Matrix are calculated by WAMIT_MeshTran.exe.
 
-(2) The values of External Damping Matrix, Hydrostatic Restoring Matrix, and External Restoring Matrix are from the following publication:
+(2) The values of External Quadratic Damping Matrix, Hydrostatic Restoring Matrix, and External Restoring Matrix are from the following publication:
 
 Robertson, A., Jonkman, J., Masciola, M., Song, H., Goupee, A., Coulling, A., & Luan, C. (2014). Definition of the semisubmersible floating system for phase II of OC4 (No. NREL/TP-5000-60601). National Renewable Energy Lab.(NREL), Golden, CO (United States).
 
