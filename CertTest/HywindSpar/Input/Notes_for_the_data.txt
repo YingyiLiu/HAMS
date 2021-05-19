@@ -1,0 +1,9 @@
+
+In Hydrostatic.in,
+
+(1) The values of the Body Mass Matrix are calculated by WAMIT_MeshTran.exe.
+
+(2) The values of External Damping Matrix, Hydrostatic Restoring Matrix, and External Restoring Matrix are from the following publication:
+
+Jonkman, J. (2010). Definition of the Floating System for Phase IV of OC3 (No. NREL/TP-500-47535). National Renewable Energy Lab.(NREL), Golden, CO (United States).
+
