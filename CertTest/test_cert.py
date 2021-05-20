@@ -25,11 +25,12 @@ class TestCertRegression(unittest.TestCase):
 
             # Get all files in the truth directory
             os.chdir(truth_dir)
-            all_files = glob.glob(os.path.join(truth_dir, '**', '*.*'), recursive=True)
-
+            all_files = glob.glob(os.path.join('**', '*.*'), recursive=True)
+            all_files.sort()
+            
             # Loop over all files
             for ifile in all_files:
-                
+
                 # Load file contents into lists
                 truth_file = os.path.join(truth_dir, ifile)
                 with open(truth_file) as f:
@@ -48,7 +49,7 @@ class TestCertRegression(unittest.TestCase):
                         if isfloat(truth_data[iline][ikey]):
                             truth_float = float( truth_data[iline][ikey] )
                             actual_float = float( actual_data[iline][ikey] )
-                            self.assertAlmostEqual(truth_float, actual_float, 6)
+                            self.assertAlmostEqual(truth_float, actual_float, 4)
                         else:
                             self.assertEqual(truth_data[iline][ikey], actual_data[iline][ikey])
 
