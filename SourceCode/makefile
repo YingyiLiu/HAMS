@@ -17,7 +17,7 @@ ifeq ($(FC), f77)
     FC = gfortran 
 endif
 FLFLAGS = -g -m64 -fopenmp -fbacktrace
-FCFLAGS = -g -m64 -c -O3 -fno-align-commons -fPIC -fdec-math -fbacktrace -fcheck=bits,bounds,do,mem,pointer,recursion -Wall
+FCFLAGS = -g -m64 -c -O3 -fno-align-commons -fPIC -fdec-math -fbacktrace -fcheck=bounds,do,mem,pointer,recursion -Wall
 PROGRAM = hams
 PRG_OBJ = $(PROGRAM).o
 
