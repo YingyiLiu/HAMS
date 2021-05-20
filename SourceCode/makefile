@@ -13,8 +13,11 @@ MOD_OBJS=$(patsubst %.f90,%.o,$(MODS))
 
 # Compiler/Linker settings
 FC ?= gfortran
+ifeq ($(FC), f77)
+    FC = gfortran 
+endif
 FLFLAGS = -g -m64 -fopenmp -fbacktrace
-FCFLAGS = -g -m64 -c -O3 -fno-align-commons -fPIC -fdec-math -fbacktrace -fcheck=all -Wall
+FCFLAGS = -g -m64 -c -O3 -fno-align-commons -fPIC -fdec-math -fbacktrace -fcheck=bits,bounds,do,mem,pointer,recursion -Wall
 PROGRAM = hams
 PRG_OBJ = $(PROGRAM).o
 
@@ -50,6 +53,7 @@ shared : $(OBJS)
 # If something doesn't work right, have a 'make debug' to 
 # show what each variable contains.
 debug:
+	@echo "FC = $(FC)"
 	@echo "SRCS = $(SRCS)"
 	@echo "OBJS = $(OBJS)"
 	@echo "MODS = $(MODS)"
