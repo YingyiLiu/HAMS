@@ -1,7 +1,6 @@
 import unittest
 import os
 import glob
-import csv
 
 def isfloat(instr):
     try:
@@ -34,24 +33,29 @@ class TestCertRegression(unittest.TestCase):
                 # Load file contents into lists
                 truth_file = os.path.join(truth_dir, ifile)
                 with open(truth_file) as f:
-                    truth_data = list( csv.reader(f, delimiter=' ') )
+                    truth_data = list( f.read().splitlines() )
                     
                 actual_file = os.path.join(actual_dir, ifile)
                 with open(actual_file) as f:
-                    actual_data = list( csv.reader(f, delimiter=' ') )
+                    actual_data = list( f.read().splitlines() )
 
                 # Print progress
                 print(f'... now testing {truth_file}')
 
                 # Loop over all file contents and compare one value at a time
                 for iline in range(len(truth_data)):
-                    for ikey in range(len(truth_data[iline])):
-                        if isfloat(truth_data[iline][ikey]):
-                            truth_float = float( truth_data[iline][ikey] )
-                            actual_float = float( actual_data[iline][ikey] )
+                    truth_tok = truth_data[iline].split()
+                    actual_tok = actual_data[iline].split()
+                    for ikey in range(len(truth_tok)):
+                        if isfloat(truth_tok[ikey]) and isfloat(actual_tok[ikey]):
+                            truth_float = float( truth_tok[ikey] )
+                            actual_float = float( actual_tok[ikey] )
                             self.assertAlmostEqual(truth_float, actual_float, 4)
+                        elif ( (isfloat(truth_tok[ikey]) and not isfloat(actual_tok[ikey])) or
+                               (not isfloat(truth_tok[ikey]) and isfloat(actual_tok[ikey])) ):
+                               breakpoint()
                         else:
-                            self.assertEqual(truth_data[iline][ikey], actual_data[iline][ikey])
+                            self.assertEqual(truth_tok[ikey], actual_tok[ikey])
 
             # Change back to starting point
             os.chdir(start_dir)
