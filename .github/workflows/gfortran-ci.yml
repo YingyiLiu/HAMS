@@ -26,6 +26,10 @@ jobs:
             
         steps:
         - uses: actions/checkout@v2
+        - name: Set up python for regression tests
+          uses: actions/setup-python@v2
+          with:
+              python-version: 3.9
             
         - name: Install GFortran macOS
           if: contains(matrix.os, 'macos')
@@ -106,5 +110,12 @@ jobs:
         #      cd Moonpool
         #      ../../SourceCode/hams
         #      cd ../..
+              
+        - name: Regression test
+          if: contains(matrix.os, 'macos') || contains(matrix.os, 'ubuntu')
+          run: |
+              cd CertTest
+              python test_cert.py
+              cd ..
 
 

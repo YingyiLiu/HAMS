@@ -13,8 +13,19 @@ MOD_OBJS=$(patsubst %.f90,%.o,$(MODS))
 
 # Compiler/Linker settings
 FC ?= gfortran
-FLFLAGS = -g -m64 -fopenmp -fbacktrace
-FCFLAGS = -g -m64 -c -O3 -fno-align-commons -fPIC -fdec-math -fbacktrace -fcheck=all -Wall
+ifeq ($(FC), f77)
+    FC = gfortran 
+endif
+
+ifeq ($(FC), ifort)
+	FLFLAGS = -g -m64 -fopenmp -mkl
+	FCFLAGS = -g -m64 -c -O3 -fPIC -check bounds,pointers -warn all -mkl
+	LDCOMP  = -mkl
+else
+	FLFLAGS = -g -m64 -fopenmp -fbacktrace
+	FCFLAGS = -g -m64 -c -O3 -fno-align-commons -fPIC -fdec-math -fbacktrace -fcheck=bounds,do,mem,pointer,recursion -Wall
+	LDCOMP  = -llapack
+endif
 PROGRAM = hams
 PRG_OBJ = $(PROGRAM).o
 
@@ -42,14 +53,15 @@ $(OBJS) : %.o : %.f90
 
 # Linker
 $(PROGRAM) : $(OBJS)
-	$(FC) $(FLFLAGS) -o $@ $^ -llapack
+	$(FC) $(FLFLAGS) -o $@ $^ $(LDCOMP)
 
 shared : $(OBJS)
-	$(FC) $(FLFLAGS) $(LDFLAGS) -o $(LIB) $^ -llapack
+	$(FC) $(FLFLAGS) $(LDFLAGS) -o $(LIB) $^ $(LDCOMP)
 
 # If something doesn't work right, have a 'make debug' to 
 # show what each variable contains.
 debug:
+	@echo "FC = $(FC)"
 	@echo "SRCS = $(SRCS)"
 	@echo "OBJS = $(OBJS)"
 	@echo "MODS = $(MODS)"
