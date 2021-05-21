@@ -25,29 +25,60 @@
 !---------------------------------------------------------------------------------------------
 !
 SUBROUTINE SolveMotion(W1,TP,OUFR,BETA,AMP,AMAS,BDMP,&
-     VDMP,EXFC,DSPL)
+     BLNR,BQDR,EXFC,DSPL)
       USE HAMS_mod
       USE Const_mod
       USE Body_mod
       IMPLICIT   NONE
 
       REAL*8,INTENT(IN)::  W1,TP,OUFR,BETA,AMP
-      REAL*8,INTENT(IN):: AMAS(6,6),BDMP(6,6),VDMP(6,6)
+      REAL*8,INTENT(IN):: AMAS(6,6),BDMP(6,6),BLNR(6,6),BQDR(6,6)
       COMPLEX*16,INTENT(IN):: EXFC(6)
       COMPLEX*16,INTENT(OUT):: DSPL(6)
+      REAL*8 DLANGE
       
-      INTEGER INFO,IPV(6),MD,MEXP
+      INTEGER INFO,IPV(6),MD,MEXP,I,J
 
+      REAL*8 NORM,WORK(6),RERR
       REAL*8 MOD,PHS,REL,IMG,NREL,NIMG,NFAC
-      COMPLEX*16 LEFT(6,6),RIGHT(6)
+      COMPLEX*16 LEFT(6,6),RIGHT(6),VDMP(6,6),DSPL1(6),DX(6)
 !
 ! ========================================================
 
-      LEFT=-W1**2*(MATX+AMAS)-CI*W1*(BDMP+VDMP)+CRS+KSTF
-      RIGHT=EXFC
-
-      CALL ZGESV( 6, 1, LEFT, 6, IPV, RIGHT, 6, INFO )
-      DSPL=RIGHT
+      NORM=DLANGE( 'M', 6, 6, BQDR, 6, WORK )
+      
+      !PRINT*,'NORM',NORM
+      !PAUSE
+      
+      IF (NORM.LT.1.E-6) THEN
+       LEFT=-W1**2*(MATX+AMAS)-CI*W1*(BDMP+BLNR)+CRS+KSTF
+       RIGHT=EXFC
+       CALL ZGESV( 6, 1, LEFT, 6, IPV, RIGHT, 6, INFO )
+       DSPL=RIGHT
+      ELSE
+       RERR=100.D0
+       LEFT=-W1**2*(MATX+AMAS)-CI*W1*(BDMP+BLNR)+CRS+KSTF
+       RIGHT=EXFC
+       CALL ZGESV( 6, 1, LEFT, 6, IPV, RIGHT, 6, INFO )
+       DSPL=RIGHT
+       DO WHILE (RERR.GT.1.E-6)
+        DO I=1,6
+        DO J=1,6
+         VDMP(I,J)=BQDR(I,J)*W1*ABS(DSPL(J))
+        ENDDO
+        ENDDO
+        LEFT=-W1**2*(MATX+AMAS)-CI*W1*(BDMP+BLNR+VDMP)+CRS+KSTF
+        RIGHT=EXFC
+        CALL ZGESV( 6, 1, LEFT, 6, IPV, RIGHT, 6, INFO )
+        DSPL1=RIGHT
+        DX=DSPL1-DSPL
+        RERR=0.D0
+        DO J=1,6
+         RERR=RERR+ABS(DX(J))/ABS(DSPL1(J))
+        ENDDO
+        DSPL=DSPL1  !+0.75D0*DX
+       ENDDO
+      ENDIF
 !
 !   =================================================== 
 !    Write WAMIT-style output files

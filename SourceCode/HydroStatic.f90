@@ -54,7 +54,8 @@ CONTAINS
       XB=0.D0
       MATX=0.D0
       CRS=0.D0
-      VDMP=0.D0
+      BLNR=0.D0
+      BQDR=0.D0
       KSTF=0.D0
       
       EXFC=CMPLX(0.D0,0.D0)
@@ -83,7 +84,11 @@ CONTAINS
       ENDDO
       READ(4,*)
       DO I=1,6
-       READ(4,120) (VDMP(I,J), J=1, 6)
+       READ(4,120) (BLNR(I,J), J=1, 6)
+      ENDDO
+      READ(4,*)
+      DO I=1,6
+       READ(4,120) (BQDR(I,J), J=1, 6)
       ENDDO
       READ(4,*)
       DO I=1,6
@@ -102,7 +107,7 @@ CONTAINS
  
 120   FORMAT(6(2x,E12.5))
 130   FORMAT(2I6,2X,ES14.6)
-      
+
       RETURN        
       END SUBROUTINE ReadHydroStatic
 !-------------------------------------------------------------------------------
