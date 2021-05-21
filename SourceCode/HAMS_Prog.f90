@@ -197,6 +197,10 @@ contains
        CALL ReadHydroStatic
       
        CALL CalNormals(IRSP)
+
+        DO MD1=1,5
+           CLOSE(MD1)
+        ENDDO
       
        write(*,*) ' Number of geometrial symmetries:',ISYS
        write(*,*) ' Number of panels on the hull:   ',NELEM
