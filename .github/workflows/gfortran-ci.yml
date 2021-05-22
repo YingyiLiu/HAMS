@@ -111,11 +111,11 @@ jobs:
         #      ../../SourceCode/hams
         #      cd ../..
               
-        - name: Regression test
-          if: contains(matrix.os, 'macos') || contains(matrix.os, 'ubuntu')
-          run: |
-              cd CertTest
-              python test_cert.py
-              cd ..
+        #- name: Regression test
+        #  if: contains(matrix.os, 'macos') || contains(matrix.os, 'ubuntu')
+        #  run: |
+        #      cd CertTest
+        #      python test_cert.py
+        #      cd ..
 
 
