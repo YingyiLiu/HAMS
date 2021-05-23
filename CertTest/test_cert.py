@@ -1,6 +1,7 @@
 import unittest
 import os
 import glob
+import math
 
 def isfloat(instr):
     try:
@@ -50,7 +51,8 @@ class TestCertRegression(unittest.TestCase):
                         if isfloat(truth_tok[ikey]) and isfloat(actual_tok[ikey]):
                             truth_float = float( truth_tok[ikey] )
                             actual_float = float( actual_tok[ikey] )
-                            self.assertAlmostEqual(truth_float, actual_float, 4)
+                            answer = math.isclose(truth_float, actual_float, rel_tol=1e-1, abs_tol=0.0)
+                            self.assertTrue(answer, f'TRUTH {truth_float} vs NEW {actual_float}')
                         elif ( (isfloat(truth_tok[ikey]) and not isfloat(actual_tok[ikey])) or
                                (not isfloat(truth_tok[ikey]) and isfloat(actual_tok[ikey])) ):
                                breakpoint()
