@@ -11,9 +11,9 @@
 
   <p align="center"><img src="https://github.com/YingyiLiu/HAMS/blob/master/Other/md_resources/body_mesh.png" width="70%" /></p>
   
-HAMS (Hydrodynamic Analysis of Marine Structures) is an open-source software for the numerical computation of the wave effect upon marine structures. It is based on boundary integral equations in the potential flow theory for analysis of wave-structure interactions. It is currently written in FORTRAN 90. The code has been developed by the author Yingyi Liu for almost a decade. 
+HAMS (Hydrodynamic Analysis of Marine Structures) is an open-source software for the numerical computation of the wave effect upon marine structures. It is based on boundary integral equations in the potential flow theory for analysis of wave-structure interactions. It is currently written in FORTRAN 90. The code has been developed by the author Yingyi Liu for nearly a decade. 
 
-HAMS is released in the hope that it will contribute to eliminating the inequality (for those who are not able to afford to purchase a costly commercial BEM software) in the continuous research developments related to offshore engineering and the ocean renewable energies.
+HAMS is released in the hope that it will contribute to eliminating the inequality (for those who are not able to afford to purchase a costly commercial BEM software) in the continuous research developments related to offshore engineering and ocean renewable energies.
 
 HAMS is freely distributed under the Apache License, Version 2.0, http://www.apache.org/licenses/LICENSE-2.0, and may be modified and extended by researchers who intend to enhance its capabilities and port the code to other platforms. 
 
