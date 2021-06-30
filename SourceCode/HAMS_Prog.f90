@@ -365,14 +365,15 @@ contains
         ENDDO
         
        DEALLOCATE(XYZ,DS,NCN,NCON,XYZ_P,DXYZ_P)
-       DEALLOCATE(AMAT,BRMAT,BDMAT,CGRN,RKBN)
-       DEALLOCATE(MXPOT,WVHD,EXFC,DSPL,AMAS,BDMP)
+       DEALLOCATE(AMAT,BRMAT,BDMAT,CGRN,RKBN,IPIV)
+       DEALLOCATE(MXPOT,EXFC,DSPL,AMAS,BDMP)
+       DEALLOCATE(WVFQ,WVHD,WVNB,XFP,PNSZ)
      
        IF (IRSP.EQ.1) THEN
         DEALLOCATE(iXYZ,IDS,INCN,INCON,iXYZ_P,IDXYZ_P)
-        DEALLOCATE(CMAT,DRMAT,DDMAT,DGRN,PKBN)
+        DEALLOCATE(CMAT,DRMAT,DDMAT,DGRN,PKBN,iPNSZ)
        ENDIF
-
+       
        write(*,*) 
        write(*,*) ' Congratulations! Your computation completes successfully.'
        write(*,*)
