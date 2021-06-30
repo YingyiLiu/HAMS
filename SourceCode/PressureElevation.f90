@@ -343,6 +343,8 @@ CONTAINS
       
       ENDDO
       
+      DEALLOCATE(VCPX)
+      
 1000  FORMAT(ES14.6,I10,12ES14.6)
       RETURN
       END SUBROUTINE OutputPressureElevation_Radiation
