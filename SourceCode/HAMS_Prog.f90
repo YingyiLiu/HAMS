@@ -211,68 +211,6 @@ contains
        !PRINT*
        !PRINT*,' The number of threads used for OpenMP is:',NTHREAD
 
-! ================================================================
-
- !      IF (SYBO.EQ.1) THEN
- !      
- !      BETA=0.D0
- !      TP=-1.D0
- !      W1=1.E-20
- !      WK=1.E-20
- !      V=1.E-20
- !      WL=-1.D0
- !      
- !      IF (IRSP.EQ.0) THEN
- !       CALL CALGREEN
- !       CALL ASSB_LEFT(AMAT,INDX,NELEM,NSYS)
- !       CALL ASSB_RBC(BRMAT,NELEM,NSYS)
- !       CALL ASSB_DBC(BDMAT,NELEM,NSYS)
- !       CALL RADIATION_SOLVER(AMAT,BRMAT,INDX,MXPOT,NELEM,NSYS)
- !       CALL DIFFRACTION_SOLVER(AMAT,BDMAT,INDX,MXPOT,NELEM,NSYS)
- !      ELSEIF (IRSP.EQ.1) THEN
- !       CALL CALGREEN_IRR
- !       CALL ASSB_LEFT_IRR(AMAT,CMAT,INDX,NELEM,TNELEM,NSYS)
- !       CALL ASSB_RBC_IRR(BRMAT,DRMAT,AMAT,NELEM,TNELEM,NSYS)
- !       CALL ASSB_DBC_IRR(BDMAT,DDMAT,AMAT,NELEM,TNELEM,NSYS)
- !       CALL RADIATION_SOLVER_IRR(CMAT,DRMAT,INDX,MXPOT,NELEM,NSYS)
- !       CALL DIFFRACTION_SOLVER_IRR(CMAT,DDMAT,INDX,MXPOT,NELEM,NSYS)
- !      ENDIF
- !
- !      CALL RFORCE(WK,W1,TP,AMAS0(1,:,:),BDMP0(1,:,:))
- !      CALL EFORCE(WK,W1,TP,BETA,AMP,EXFC0(1,:))
- !!      CALL SolveMotion(WK,W1,TP,WL,AMP,AMAS0(1,:,:),BDMP0(1,:,:),VDMP,EXFC0(1,:),DSPL0(1,:))
- !
- !      TP=0.D0
- !      W1=-1.D0
- !      WK=-1.D0
- !      V=-1.D0
- !      WL=0.D0
- !      
- !      IF (IRSP.EQ.0) THEN
- !       CALL CALGREEN
- !       CALL ASSB_LEFT(AMAT,INDX,NELEM,NSYS)
- !       CALL ASSB_RBC(BRMAT,NELEM,NSYS)
- !       CALL ASSB_DBC(BDMAT,NELEM,NSYS)
- !       CALL RADIATION_SOLVER(AMAT,BRMAT,INDX,MXPOT,NELEM,NSYS)
- !       CALL DIFFRACTION_SOLVER(AMAT,BDMAT,INDX,MXPOT,NELEM,NSYS)
- !      ELSEIF (IRSP.EQ.1) THEN
- !       CALL CALGREEN_IRR
- !       CALL ASSB_LEFT_IRR(AMAT,CMAT,INDX,NELEM,TNELEM,NSYS)
- !       CALL ASSB_RBC_IRR(BRMAT,DRMAT,AMAT,NELEM,TNELEM,NSYS)
- !       CALL ASSB_DBC_IRR(BDMAT,DDMAT,AMAT,NELEM,TNELEM,NSYS)
- !       CALL RADIATION_SOLVER_IRR(CMAT,DRMAT,INDX,MXPOT,NELEM,NSYS)
- !       CALL DIFFRACTION_SOLVER_IRR(CMAT,DDMAT,INDX,MXPOT,NELEM,NSYS)
- !      ENDIF
- !
- !      CALL RFORCE(WK,W1,TP,AMAS0(2,:,:),BDMP0(2,:,:))
- !      CALL EFORCE(WK,W1,TP,BETA,AMP,EXFC0(2,:))
- !      CALL SolveMotion(WK,W1,TP,WL,AMP,AMAS0(2,:,:),BDMP0(2,:,:),VDMP,EXFC0(2,:),DSPL0(2,:))
- !       
- !      ENDIF
-           
-! ================================================================
-!
-       
        DO MD=1,6
          CALL PrintHeading(190+MD,NBETA,REFL,'Excitation',MD,MD,H,XW,XR,WVHD)
          CALL PrintHeading(200+MD,NBETA,REFL,'Motion',MD,MD,H,XW,XR,WVHD)
@@ -287,7 +225,7 @@ contains
        
        DO KK=1,NPER
  
-         CALL CalWaveProperts(KK)       
+         CALL CalWaveProperts(KK)
 
          IF (INFT.EQ.1.or.INFT.EQ.2) THEN
           WRITE(6,1010) INFR

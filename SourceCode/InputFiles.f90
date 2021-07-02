@@ -32,7 +32,7 @@
       USE FieldOutput_mod
       IMPLICIT NONE
 
-      INTEGER I,J,err
+      INTEGER I,J,err,IFS,NPET
 ! ======================================================
       OPEN(1, FILE='Input/ControlFile.in',      STATUS='OLD')
       OPEN(2, FILE='Input/HullMesh.pnl',        STATUS='OLD')
@@ -52,19 +52,31 @@
         READ(1,'(14x,f30.15)')     H
         READ(1,*) 
         READ(1,*) 
+        READ(1,'(27x,i16)')        SYBO
         READ(1,'(25x,i16)')        INFT
         READ(1,'(25x,i17)')        OUFT
-        READ(1,'(26x,i16)')        NPER
-        IF (NPER.GT.0) THEN
+        READ(1,'(26x,i16)')        NPET
+        IF (SYBO.EQ.0) THEN
+          IFS=0
+        ELSEIF (SYBO.EQ.1) THEN
+          IFS=2
+        ELSE
+          PRINT*, 'Warning: SYBO must be 0 or 1.'
+          PRINT*
+          IFS=0
+        ENDIF
+        IF (NPET.GT.0) THEN
+         NPER=IFS+NPET
          ALLOCATE(WVNB(NPER))
-         READ(1,*) (WVNB(I),I=1,NPER)
-        ELSEIF (NPER.LT.0) THEN
-         NPER=ABS(NPER)
+         READ(1,*) (WVNB(I),I=IFS+1,NPER)
+        ELSEIF (NPET.LT.0) THEN
+         NPET=ABS(NPET)
+         NPER=IFS+NPET
          ALLOCATE(WVNB(NPER))
          READ(1,'(27x,f30.15)')     WK1
          READ(1,'(19x,f30.15)')     DWK
-         DO I=1,NPER
-          WVNB(I)=WK1+(I-1)*DWK
+         DO I=IFS+1,NPER
+          WVNB(I)=WK1+(I-IFS-1)*DWK
          ENDDO
         ENDIF
         READ(1,*) 

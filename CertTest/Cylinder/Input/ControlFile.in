@@ -1,8 +1,9 @@
    --------------HAMS Control file---------------
    
-   Waterdepth  -1.D0                                    (a negative value denotes the infinite depth)
+   Waterdepth  10.D0                                    (a negative value denotes the infinite depth)
 
    #Start Definition of Wave Frequencies
+    0_inf_frequency_limits      1                             # 0: not to include; 1: to include
     Input_frequency_type        1
     Output_frequency_type       4
     Number_of_frequencies      -30

@@ -49,7 +49,6 @@ CONTAINS
       
       XW=0.D0
       AMP=1.D0
-      SYBO=0
         
       XB=0.D0
       MATX=0.D0

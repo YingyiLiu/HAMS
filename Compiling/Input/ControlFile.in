@@ -3,11 +3,12 @@
    Waterdepth  -200.D0
 
    #Start Definition of Wave Frequencies
+    0_inf_frequency_limits      1                             # 0: not to include; 1: to include
     Input_frequency_type        2
     Output_frequency_type       2
-    Number_of_frequencies      -3
-    Minimum_frequency_Wmin    0.5D0
-    Frequency_step            0.5D0
+    Number_of_frequencies      -1
+    Minimum_frequency_Wmin    0.00005D0
+    Frequency_step            0.00005D0
    #End Definition of Wave Frequencies
 
    #Start Definition of Wave Headings

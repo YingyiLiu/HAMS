@@ -33,6 +33,7 @@ MODULE ImplementSubs
    PUBLIC :: CalWaveProperts
 
 CONTAINS
+
 ! ------------------------------------------------------------------- 
 !    Calculate the incident wave properties
 ! ------------------------------------------------------------------- 
@@ -40,9 +41,36 @@ CONTAINS
       IMPLICIT  NONE
 !        
       INTEGER,INTENT(IN):: KK
-      
+
+        IF (SYBO.EQ.1) THEN
+          IF (KK.EQ.1) THEN
+            V=0.D0
+            WK=0.D0
+            W1=0.D0
+            TP=-1.D0
+            WL=-1.D0
+            IF (INFT.LE.3) THEN
+             INFR=0.D0
+            ELSE
+             INFR=-1.D0
+            ENDIF
+            GOTO 100
+            ELSEIF (KK.EQ.2) THEN
+            V=-1.D0
+            WK=-1.D0
+            W1=-1.D0
+            TP=0.D0
+            WL=0.D0
+            IF (INFT.LE.3) THEN
+             INFR=-1.D0
+            ELSE
+             INFR=0.D0
+            ENDIF
+            GOTO 100
+          ENDIF
+        ENDIF
+        
         INFR=WVNB(KK)
-      
         IF (INFT .EQ. 1)  THEN
             V=WVNB(KK)
           IF (H .LE. 0.0D0) THEN
@@ -103,7 +131,8 @@ CONTAINS
             CALL DISPERSION(WVN,NK,W1,H)
           END IF
         END IF
-        
+
+100     CONTINUE
         WVNB(KK)=WK
         WVFQ(KK)=W1
         
@@ -118,7 +147,7 @@ CONTAINS
         ELSEIF (OUFT .EQ. 5)  THEN
          OUFR=WL
         END IF
-        
+
       END SUBROUTINE CalWaveProperts
 !-------------------------------------------------------------------------------
 END MODULE ImplementSubs
