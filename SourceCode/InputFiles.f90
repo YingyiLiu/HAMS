@@ -65,7 +65,7 @@
           PRINT*
           IFS=0
         ENDIF
-        IF (NPET.GT.0) THEN
+        IF (NPET.GE.0) THEN
          NPER=IFS+NPET
          ALLOCATE(WVNB(NPER))
          READ(1,*) (WVNB(I),I=IFS+1,NPER)
