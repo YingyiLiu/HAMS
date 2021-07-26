@@ -132,8 +132,8 @@ CONTAINS
       CALL CalTransNormals( XYZ, NTND, NELEM, NCN, NCON, DXYZ_P)
       CALL CalTransNormals(IXYZ,INTND,INELEM,INCN,INCON,IDXYZ_P)
       
-      CALL CalRotNormals(XG, XYZ_P, DXYZ_P, NELEM)
-      CALL CalRotNormals(XG,IXYZ_P,IDXYZ_P,INELEM)
+      CALL CalRotNormals(XR, XYZ_P, DXYZ_P, NELEM)
+      CALL CalRotNormals(XR,IXYZ_P,IDXYZ_P,INELEM)
       
 !
       Print *,' Calculating panel normals is finished...'

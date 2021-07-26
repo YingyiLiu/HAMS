@@ -41,11 +41,6 @@ CONTAINS
 ! 
       SUBROUTINE Initialisation
       IMPLICIT   NONE
-
-      !COMPLEX*16 EXFC
-      !REAL*8 XW,AMP,SYBO
-      !REAL*8 XB,MATX,CRS,VDMP,KSTF
-      !REAL*8 AMAS,BDMP,DSPL
       
       XW=0.D0
       AMP=1.D0
@@ -93,6 +88,20 @@ CONTAINS
       DO I=1,6
        READ(4,120) (KSTF(I,J), J=1, 6)
       ENDDO
+      
+      MATX(1,5)=MATX(1,1)*XG(3)
+      MATX(1,6)=-MATX(1,1)*XG(2)
+      MATX(2,4)=-MATX(1,1)*XG(3)
+      MATX(2,6)=MATX(1,1)*XG(1)
+      MATX(3,4)=MATX(1,1)*XG(2)
+      MATX(3,5)=-MATX(1,1)*XG(1)
+      
+      MATX(5,1)=MATX(1,5)
+      MATX(6,1)=MATX(1,6)
+      MATX(4,2)=MATX(2,4)
+      MATX(6,2)=MATX(2,6)
+      MATX(4,3)=MATX(3,4)
+      MATX(5,3)=MATX(3,5)
       
       DO I=1,6
        DO J=1,6
