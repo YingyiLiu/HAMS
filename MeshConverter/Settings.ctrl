@@ -1,0 +1,10 @@
+9.80665                                    
+1025.0                                     
+marin_semi_low.gdf                         
+0.0   0.0   0.0                            
+
+The format is as below:
+gravity acceleration
+sea water density
+mesh file name (gdf format)
+Center of rotation
