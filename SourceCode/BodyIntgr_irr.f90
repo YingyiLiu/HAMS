@@ -41,7 +41,7 @@ MODULE BodyIntgr_irr
    
 CONTAINS
 
-     
+
 !   --------------------------------------------------------
 !     Integration inside an element, which is not singular 
 !   --------------------------------------------------------
@@ -105,10 +105,10 @@ CONTAINS
       
       INTEGER  IP
       REAL*8  XQ,YQ,ZQ,EAR
-      REAL*8  RKN(4),ENV(6),TNV(6),XEC(3)      
+      REAL*8  RKN(4),ENV(6),TNV(6),XEC(3)
       COMPLEX*16  GRN(4),DUM
 
-      IF (IRR.EQ.1) THEN      
+      IF (IRR.EQ.1) THEN
           
         RKN(:)=RKBN(IEL,JEL,IS,:)
         GRN(:)=CGRN(IEL,JEL,IS,:)
@@ -118,7 +118,7 @@ CONTAINS
         ENV(:)=DXYZ_P(JEL,:)
         TNV(:)=DXYZ_P(IEL,:)
         
-      ELSEIF (IRR.EQ.3) THEN  
+      ELSEIF (IRR.EQ.3) THEN
           
         RKN(:)=PKBN(IEL,JEL,IS,:)
         GRN(:)=DGRN(IEL,JEL,IS,:)
@@ -128,7 +128,7 @@ CONTAINS
         ENV(:)=DXYZ_P(JEL,:)
         TNV(:)=iDXYZ_P(IEL,:)
         
-      ENDIF    
+      ENDIF
     
 !  Above----
 !  Field point changes, source element keeps the same as in the first quadrant
@@ -215,7 +215,7 @@ CONTAINS
        IF (ISX.EQ.1.AND.ISY.EQ.0) THEN
         XQ=SY(IS,IP)*XEC(1)
         YQ=SX(IS,IP)*XEC(2)
-        ZQ=           XEC(3)
+        ZQ=          XEC(3)
         CALL DINP(XQ,YQ,ZQ,XW(1),XW(2),BETA,DPOX,DPOY,DPOZ)
         DUM(2)=SY(IS,IP)*DPOX*ENV(1)+SX(IS,IP)*DPOY*ENV(2)+DPOZ*ENV(3)          
         TINRD(IS,IP)=TINRD(IS,IP)-DUM(1)*DUM(2)
@@ -224,7 +224,7 @@ CONTAINS
         YQ=SY(IS,IP)*XEC(2)
         ZQ=          XEC(3)
         CALL DINP(XQ,YQ,ZQ,XW(1),XW(2),BETA,DPOX,DPOY,DPOZ)
-        DUM(2)=SX(IS,IP)*DPOX*ENV(1)+SY(IS,IP)*DPOY*ENV(2)+DPOZ*ENV(3)          
+        DUM(2)=SX(IS,IP)*DPOX*ENV(1)+SY(IS,IP)*DPOY*ENV(2)+DPOZ*ENV(3)
         TINRD(IS,IP)=TINRD(IS,IP)-DUM(1)*DUM(2)
        ENDIF
 

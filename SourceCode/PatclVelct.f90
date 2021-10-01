@@ -61,7 +61,7 @@ CONTAINS
  
         WKX=WK0*((X-XW)*COS(SITA)+(Y-YW)*SIN(SITA))
 
-	    IF (H .LT. 0.0D0) THEN
+	    IF (H .LT. 0.0D0 .or. H .GT. 500.0D0) THEN
           VINP=-CI*AMP*G/W0*EXP(WK0*Z)*EXP(CI*WKX)
 	    ELSE
           DUM=-AMP*W0/(WK0*SINH(WK0*H))
