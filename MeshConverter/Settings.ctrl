@@ -1,7 +1,8 @@
 9.80665                                    
 1025.0                                     
-marin_semi_low.gdf                         
-0.0   0.0   0.0                            
+Cylinder2.gdf                       
+0.0   0.0  -0.0                          
+0.0   0.0  -2.5
 
 The format is as below:
 gravity acceleration
