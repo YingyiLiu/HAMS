@@ -1,12 +1,12 @@
-9.80665                                    
-1025.0                                     
-Cylinder2.gdf                       
-0.0   0.0  -0.0                          
-0.0   0.0  -2.5
+9.807
+1025
+.\Cylinder_withWP.gdf
+1      0       1
+0      0       0
 
 The format is as below:
 gravity acceleration
 sea water density
 mesh file name (gdf format)
-Center of rotation
-Center of gravity
+Centre of gravity
+Centre of rotation
