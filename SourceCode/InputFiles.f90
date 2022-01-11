@@ -98,7 +98,9 @@
         
         READ(1,*) 
         READ(1,*) 
-        READ(1,'(26x,3f7.3)')      (XR(I), I=1,3)
+        READ(1,'(26x,3f12.3)')      (XR(I), I=1,3)
+        WRITE(9,*) "The rotation center is input as (please confirm if it is correct):"
+        WRITE(9,'(3f12.3)') (XR(I), I=1,3)
         READ(1,'(26x,f30.15)')     REFL
         READ(1,'(26x,i16)')        ISOL
         READ(1,'(23x,i16)')        IRSP
