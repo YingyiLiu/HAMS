@@ -125,7 +125,7 @@ CONTAINS
 
       CALL CalTransNormals( XYZ, NTND, NELEM, NCN, NCON, DXYZ_P)
 
-      CALL CalRotNormals(XG, XYZ_P, DXYZ_P, NELEM)
+      CALL CalRotNormals(XR, XYZ_P, DXYZ_P, NELEM)
 
       IF (IFLAG.NE.0) THEN
 
@@ -137,7 +137,7 @@ CONTAINS
 
          CALL CalTransNormals(iXYZ,INTND,INELEM,INCN,INCON,IDXYZ_P)
 
-         CALL CalRotNormals(XG,iXYZ_P,IDXYZ_P,INELEM)
+         CALL CalRotNormals(XR,iXYZ_P,IDXYZ_P,INELEM)
       ENDIF
 !
       Print *,' Calculating panel normals is finished...'
