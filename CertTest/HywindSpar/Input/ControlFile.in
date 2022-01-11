@@ -17,7 +17,7 @@
     Heading_step             90.D0
    #End Definition of Wave Headings
 
-    Reference_body_center   0.000   0.000   0.000
+    Reference_body_center       0.000       0.000       0.000
     Reference_body_length   1.D0
     Wave_diffrac_solution    2
     If_remove_irr_freq       1
