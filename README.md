@@ -27,7 +27,7 @@ The success of HAMS should to a large extent be attributed to Prof. Bin Teng (Da
 
 The theory of panel method that has been used by HAMS is written in detail in the following two papers:
 
-* Yingyi Liu (2021). Introduction of the Open-Source Boundary Element Method Solver HAMS to the Ocean Renewable Energy Community. In: Proc. of the 14th European Wave and Tidal Energy Conference, Plymouth, UK, Sep. 5–9, 2021..
+* Yingyi Liu (2021). Introduction of the Open-Source Boundary Element Method Solver HAMS to the Ocean Renewable Energy Community. In: Proc. of the 14th European Wave and Tidal Energy Conference, Plymouth, UK, Sep. 5–9, 2021.
 
 * Yingyi Liu (2019). "HAMS: A Frequency-Domain Preprocessor for Wave-Structure Interactions—Theory, Development, and Application." _Journal of Marine Science and Engineering_, 7: 81.
 
