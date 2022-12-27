@@ -13,7 +13,7 @@ jobs:
             fail-fast: false
             matrix:
                 os: [ubuntu-latest, macos-latest] #, windows-latest]
-                gcc_v: [9, 10] # Version of GFortran we want to use.
+                gcc_v: ["10", "11", "12"] # Versions of GFortran we want to use.
                 
         env:
             FC: gfortran-${{ matrix.gcc_v }}
@@ -29,7 +29,7 @@ jobs:
         - name: Set up python for regression tests
           uses: actions/setup-python@v2
           with:
-              python-version: 3.9
+              python-version: "3.10"
             
         - name: Install GFortran macOS
           if: contains(matrix.os, 'macos')
