@@ -23,6 +23,10 @@ ifeq ($(FC), ifort)
 	FLFLAGS = -g -xHost -fopenmp -qmkl
 	FCFLAGS = -g -xHost -c -O3 -fPIC -check bounds,pointers -warn all -fopenmp -qmkl
 	LDCOMP  = -lmkl_rt
+else ifeq ($(FC), ifx)
+	FLFLAGS = -g -xHost -fopenmp -qmkl
+	FCFLAGS = -g -xHost -c -O3 -fPIC -check bounds,pointers -warn all -fopenmp -qmkl
+	LDCOMP  = -lmkl_rt
 else
 	FLFLAGS = -g -march=native -mtune=native -fopenmp
 	FCFLAGS = -g -march=native -mtune=native -c -O3 -fPIC -fopenmp -fdec-math -fcheck=bounds,mem,pointer -Wall
