@@ -529,7 +529,7 @@ END SUBROUTINE LGAMA
 !     25 July 2017, by Yingyi Liu
 !
 !   Parameters:
-!        Input :  x   --- Argument ( x � 0 )
+!        Input :  x   --- Argument ( x > 0 )
 !        Output:  BK0 --- K0(x)
 !                 BK1 --- K1(x)
 !  ============================================================================
@@ -653,7 +653,7 @@ END SUBROUTINE IK01A
 !     25 July 2017, by Yingyi Liu
 !
 !   Parameters:
-!        Input :  x   --- Argument of Jn(x) & Yn(x) ( x � 0 )
+!        Input :  x   --- Argument of Jn(x) & Yn(x) ( x > 0 )
 !        Output:  BJ0 --- J0(x)
 !                 BJ1 --- J1(x)
 !                 BY0 --- Y0(x)
@@ -733,7 +733,7 @@ END SUBROUTINE JY01B
 !     This is a derived version from the subroutine JY01B.
 !
 !   Parameters:
-!        Input :  x   --- Argument of Jn(x) & Yn(x) ( x � 0 )
+!        Input :  x   --- Argument of Jn(x) & Yn(x) ( x > 0 )
 !        Output:  BJ0 --- J0(x)
 !                 BJ1 --- J1(x)
 !  ============================================================================
@@ -801,7 +801,7 @@ END SUBROUTINE JY01BJ
 !     This is a derived version from the subroutine JY01B.
 !
 !   Parameters:
-!        Input :  x   --- Argument of Jn(x) & Yn(x) ( x � 0 )
+!        Input :  x   --- Argument of Jn(x) & Yn(x) ( x > 0 )
 !        Output:  BJ0 --- J0(x)
 !                 BJ1 --- J1(x)
 !                 BY0 --- Y0(x)
@@ -868,7 +868,7 @@ END SUBROUTINE JY01BY0
 !     This is a derived version from the subroutine JY01B.
 !
 !   Parameters:
-!        Input :  x   --- Argument of Jn(x) & Yn(x) ( x � 0 )
+!        Input :  x   --- Argument of Jn(x) & Yn(x) ( x > 0 )
 !        Output:  BY1 --- Y1(x)
 !  ============================================================================
 !         
