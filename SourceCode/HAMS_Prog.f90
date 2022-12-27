@@ -60,27 +60,30 @@
 
 !  ---------------------------------------------------------------------------------------------------------
 !  
-module HAMS_Lib
+module HAMS_Full
+    
+  USE AssbMatx
+  USE AssbMatx_irr
+  USE CalGreenFunc
+  USE ReadPanelMesh
+  USE LinearMatrix_mod
+  USE HydroStatic
+  USE ImplementSubs
+  USE CalGreenFunc
+  USE PotentWavForce
+  USE PrintOutput
+  USE Potentials_mod
+  USE PressureElevation
+  USE FieldOutput_mod
+  USE omp_lib
+  
   implicit none
 
+  public :: Exec
+  
 contains
 
   subroutine Exec()
-    
-      USE AssbMatx
-      USE AssbMatx_irr
-      USE CalGreenFunc
-      USE ReadPanelMesh
-      USE LinearMatrix_mod
-      USE HydroStatic
-      USE ImplementSubs
-      USE CalGreenFunc
-      USE PotentWavForce
-      USE PrintOutput
-      USE Potentials_mod
-      USE PressureElevation
-      USE FieldOutput_mod
-      USE omp_lib
 
       IMPLICIT NONE  
       
@@ -99,7 +102,7 @@ contains
     Write(*,'(200A)') ' Please cite the following papers in your publications, reports, etc., when HAMS has been used in your work:'
     print*
     Write(*,'(200A)') '  (1) Yingyi Liu. (2019).'
-    Write(*,'(200A)') '      HAMS: A Frequency-Domain Preprocessor for Wave-Structure Interactions—'
+    Write(*,'(200A)') '      HAMS: A Frequency-Domain Preprocessor for Wave-Structure Interactions'
     Write(*,'(200A)') '      Theory, Development, and Application. Journal of Marine Science and Engineering, 7(3), 81.'
     print*
     Write(*,'(200A)') '  (2) Yingyi Liu et al. (2018). '
@@ -335,12 +338,12 @@ contains
         ENDDO
 
      end subroutine Exec
-end module HAMS_Lib
+end module HAMS_Full
 
 
 !  
-      Program HAMS
-      USE HAMS_Lib
-      CALL Exec
-      END Program HAMS
+Program HAMS
+  USE HAMS_Full
+  CALL Exec
+END Program HAMS
       
