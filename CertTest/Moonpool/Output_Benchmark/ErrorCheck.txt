@@ -1,0 +1,2 @@
+ The rotation center is input as (please confirm if it is correct):
+       0.000       0.000       0.000
