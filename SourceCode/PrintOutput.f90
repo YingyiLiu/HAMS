@@ -177,7 +177,7 @@ CONTAINS
         MDL(II)=CDABS(CVAB(II))
         NREL(II)=-IMG(II)
         NIMG(II)=-REL(II)
-        PHS(II)=ATAN2D(NIMG(II),NREL(II))
+        PHS(II)=ATAN2(NIMG(II),NREL(II))*180.0D0/PI
         IF (PHS(II).LT.0.D0) PHS(II)=PHS(II)+360.D0
       ENDDO
        
@@ -208,7 +208,7 @@ CONTAINS
         REL(II)=DREAL(CVAB(II))
         IMG(II)=DIMAG(CVAB(II))
         MDL(II)=CDABS(CVAB(II))
-        PHS(II)=ATAN2D(REL(II),IMG(II))
+        PHS(II)=ATAN2(REL(II),IMG(II))*180.0D0/PI
       ENDDO
        
       WRITE(FMT,*) '(F8.4,',NBETA,'(ES14.6),',NBETA,'(F12.4))'
