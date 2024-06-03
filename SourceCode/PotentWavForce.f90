@@ -51,6 +51,7 @@ CONTAINS
       REAL*8:: XP,YP,ZP,AMFJ(6)
       REAL*8:: MOD,PHS(6),REL,IMG,NREL,NIMG
       COMPLEX*16 PHI,FORCE(6,4)
+      INTEGER M
 
       MD=7
       FORCE=CMPLX(0.0D0, 0.0D0)
@@ -107,16 +108,23 @@ CONTAINS
       AMFJ(:)=ABS(EXFC(:))
 
       DO MD=1,6
-          
-       REL=REAL(EXFC(MD))/(RHO*G*AMP)
-       IMG=IMAG(EXFC(MD))/(RHO*G*AMP)
-       MOD=ABS(EXFC(MD))/(RHO*G*AMP) !SQRT(REL**2+MDMG**2)
+    
+       IF(MD.LE.3)THEN
+         M=2
+       ELSE
+         M=3
+       ENDIF
+       
+       REL=REAL(EXFC(MD))/(RHO*G*AMP*REFL**M)
+       IMG=IMAG(EXFC(MD))/(RHO*G*AMP*REFL**M)
+       MOD=ABS(EXFC(MD))/(RHO*G*AMP*REFL**M) !SQRT(REL**2+MDMG**2)
        NREL=-IMG
-       NIMG=-REL
-       PHS(MD)=ATAN2(NIMG,NREL)*180.0D0/PI
+       NIMG= REL
+       PHS(MD)=ATAN2D(NIMG,NREL)
        WRITE(20+MD,1010) WK,W1,REAL(EXFC(MD)),IMAG(EXFC(MD))
        
        IF (ABS(TP+1.D0).GT.1.E-6.AND.ABS(TP).GT.1.E-6) THEN
+        
         WRITE(62,1030)  OUFR,BETA*180.0D0/PI,MD,MOD,PHS(MD),NREL,NIMG
        ENDIF
            
@@ -142,7 +150,8 @@ CONTAINS
       INTEGER IEL,MD,MD1,MD2,IP
       REAL*8:: AMFJ(6),NAMAS(6,6),NBDMP(6,6)
       COMPLEX*16 RPHI,IPHI
-
+      INTEGER K
+      
       AMAS(:,:)=0.D0
       BDMP(:,:)=0.D0
       
@@ -203,10 +212,20 @@ CONTAINS
 !
        DO MD1=1,6
           DO MD2=1,6
-            IF (ABS(TP+1.D0).LT.1.E-6.OR.ABS(TP).LT.1.E-6) THEN
-             WRITE(61,1020) OUFR,MD1,MD2,AMAS(MD1,MD2)/RHO
+            
+            K = 3
+            IF(MD1.LE.3.AND.MD2.LE.3)THEN
+                K = 3
+            ELSEIF(MD1.GT.3.AND.MD2.GT.3)THEN
+                K = 5
             ELSE
-             WRITE(61,1020) OUFR,MD1,MD2,AMAS(MD1,MD2)/RHO,BDMP(MD1,MD2)/(RHO*W1)
+                K = 4
+            ENDIF
+            
+            IF (ABS(TP+1.D0).LT.1.E-6.OR.ABS(TP).LT.1.E-6) THEN
+             WRITE(61,1020) OUFR,MD1,MD2,AMAS(MD1,MD2)/(RHO*REFL**K)
+            ELSE
+             WRITE(61,1020) OUFR,MD1,MD2,AMAS(MD1,MD2)/(RHO*REFL**K),BDMP(MD1,MD2)/(RHO*REFL**K*W1)
             ENDIF
           ENDDO
        ENDDO

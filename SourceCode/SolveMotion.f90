@@ -86,12 +86,12 @@ SUBROUTINE SolveMotion(W1,TP,OUFR,BETA,AMP,AMAS,BDMP,&
       DO MD=1,6
           
        IF (MD.LE.3) THEN
-        MEXP=2
+        MEXP=0
        ELSEIF (MD.GE.4) THEN
-        MEXP=3
+        MEXP=1
        ENDIF
 
-       NFAC=(RHO*G*AMP)*REFL**MEXP
+       NFAC=AMP/REFL**MEXP
        
        !print*,'NFAC',(RHO*G*AMP),REFL,MEXP
        !pause
@@ -101,7 +101,7 @@ SUBROUTINE SolveMotion(W1,TP,OUFR,BETA,AMP,AMAS,BDMP,&
        MOD=SQRT(REL**2+IMG**2) !ABS(EXFC(IMD))/NFAC
        NREL= REL
        NIMG=-IMG
-       PHS=ATAN2(NIMG,NREL)*180.0D0/PI
+       PHS=ATAN2D(NIMG,NREL)
        
        IF (ABS(TP+1.D0).GT.1.E-6.AND.ABS(TP).GT.1.E-6) THEN
         WRITE(63,1030)  OUFR,BETA*180.0D0/PI,MD,MOD,PHS,NREL,NIMG
